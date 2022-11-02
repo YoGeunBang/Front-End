@@ -1,13 +1,15 @@
 import { combineReducers, Store, CombinedState, AnyAction } from 'redux';
 import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
 import { MakeStore, createWrapper, HYDRATE } from 'next-redux-wrapper';
+import search from './search';
+import category from './category';
 
 const rootReducer = (state: any, action: AnyAction): CombinedState<any> => {
   switch (action.type) {
     case HYDRATE:
       return { ...state, ...action.payload };
     default: {
-      const combinedReducer = combineReducers({});
+      const combinedReducer = combineReducers({ search, category });
       return combinedReducer(state, action);
     }
   }
