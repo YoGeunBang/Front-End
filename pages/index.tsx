@@ -17,11 +17,8 @@ const Page: NextPageWithLayout = () => {
   const regionList = region.map((region, i) =>
     region.open ? (
       <Link
-        href={`/${region.name}`}
+        href={`/${region.id}`}
         key={i}
-        onClick={() => {
-          dispatch(changeCategoryAction({ value: i }));
-        }}
       >
         <a className="card">
           <img src={region.image} alt="여행지이미지" />
