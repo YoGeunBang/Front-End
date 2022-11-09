@@ -16,6 +16,7 @@ const Header = () => {
     if (router.pathname === '/[region_id]/[detail_id]') {
       setRoomsPage(true);
     }
+    else setRoomsPage(false);
   });
 
   useEffect(() => {

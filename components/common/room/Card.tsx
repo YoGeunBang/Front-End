@@ -18,11 +18,17 @@ const Card = ({ item }:any) => {
     setShowImg(true);
   };
   // 정수형 데이터 -> 문자열 변환 후 문자 사이 : 추가 ex) 10:10
-  const time = (_num:any) => {
-    if (_num != null) {
+  const time = (_num:number) => {
+    console.log(String(_num).length);
+    if (String(_num).length == 4) {
       let time = String(_num).replace(/(.{2})/, "$1:");
       return time;
-    } else {
+    } 
+    else if (String(_num).length == 3) {
+      let time = '0'+ String(_num).replace(/(.{1})/, "$1:");
+      return time;
+    }
+    else {
       return "없음";
     }
   };

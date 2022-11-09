@@ -31,7 +31,7 @@ const Page: NextPageWithLayout = () => {
             <div className="container">
               <h2 className="title">인기있는 관광지에요</h2>
               <div className="card-wrap">
-              {regionData?.detail?.map((detail: any, index: number) => {
+              {regionData?.detail?.map((detail: any) => {
                 return (
                   <Link href={`/${regionData.id}/${detail?.id}`} key={detail?.id}>
                     <a className="card">

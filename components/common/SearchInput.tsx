@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import {useRouter} from 'next/router';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
-import { changeSearchAction } from 'store/search';
 
 const SearchInput = () => {
   const router = useRouter();
@@ -15,7 +13,10 @@ const SearchInput = () => {
   };
 
   const searchClick = () => {
-    router.push(`${`/search?keyword=${search}`}`)
+    router.push({
+      pathname: '/search',
+      query: { keyword: search },
+  })
     setSearch('');
   }
   
