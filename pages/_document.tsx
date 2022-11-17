@@ -25,11 +25,13 @@ export default class MyDocument extends Document {
       sheet.seal();
     }
   }
-
+  //window && window.dataLayer && window.dataLayer.push({data:data});
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-77F6696QSE"></script>
+        </Head>
         <body>
           <Main />
           <NextScript />
