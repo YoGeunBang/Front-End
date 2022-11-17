@@ -24,7 +24,7 @@ const SearchInput = () => {
     <SearchInputEL>
       <input type="text" value={search} onChange={onChange} placeholder="검색" />
         <div onClick={searchClick} className="search-btn">
-          <img src="assets/img/search.png"></img>
+          <img src="/assets/img/search.png"></img>
         </div>
     </SearchInputEL>
   );

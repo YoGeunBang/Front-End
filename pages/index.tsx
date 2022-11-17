@@ -4,15 +4,12 @@ import { ReactElement} from 'react';
 import { AppLayout } from 'components/layout';
 import styled from 'styled-components'
 import Data from 'data/data.json';
-import { useDispatch } from 'react-redux';
 import Link from 'next/link'
-import { changeCategoryAction } from 'store/category';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiFillLock } from 'react-icons/ai';
-
+console.log(process.env.NODE_ENV);
 const Page: NextPageWithLayout = () => {
   const region = Data.region;
-  const dispatch = useDispatch();
 
   const regionList = region.map((region, i) =>
     region.open ? (

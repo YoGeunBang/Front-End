@@ -6,13 +6,40 @@ import { useRouter } from 'next/router';
 import Data from 'data/data.json';
 import { TiWarningOutline } from 'react-icons/ti';
 import { Card } from 'components/common/room';
+import axios from 'pages/api/customAxios';
+import type { GetStaticProps, GetStaticPaths } from 'next';
 
+export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await axios.get('/api/rooms/list');
+  const data = res.data;
+  const paths:any[] = [];
+  data.forEach((region: any) => {
+    region.detail.forEach((detailItem: any) => {
+      paths.push({ params: { region_id: region?.id?.toString(), detail_id: detailItem?.id?.toString() } });
+    });
+  });
+
+  console.log(paths)
+
+  return { paths, fallback: 'blocking' };
+};
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const res = await axios.get('/api/rooms/list', {
+    params: { detail_id: params?.detail_id, region_id: params?.region_id },
+  });
+  console.log(res);
+  const data = res?.data;
+  return { props: { data },revalidate: 2 };
+};
+
+/*
 export async function getServerSideProps(context: any) {
   return {
     props: {},
   };
 }
-
+*/
 const Page: NextPageWithLayout = () => {
   const router = useRouter();
   const { region_id, detail_id } = router.query;
@@ -83,6 +110,7 @@ const Page: NextPageWithLayout = () => {
     // 절대좌표 구하기 현재 스크롤된 좌표 + 뷰 포트 내 해당 dom y 좌표 !!!
   };
 
+  
   useEffect(() => {
     window.scrollTo({ top: 0 });
     window.addEventListener('scroll', isScroll);

@@ -19,7 +19,6 @@ const Card = ({ item }:any) => {
   };
   // 정수형 데이터 -> 문자열 변환 후 문자 사이 : 추가 ex) 10:10
   const time = (_num:number) => {
-    console.log(String(_num).length);
     if (String(_num).length == 4) {
       let time = String(_num).replace(/(.{2})/, "$1:");
       return time;
