@@ -2,7 +2,6 @@ import data from 'data/data.json';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
-  console.log(req.method);
   if (req.method === 'GET') {
     try {
       const { test, region_id, detail_id } = req.query;

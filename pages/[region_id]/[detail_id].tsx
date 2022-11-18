@@ -7,40 +7,29 @@ import Data from 'data/data.json';
 import { TiWarningOutline } from 'react-icons/ti';
 import { Card } from 'components/common/room';
 import axios from 'pages/api/customAxios';
-import type { GetStaticProps, GetStaticPaths } from 'next';
+import type { GetStaticProps, GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const res = await axios.get('/api/rooms/list');
   const data = res.data;
-  const paths:any[] = [];
+  const paths: any[] = [];
   data.forEach((region: any) => {
     region.detail.forEach((detailItem: any) => {
       paths.push({ params: { region_id: region?.id?.toString(), detail_id: detailItem?.id?.toString() } });
     });
   });
-
-  console.log(paths)
-
   return { paths, fallback: 'blocking' };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
   const res = await axios.get('/api/rooms/list', {
     params: { detail_id: params?.detail_id, region_id: params?.region_id },
   });
-  console.log(res);
   const data = res?.data;
-  return { props: { data },revalidate: 2 };
+  return { props: { data }, revalidate: 2 };
 };
 
-/*
-export async function getServerSideProps(context: any) {
-  return {
-    props: {},
-  };
-}
-*/
-const Page: NextPageWithLayout = () => {
+const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
   const { region_id, detail_id } = router.query;
   const [originalItems, setOriginalItems] = useState<any>(null); // 시간정렬 까지 된 오리진 데이터
@@ -110,7 +99,6 @@ const Page: NextPageWithLayout = () => {
     // 절대좌표 구하기 현재 스크롤된 좌표 + 뷰 포트 내 해당 dom y 좌표 !!!
   };
 
-  
   useEffect(() => {
     window.scrollTo({ top: 0 });
     window.addEventListener('scroll', isScroll);
@@ -120,11 +108,8 @@ const Page: NextPageWithLayout = () => {
   }, []);
 
   useEffect(() => {
-    let _items = Data.region[Number(region_id) - 1].detail.find((detail) => {
-      return detail.id === Number(detail_id);
-    })?.items;
-
-    _items?.sort((a: any, b: any) => {
+    console.log(data)
+    const _items = data?.sort((a: any, b: any) => {
       return parseFloat(a.time) - parseFloat(b.time);
     });
 
