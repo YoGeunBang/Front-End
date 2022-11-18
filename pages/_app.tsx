@@ -1,6 +1,9 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import type { NextPage } from 'next';
+import Script from 'next/script';
+import * as gtag from '../lib/gtag';
+import { useRouter } from 'next/router';
 import { wrapper } from 'store';
 import { ReactElement, ReactNode, useEffect } from 'react';
 
@@ -14,27 +17,44 @@ type AppPropsWithLayout = AppProps & {
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
+  const router = useRouter();
 
+  // GA
   useEffect(() => {
-    // window.dataLayer = window.dataLayer || [];
-    // window.dataLayer.push('js', new Date());
-    // window.dataLayer.push('config', 'G-77F6696QSE');
-
-    (function (w: any, d: any, s: any, l: any, i: any) {
-      w[l] = w[l] || [];
-      w[l].push({
-        'gtm.start': new Date().getTime(),
-        event: 'gtm.js',
-      });
-      var f = d.getElementsByTagName(s)[0],
-        j = d.createElement(s),
-        dl = l != 'dataLayer' ? '&l=' + l : '';
-      j.async = true;
-      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-      f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 'GTM-5GVT87H');
-  }, []);
-  return getLayout(<Component {...pageProps} />);
+    const handleRouteChange = (url:any) => {
+      gtag.pageview(url)
+    }
+    router.events.on('routeChangeComplete', handleRouteChange)
+    router.events.on('hashChangeComplete', handleRouteChange)
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+      router.events.off('hashChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+  // /GA
+  return getLayout(
+    <>
+      <Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+      />
+      <Script
+        id="gtag-init"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${gtag.GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
+      <Component {...pageProps} />
+    </>,
+  );
 }
 
 export default wrapper.withRedux(MyApp);

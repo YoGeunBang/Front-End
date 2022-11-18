@@ -5,6 +5,7 @@ export default class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
     const sheet = new ServerStyleSheet();
     const originalRenderPage = ctx.renderPage;
+    
     try {
       ctx.renderPage = () =>
         originalRenderPage({
@@ -25,20 +26,11 @@ export default class MyDocument extends Document {
       sheet.seal();
     }
   }
-  //window && window.dataLayer && window.dataLayer.push({data:data});
+  
   render() {
     return (
       <Html>
         <Head>
-          <script async src="https://www.googletagmanager.com/gtag/js?id=G-77F6696QSE"></script>
-          <noscript>
-            <iframe
-              src="https://www.googletagmanager.com/ns.html?id=GTM-5GVT87H"
-              height="0"
-              width="0"
-              style={{ display: 'none', visibility: 'hidden' }}
-            ></iframe>
-          </noscript>
           <script
             async
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1919598055512436"
