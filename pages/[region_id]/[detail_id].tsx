@@ -108,7 +108,6 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
   }, []);
 
   useEffect(() => {
-    console.log(data)
     const _items = data?.sort((a: any, b: any) => {
       return parseFloat(a.time) - parseFloat(b.time);
     });

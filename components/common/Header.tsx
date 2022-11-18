@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { SearchInput } from 'components/common';
 
-
 const Header = () => {
   // header Dom class 제어를 위한 ref 선언
   const header = useRef<any>(null);
@@ -15,18 +14,17 @@ const Header = () => {
   useEffect(() => {
     if (router.pathname === '/[region_id]/[detail_id]') {
       setRoomsPage(true);
-    }
-    else setRoomsPage(false);
+    } else setRoomsPage(false);
   });
 
   useEffect(() => {
-    if(roomsPage){
+    if (roomsPage) {
       window.addEventListener('scroll', isScroll);
     }
     return () => {
       window.removeEventListener('scroll', isScroll);
     };
-  },[roomsPage])
+  }, [roomsPage]);
 
   const isScroll = () => {
     if (window.pageYOffset >= 80) {
@@ -59,17 +57,21 @@ const Header = () => {
   //   }
   // };
   return (
-    showHeader && <HeaderEl ref={header}>
-      <div className="container">
-        <Link href="/">
-          <a className="logo">
-            <img src="/assets/img/logo.png" />
-            <span style={{ padding: '0 0 10px 10px' }}>Beta</span>
-          </a>
-        </Link>
-        <SearchInput />
-      </div>
-    </HeaderEl>
+    <>
+      {showHeader && (
+        <HeaderEl ref={header}>
+          <div className="container">
+            <Link href="/">
+              <a className="logo">
+                <img src="/assets/img/logo.png" />
+                <span style={{ padding: '0 0 10px 10px' }}>Beta</span>
+              </a>
+            </Link>
+            {/* <SearchInput /> */}
+          </div>
+        </HeaderEl>
+      )}
+    </>
   );
 };
 
