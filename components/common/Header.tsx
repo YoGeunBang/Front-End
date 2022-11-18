@@ -57,21 +57,19 @@ const Header = () => {
   //   }
   // };
   return (
-    <>
+    <HeaderEl ref={header}>
       {showHeader && (
-        <HeaderEl ref={header}>
-          <div className="container">
-            <Link href="/">
-              <a className="logo">
-                <img src="/assets/img/logo.png" />
-                <span style={{ padding: '0 0 10px 10px' }}>Beta</span>
-              </a>
-            </Link>
-            {/* <SearchInput /> */}
-          </div>
-        </HeaderEl>
+        <div className="container">
+          <Link href="/">
+            <a className="logo">
+              <img src="/assets/img/logo.png" />
+              <span style={{ padding: '0 0 10px 10px' }}>Beta</span>
+            </a>
+          </Link>
+          {/* <SearchInput /> */}
+        </div>
       )}
-    </>
+    </HeaderEl>
   );
 };
 
