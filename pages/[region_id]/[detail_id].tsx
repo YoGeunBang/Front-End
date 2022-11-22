@@ -10,8 +10,9 @@ import axios from 'pages/api/customAxios';
 import type { GetStaticProps, GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await axios.get('/api/rooms/list');
-  const data = res.data;
+  //const res = await axios.get('/api/rooms/list');
+  // const data = res.data;
+  const data = Data.region;
   const paths: any[] = [];
   data.forEach((region: any) => {
     region.detail.forEach((detailItem: any) => {
@@ -22,11 +23,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsContext) => {
+  /*
   const res = await axios.get('/api/rooms/list', {
     params: { detail_id: params?.detail_id, region_id: params?.region_id },
   });
-  const data = res?.data;
-  return { props: { data }, revalidate: 2 };
+  */
+  const _region_id = params?.region_id;
+  const _detail_id = params?.detail_id;
+  const _regionData = Data?.region?.find((region) => {
+    return region.id === Number(_region_id);
+  });
+  const _roomsData = _regionData?.detail?.find((detail) => {
+    return detail.id === Number(_detail_id);
+  })?.items;
+  //const data = res?.data;
+  return { props: { data: _roomsData }, revalidate: 2 };
 };
 
 const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
