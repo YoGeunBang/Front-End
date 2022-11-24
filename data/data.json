@@ -1,20 +1,17 @@
 {
-  "region": [
-    {
+  "region": [{
       "id": 1,
       "name": "제주도",
       "open": true,
       "image": "/assets/img/main/main_1.jpeg",
       "banner": "/assets/img/main/main_1_banner.png",
-      "detail": [
-        {
+      "detail": [{
           "id": 220649,
           "name": "제주국제공항",
           "description": "친절한 공항, 다시 찾고 싶은 공항",
           "car": true,
           "image": "/assets/img/main/064/064_9.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220649109,
               "name": "김군빌리지 게스트하우스",
               "time": 8,
@@ -2997,8 +2994,7 @@
           "description": "유네스코 자연 유산에 등재된, 제주 일출명소",
           "car": false,
           "image": "/assets/img/main/064/064_1.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220641001,
               "name": "히든스테이",
               "time": 5,
@@ -3820,8 +3816,7 @@
           "description": "‘성산일출봉’과 일출, 일몰을 아름답게 볼 수 있는 곳",
           "car": false,
           "image": "/assets/img/main/064/064_2.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220642001,
               "name": "낯선하루",
               "time": 5,
@@ -4105,8 +4100,7 @@
           "description": "볼거리, 즐길거리가 넘치는 복합관광단지",
           "car": false,
           "image": "/assets/img/main/064/064_3.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220643001,
               "name": "후스토리게스트하우스",
               "time": 5,
@@ -4824,8 +4818,7 @@
           "description": "이중섭의 흔적과 먹거리를 찾을 수 있는 곳",
           "car": false,
           "image": "/assets/img/main/064/064_4.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220644001,
               "name": "청춘 게스트하우스",
               "time": 5,
@@ -5750,8 +5743,7 @@
           "description": "노천탕과 용천수를 볼 수 있는 해수욕장",
           "car": false,
           "image": "/assets/img/main/064/064_5.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220645001,
               "name": "설레임게스트하우스",
               "time": 10,
@@ -6227,8 +6219,7 @@
           "description": "유명 카페와 액티비티를 즐기기 좋은 해변",
           "car": false,
           "image": "/assets/img/main/064/064_6.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220646001,
               "name": "포세이돈게스트하우스",
               "time": 5,
@@ -6459,8 +6450,7 @@
           "description": "비양도가 보이는 에메랄드빛 해수욕장",
           "car": false,
           "image": "/assets/img/main/064/064_7.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220647001,
               "name": "해조대 펜션",
               "time": 3,
@@ -7151,8 +7141,7 @@
           "description": "‘우리들의 블루스’ 촬영지, 아름다운 제주 바다",
           "car": false,
           "image": "/assets/img/main/064/064_8.jpg",
-          "items": [
-            {
+          "items": [{
               "id": 220648001,
               "name": "금능 이큐 스테이",
               "time": 15,
@@ -7405,7 +7394,1594 @@
               "checkout": 1000
             }
           ]
+        },
+        {
+          "id": 2206410,
+          "name": "함덕해수욕장",
+          "description": "함덕해수욕장 함더 ㄱ?",
+          "car": false,
+          "image": "/assets/img/main/064/064_8.jpg",
+          "items": [{
+            "id": 2206410001,
+            "name": "유탑유블레스호텔제주",
+            "time": 6,
+            "price": 95000,
+            "address": "제주 제주시 조천읍 조함해안로 502",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/128608255?c=14099951.3354765,3967542.1957224,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410001_01.jpg",
+              "/assets/img/main/064/2206410/2206410001_02.jpg",
+              "/assets/img/main/064/2206410/2206410001_03.jpg",
+              "/assets/img/main/064/2206410/2206410001_04.jpg",
+              "/assets/img/main/064/2206410/2206410001_05.jpg",
+              "/assets/img/main/064/2206410/2206410001_06.jpg",
+              "/assets/img/main/064/2206410/2206410001_07.jpg",
+              "/assets/img/main/064/2206410/2206410001_08.jpg",
+              "/assets/img/main/064/2206410/2206410001_09.jpg",
+              "/assets/img/main/064/2206410/2206410001_10.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410002,
+            "name": "에벤에셀호텔",
+            "time": 7,
+            "price": 60000,
+            "address": "제주 제주시 조천읍 조함해안로 504",
+            "type": 3,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/1809022253?c=14100016.4128508,3967506.4416117,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410002_01.jpg",
+              "/assets/img/main/064/2206410/2206410002_02.jpg",
+              "/assets/img/main/064/2206410/2206410002_03.jpg",
+              "/assets/img/main/064/2206410/2206410002_04.jpg",
+              "/assets/img/main/064/2206410/2206410002_05.jpg",
+              "/assets/img/main/064/2206410/2206410002_06.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410003,
+            "name": "아트스테이함덕비치",
+            "time": 7,
+            "price": 53000,
+            "address": "제주 제주시 조천읍 조함해안로 504",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/1946868062?c=14100020.4648803,3967545.6549418,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410003_01.jpg",
+              "/assets/img/main/064/2206410/2206410003_02.jpg",
+              "/assets/img/main/064/2206410/2206410003_03.jpg",
+              "/assets/img/main/064/2206410/2206410003_04.jpg",
+              "/assets/img/main/064/2206410/2206410003_05.jpg",
+              "/assets/img/main/064/2206410/2206410003_06.jpg",
+              "/assets/img/main/064/2206410/2206410003_07.jpg",
+              "/assets/img/main/064/2206410/2206410003_08.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410004,
+            "name": "오션그랜드호텔",
+            "time": 8,
+            "price": 46000,
+            "address": "제주 제주시 조천읍 조함해안로 490 오션그랜드제주호텔",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/11385840?c=14099840.6282429,3967537.4142547,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410004_01.jpg",
+              "/assets/img/main/064/2206410/2206410004_02.jpg",
+              "/assets/img/main/064/2206410/2206410004_03.jpg",
+              "/assets/img/main/064/2206410/2206410004_04.jpg",
+              "/assets/img/main/064/2206410/2206410004_05.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410005,
+            "name": "비치스토리호텔",
+            "time": 7,
+            "price": 39000,
+            "address": "제주 제주시 조천읍 조함해안로 492-5",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/11494289?c=14099854.8771377,3967490.1472835,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410005_01.jpg",
+              "/assets/img/main/064/2206410/2206410005_02.jpg",
+              "/assets/img/main/064/2206410/2206410005_03.jpg",
+              "/assets/img/main/064/2206410/2206410005_04.jpg",
+              "/assets/img/main/064/2206410/2206410005_05.jpg",
+              "/assets/img/main/064/2206410/2206410005_06.jpg",
+              "/assets/img/main/064/2206410/2206410005_07.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410006,
+            "name": "아이미제주비치호텔",
+            "time": 10,
+            "price": 47000,
+            "address": "제주 제주시 조천읍 조함해안로 474",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/36831717?c=14099637.2586651,3967664.9786123,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410006_01.jpg",
+              "/assets/img/main/064/2206410/2206410006_02.jpg",
+              "/assets/img/main/064/2206410/2206410006_03.jpg",
+              "/assets/img/main/064/2206410/2206410006_04.jpg",
+              "/assets/img/main/064/2206410/2206410006_05.jpg",
+              "/assets/img/main/064/2206410/2206410006_06.jpg",
+              "/assets/img/main/064/2206410/2206410006_07.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410007,
+            "name": "제주선샤인호텔",
+            "time": 13,
+            "price": 110000,
+            "address": "제주 제주시 조천읍 신북로 481-9 제주선샤인호텔",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/11597262?c=14099478.1385850,3967753.0230158,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410007_01.jpg",
+              "/assets/img/main/064/2206410/2206410007_02.jpg",
+              "/assets/img/main/064/2206410/2206410007_03.jpg",
+              "/assets/img/main/064/2206410/2206410007_04.jpg",
+              "/assets/img/main/064/2206410/2206410007_05.jpg",
+              "/assets/img/main/064/2206410/2206410007_06.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410008,
+            "name": "소노벨 제주",
+            "time": 7,
+            "price": 170000,
+            "address": "제주 제주시 조천읍 신북로 577 대명리조트제주휴양콘도미니엄",
+            "type": 1,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%98%B8%ED%85%94/place/12896850?c=14100107.1716316,3967390.5653971,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410008_01.jpg",
+              "/assets/img/main/064/2206410/2206410008_02.jpg",
+              "/assets/img/main/064/2206410/2206410008_03.jpg",
+              "/assets/img/main/064/2206410/2206410008_04.jpg",
+              "/assets/img/main/064/2206410/2206410008_05.jpg",
+              "/assets/img/main/064/2206410/2206410008_06.jpg",
+              "/assets/img/main/064/2206410/2206410008_07.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410009,
+            "name": "함덕돌낭집",
+            "time": 10,
+            "price": 90000,
+            "address": "제주 제주시 조천읍 함덕서4길 56",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1105162825?c=14099489.7269440,3967119.4842414,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410009_01.jpg",
+              "/assets/img/main/064/2206410/2206410009_02.jpg",
+              "/assets/img/main/064/2206410/2206410009_03.jpg",
+              "/assets/img/main/064/2206410/2206410009_04.jpg",
+              "/assets/img/main/064/2206410/2206410009_05.jpg",
+              "/assets/img/main/064/2206410/2206410009_06.jpg",
+              "/assets/img/main/064/2206410/2206410009_07.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1030
+          }, {
+            "id": 2206410010,
+            "name": "봉봉키즈펜션",
+            "time": 10,
+            "price": 350000,
+            "address": "제주 제주시 조천읍 신북로 508",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1193509021?c=14099254.8762143,3967503.2361683,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410010_01.jpg",
+              "/assets/img/main/064/2206410/2206410010_02.jpg",
+              "/assets/img/main/064/2206410/2206410010_03.jpg",
+              "/assets/img/main/064/2206410/2206410010_04.jpg",
+              "/assets/img/main/064/2206410/2206410010_05.jpg",
+              "/assets/img/main/064/2206410/2206410010_06.jpg",
+              "/assets/img/main/064/2206410/2206410010_07.jpg",
+              "/assets/img/main/064/2206410/2206410010_08.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410011,
+            "name": "포엠하우스",
+            "time": 9,
+            "price": 60000,
+            "address": "제주 제주시 조천읍 조함해안로 476-1",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/37747040?c=14099224.2832843,3967625.7648769,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410011_01.jpg",
+              "/assets/img/main/064/2206410/2206410011_02.jpg",
+              "/assets/img/main/064/2206410/2206410011_03.jpg",
+              "/assets/img/main/064/2206410/2206410011_04.jpg",
+              "/assets/img/main/064/2206410/2206410011_05.jpg",
+              "/assets/img/main/064/2206410/2206410011_06.jpg",
+              "/assets/img/main/064/2206410/2206410011_07.jpg",
+              "/assets/img/main/064/2206410/2206410011_08.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410012,
+            "name": "소곤닥하우스",
+            "time": 10,
+            "price": 39000,
+            "address": "제주 제주시 조천읍 신북로 497 소곤닥하우스",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1659523223?c=14099162.0000294,3967581.2221883,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410012_01.jpg",
+              "/assets/img/main/064/2206410/2206410012_02.jpg",
+              "/assets/img/main/064/2206410/2206410012_03.jpg",
+              "/assets/img/main/064/2206410/2206410012_04.jpg",
+              "/assets/img/main/064/2206410/2206410012_05.jpg",
+              "/assets/img/main/064/2206410/2206410012_06.jpg",
+              "/assets/img/main/064/2206410/2206410012_07.jpg",
+              "/assets/img/main/064/2206410/2206410012_08.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410013,
+            "name": "바다야펜션",
+            "time": 9,
+            "price": 45000,
+            "address": "제주 제주시 조천읍 조함해안로 478 2,3층",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/31343437?c=14099236.6750040,3967621.7370221,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410013_01.jpg",
+              "/assets/img/main/064/2206410/2206410013_02.jpg",
+              "/assets/img/main/064/2206410/2206410013_03.jpg",
+              "/assets/img/main/064/2206410/2206410013_04.jpg",
+              "/assets/img/main/064/2206410/2206410013_05.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410014,
+            "name": "제주무지개하우스",
+            "time": 7,
+            "price": 72000,
+            "address": "제주 제주시 조천읍 평사길 8-6",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/35831951?c=14100282.7755122,3967607.7983379,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410014_01.jpg",
+              "/assets/img/main/064/2206410/2206410014_02.jpg",
+              "/assets/img/main/064/2206410/2206410014_03.jpg",
+              "/assets/img/main/064/2206410/2206410014_04.jpg",
+              "/assets/img/main/064/2206410/2206410014_05.jpg",
+              "/assets/img/main/064/2206410/2206410014_06.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410015,
+            "name": "야호비치하우스",
+            "time": 6,
+            "price": 140000,
+            "address": "제주 제주시 조천읍 조함해안로 582",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/38349472?c=14100321.0957075,3967734.0465681,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410015_01.jpg",
+              "/assets/img/main/064/2206410/2206410015_02.jpg",
+              "/assets/img/main/064/2206410/2206410015_03.jpg",
+              "/assets/img/main/064/2206410/2206410015_04.jpg",
+              "/assets/img/main/064/2206410/2206410015_05.jpg",
+              "/assets/img/main/064/2206410/2206410015_06.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410016,
+            "name": "야호스카이하우스",
+            "time": 9,
+            "price": 140000,
+            "address": "제주 제주시 조천읍 조함해안로 580 3~5층",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1222351784?c=14100295.5218762,3967733.2690630,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410016_01.jpg",
+              "/assets/img/main/064/2206410/2206410016_02.jpg",
+              "/assets/img/main/064/2206410/2206410016_03.jpg",
+              "/assets/img/main/064/2206410/2206410016_04.jpg",
+              "/assets/img/main/064/2206410/2206410016_05.jpg",
+              "/assets/img/main/064/2206410/2206410016_06.jpg",
+              "/assets/img/main/064/2206410/2206410016_07.jpg",
+              "/assets/img/main/064/2206410/2206410016_08.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410017,
+            "name": "수수별장",
+            "time": 8,
+            "price": 150000,
+            "address": "제주 제주시 조천읍 조함해안로 574 2층, 3층",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1316549336?c=14100223.1419434,3967727.0049700,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410017_01.jpg",
+              "/assets/img/main/064/2206410/2206410017_02.jpg",
+              "/assets/img/main/064/2206410/2206410017_03.jpg",
+              "/assets/img/main/064/2206410/2206410017_04.jpg",
+              "/assets/img/main/064/2206410/2206410017_05.jpg",
+              "/assets/img/main/064/2206410/2206410017_06.jpg",
+              "/assets/img/main/064/2206410/2206410017_07.jpg",
+              "/assets/img/main/064/2206410/2206410017_08.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410018,
+            "name": "홀드인함덕",
+            "time": 8,
+            "price": 340000,
+            "address": "제주 제주시 조천읍 평사길 15 서우봉, 함덕해수욕장",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1839732709?c=14100296.1675293,3967696.9801110,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410018_01.jpg",
+              "/assets/img/main/064/2206410/2206410018_02.jpg",
+              "/assets/img/main/064/2206410/2206410018_03.jpg",
+              "/assets/img/main/064/2206410/2206410018_04.jpg",
+              "/assets/img/main/064/2206410/2206410018_05.jpg",
+              "/assets/img/main/064/2206410/2206410018_06.jpg",
+              "/assets/img/main/064/2206410/2206410018_07.jpg",
+              "/assets/img/main/064/2206410/2206410018_08.jpg",
+              "/assets/img/main/064/2206410/2206410018_09.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410019,
+            "name": "머라이",
+            "time": 11,
+            "price": 80000,
+            "address": "제주 제주시 조천읍 함덕29길 17",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1463890682?c=14100469.2804694,3967411.0934061,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410019_01.jpg",
+              "/assets/img/main/064/2206410/2206410019_02.jpg",
+              "/assets/img/main/064/2206410/2206410019_03.jpg",
+              "/assets/img/main/064/2206410/2206410019_04.jpg",
+              "/assets/img/main/064/2206410/2206410019_05.jpg",
+              "/assets/img/main/064/2206410/2206410019_06.jpg",
+              "/assets/img/main/064/2206410/2206410019_07.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410020,
+            "name": "함덕바당",
+            "time": 10,
+            "price": 200000,
+            "address": "제주 제주시 조천읍 함덕29길 25-8",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1505695168?c=14100397.3569468,3967487.5562203,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410020_01.jpg",
+              "/assets/img/main/064/2206410/2206410020_02.jpg",
+              "/assets/img/main/064/2206410/2206410020_03.jpg",
+              "/assets/img/main/064/2206410/2206410020_04.jpg",
+              "/assets/img/main/064/2206410/2206410020_05.jpg",
+              "/assets/img/main/064/2206410/2206410020_06.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410021,
+            "name": "제주소록",
+            "time": 11,
+            "price": 72000,
+            "address": "제주 제주시 조천읍 함덕27길 4-7 1층",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1605166889?c=14100467.9780313,3967313.2350991,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410021_01.jpg",
+              "/assets/img/main/064/2206410/2206410021_02.jpg",
+              "/assets/img/main/064/2206410/2206410021_03.jpg",
+              "/assets/img/main/064/2206410/2206410021_04.jpg",
+              "/assets/img/main/064/2206410/2206410021_05.jpg",
+              "/assets/img/main/064/2206410/2206410021_06.jpg",
+              "/assets/img/main/064/2206410/2206410021_07.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1100
+          }, {
+            "id": 2206410022,
+            "name": "펜션 꿈꾸다",
+            "time": 15,
+            "price": 149000,
+            "address": "제주 제주시 조천읍 함덕22길 28",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1721283633?c=14100291.1358892,3966908.3747011,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410022_01.jpg",
+              "/assets/img/main/064/2206410/2206410022_02.jpg",
+              "/assets/img/main/064/2206410/2206410022_03.jpg",
+              "/assets/img/main/064/2206410/2206410022_04.jpg",
+              "/assets/img/main/064/2206410/2206410022_05.jpg",
+              "/assets/img/main/064/2206410/2206410022_06.jpg",
+              "/assets/img/main/064/2206410/2206410022_07.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410023,
+            "name": "함덕리준하네",
+            "time": 15,
+            "price": 390000,
+            "address": "제주 제주시 조천읍 함덕28길 9-4",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1056099208?c=14100571.4383661,3966940.7881186,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410023_01.jpg",
+              "/assets/img/main/064/2206410/2206410023_02.jpg",
+              "/assets/img/main/064/2206410/2206410023_03.jpg",
+              "/assets/img/main/064/2206410/2206410023_04.jpg",
+              "/assets/img/main/064/2206410/2206410023_05.jpg",
+              "/assets/img/main/064/2206410/2206410023_06.jpg",
+              "/assets/img/main/064/2206410/2206410023_07.jpg",
+              "/assets/img/main/064/2206410/2206410023_08.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410024,
+            "name": "함덕사이 게스트하우스",
+            "time": 6,
+            "price": 24500,
+            "address": "제주 제주시 조천읍 신북로 540-3",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1205012385?c=14099618.1093793,3967324.0800073,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410024_01.jpg",
+              "/assets/img/main/064/2206410/2206410024_02.jpg",
+              "/assets/img/main/064/2206410/2206410024_03.jpg",
+              "/assets/img/main/064/2206410/2206410024_04.jpg",
+              "/assets/img/main/064/2206410/2206410024_05.jpg",
+              "/assets/img/main/064/2206410/2206410024_06.jpg",
+              "/assets/img/main/064/2206410/2206410024_07.jpg",
+              "/assets/img/main/064/2206410/2206410024_08.jpg",
+              "/assets/img/main/064/2206410/2206410024_09.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1000
+          }, {
+            "id": 2206410025,
+            "name": "바바호미 게스트하우스",
+            "time": 12,
+            "price": 40000,
+            "address": "제주 제주시 조천읍 함덕서4길 60-21",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1472774365?c=14099684.6673028,3967041.2609421,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410025_01.jpg",
+              "/assets/img/main/064/2206410/2206410025_02.jpg",
+              "/assets/img/main/064/2206410/2206410025_03.jpg",
+              "/assets/img/main/064/2206410/2206410025_04.jpg",
+              "/assets/img/main/064/2206410/2206410025_05.jpg",
+              "/assets/img/main/064/2206410/2206410025_06.jpg",
+              "/assets/img/main/064/2206410/2206410025_07.jpg",
+              "/assets/img/main/064/2206410/2206410025_08.jpg",
+              "/assets/img/main/064/2206410/2206410025_09.jpg",
+              "/assets/img/main/064/2206410/2206410025_10.jpg"
+            ],
+            "checkin": 1700,
+            "checkout": 1100
+          }, {
+            "id": 2206410026,
+            "name": "함덕 조용한 게스트하우스",
+            "time": 10,
+            "price": 35000,
+            "address": "제주 제주시 조천읍 함덕14길 28-2",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1584482343?c=14099352.7125811,3967194.2489557,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410026_01.jpg",
+              "/assets/img/main/064/2206410/2206410026_02.jpg",
+              "/assets/img/main/064/2206410/2206410026_03.jpg",
+              "/assets/img/main/064/2206410/2206410026_04.jpg",
+              "/assets/img/main/064/2206410/2206410026_05.jpg",
+              "/assets/img/main/064/2206410/2206410026_06.jpg",
+              "/assets/img/main/064/2206410/2206410026_07.jpg",
+              "/assets/img/main/064/2206410/2206410026_08.jpg",
+              "/assets/img/main/064/2206410/2206410026_09.jpg",
+              "/assets/img/main/064/2206410/2206410026_10.jpg"
+            ],
+            "checkin": 1700,
+            "checkout": 1100
+          }, {
+            "id": 2206410027,
+            "name": "함덕8길5",
+            "time": 14,
+            "price": 45000,
+            "address": "제주 제주시 조천읍 함덕8길 5",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1530392944?c=14099043.2110277,3967574.4372775,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410027_01.jpg",
+              "/assets/img/main/064/2206410/2206410027_02.jpg",
+              "/assets/img/main/064/2206410/2206410027_03.jpg",
+              "/assets/img/main/064/2206410/2206410027_04.jpg",
+              "/assets/img/main/064/2206410/2206410027_05.jpg",
+              "/assets/img/main/064/2206410/2206410027_06.jpg",
+              "/assets/img/main/064/2206410/2206410027_07.jpg",
+              "/assets/img/main/064/2206410/2206410027_08.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1000
+          }, {
+            "id": 2206410028,
+            "name": "몰디브 게스트하우스",
+            "time": 13,
+            "price": 20000,
+            "address": "제주 제주시 조천읍 함덕8길 3 몰디브 게스트하우스",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1958878533?c=14099035.9641022,3967585.2023079,15,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410028_01.jpg",
+              "/assets/img/main/064/2206410/2206410028_02.jpg",
+              "/assets/img/main/064/2206410/2206410028_03.jpg",
+              "/assets/img/main/064/2206410/2206410028_04.jpg",
+              "/assets/img/main/064/2206410/2206410028_05.jpg",
+              "/assets/img/main/064/2206410/2206410028_06.jpg"
+            ],
+            "checkin": 1500,
+            "checkout": 1030
+          }, {
+            "id": 2206410029,
+            "name": "함덕돌집",
+            "time": 8,
+            "price": 100000,
+            "address": "제주 제주시 조천읍 평사길 8-5",
+            "type": 2,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%20%ED%95%98%EC%9A%B0%EC%8A%A4/place/1834682352?c=14100762.5305714,3967635.0741201,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410029_01.jpg",
+              "/assets/img/main/064/2206410/2206410029_02.jpg",
+              "/assets/img/main/064/2206410/2206410029_03.jpg",
+              "/assets/img/main/064/2206410/2206410029_04.jpg",
+              "/assets/img/main/064/2206410/2206410029_05.jpg",
+              "/assets/img/main/064/2206410/2206410029_06.jpg",
+              "/assets/img/main/064/2206410/2206410029_07.jpg",
+              "/assets/img/main/064/2206410/2206410029_08.jpg",
+              "/assets/img/main/064/2206410/2206410029_09.jpg",
+              "/assets/img/main/064/2206410/2206410029_10.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }, {
+            "id": 2206410030,
+            "name": "꼬르동게스트하우스",
+            "time": 9,
+            "price": 35000,
+            "address": "제주 제주시 조천읍 함덕29길 25-4 꼬르동게스트하우스",
+            "type": 4,
+            "url": "?????",
+            "image": [
+              "/assets/img/main/064/2206410/2206410030_01.jpg",
+              "/assets/img/main/064/2206410/2206410030_02.jpg",
+              "/assets/img/main/064/2206410/2206410030_03.jpg",
+              "/assets/img/main/064/2206410/2206410030_04.jpg",
+              "/assets/img/main/064/2206410/2206410030_05.jpg",
+              "/assets/img/main/064/2206410/2206410030_06.jpg",
+              "/assets/img/main/064/2206410/2206410030_07.jpg"
+            ],
+            "checkin": 1700,
+            "checkout": 1100
+          }, {
+            "id": 2206410031,
+            "name": "안녕함덕",
+            "time": 8,
+            "price": 25000,
+            "address": "제주 제주시 조천읍 함덕로 10",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%20%ED%95%98%EC%9A%B0%EC%8A%A4/place/1747309416?c=14100787.7444355,3967332.0934935,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410031_01.jpg",
+              "/assets/img/main/064/2206410/2206410031_02.jpg",
+              "/assets/img/main/064/2206410/2206410031_03.jpg",
+              "/assets/img/main/064/2206410/2206410031_04.jpg",
+              "/assets/img/main/064/2206410/2206410031_05.jpg",
+              "/assets/img/main/064/2206410/2206410031_06.jpg",
+              "/assets/img/main/064/2206410/2206410031_07.jpg",
+              "/assets/img/main/064/2206410/2206410031_08.jpg",
+              "/assets/img/main/064/2206410/2206410031_09.jpg"
+            ],
+            "checkin": 1700,
+            "checkout": 1100
+          }, {
+            "id": 2206410032,
+            "name": "함덕 촌따이 게스트하우스",
+            "time": 14,
+            "price": 28000,
+            "address": "제주 제주시 조천읍 함덕30길 20-13",
+            "type": 4,
+            "url": "https://map.naver.com/v5/search/%ED%95%A8%EB%8D%95%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%20%ED%95%98%EC%9A%B0%EC%8A%A4/place/1998297452?c=14100966.5680657,3966985.3416912,16,0,0,0,dh",
+            "image": [
+              "/assets/img/main/064/2206410/2206410032_01.jpg",
+              "/assets/img/main/064/2206410/2206410032_02.jpg",
+              "/assets/img/main/064/2206410/2206410032_03.jpg",
+              "/assets/img/main/064/2206410/2206410032_04.jpg",
+              "/assets/img/main/064/2206410/2206410032_05.jpg",
+              "/assets/img/main/064/2206410/2206410032_06.jpg",
+              "/assets/img/main/064/2206410/2206410032_07.jpg",
+              "/assets/img/main/064/2206410/2206410032_08.jpg",
+              "/assets/img/main/064/2206410/2206410032_09.jpg",
+              "/assets/img/main/064/2206410/2206410032_10.jpg"
+            ],
+            "checkin": 1600,
+            "checkout": 1100
+          }]
+        },
+        {
+          "id": 2206411,
+          "name": "월정리해수욕장",
+          "description": "월정리를 보면서 11월 정리..",
+          "car": false,
+          "image": "/assets/img/main/064/064_8.jpg",
+          "items": [{
+              "id": 2206411001,
+              "name": "섯동네펜션",
+              "time": 5,
+              "price": 60000,
+              "address": "제주 제주시 구좌읍 월정중길 55 3층",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/38482248?c=14112807.2625786,3969650.5083988,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411001_01.jpg",
+                "/assets/img/main/064/2206411/2206411001_02.jpg",
+                "/assets/img/main/064/2206411/2206411001_03.jpg",
+                "/assets/img/main/064/2206411/2206411001_04.jpg",
+                "/assets/img/main/064/2206411/2206411001_05.jpg",
+                "/assets/img/main/064/2206411/2206411001_06.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411002,
+              "name": "월정씨하루펜션",
+              "time": 9,
+              "price": 129000,
+              "address": "제주 제주시 구좌읍 월정중길 19-7",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1600711261?c=14112480.9628871,3969583.1416914,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411002_01.jpg",
+                "/assets/img/main/064/2206411/2206411002_02.jpg",
+                "/assets/img/main/064/2206411/2206411002_03.jpg",
+                "/assets/img/main/064/2206411/2206411002_04.jpg",
+                "/assets/img/main/064/2206411/2206411002_05.jpg",
+                "/assets/img/main/064/2206411/2206411002_06.jpg",
+                "/assets/img/main/064/2206411/2206411002_07.jpg",
+                "/assets/img/main/064/2206411/2206411002_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411003,
+              "name": "월정소랑 제주독채펜션",
+              "time": 6,
+              "price": 180000,
+              "address": "제주 제주시 구좌읍 월정1길 79-3",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/36782919?c=14112636.4539520,3969554.5814254,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411003_01.jpg",
+                "/assets/img/main/064/2206411/2206411003_02.jpg",
+                "/assets/img/main/064/2206411/2206411003_03.jpg",
+                "/assets/img/main/064/2206411/2206411003_04.jpg",
+                "/assets/img/main/064/2206411/2206411003_05.jpg",
+                "/assets/img/main/064/2206411/2206411003_06.jpg",
+                "/assets/img/main/064/2206411/2206411003_07.jpg",
+                "/assets/img/main/064/2206411/2206411003_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411004,
+              "name": "월정리W699펜션",
+              "time": 9,
+              "price": 110000,
+              "address": "제주 제주시 구좌읍 월정중길 19-11",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1189776506?c=14112510.5627397,3969611.3012746,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411004_01.jpg",
+                "/assets/img/main/064/2206411/2206411004_02.jpg",
+                "/assets/img/main/064/2206411/2206411004_03.jpg",
+                "/assets/img/main/064/2206411/2206411004_04.jpg",
+                "/assets/img/main/064/2206411/2206411004_05.jpg",
+                "/assets/img/main/064/2206411/2206411004_06.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411005,
+              "name": "월정가옥",
+              "time": 7,
+              "price": 140000,
+              "address": "제주 제주시 구좌읍 월정중길 39 월정가옥",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1201914461?c=14112623.5297590,3969672.1491855,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411005_01.jpg",
+                "/assets/img/main/064/2206411/2206411005_02.jpg",
+                "/assets/img/main/064/2206411/2206411005_03.jpg",
+                "/assets/img/main/064/2206411/2206411005_04.jpg",
+                "/assets/img/main/064/2206411/2206411005_05.jpg",
+                "/assets/img/main/064/2206411/2206411005_06.jpg",
+                "/assets/img/main/064/2206411/2206411005_07.jpg",
+                "/assets/img/main/064/2206411/2206411005_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1000
+            }, {
+              "id": 2206411006,
+              "name": "보롬코지펜션",
+              "time": 9,
+              "price": 149000,
+              "address": "제주 제주시 구좌읍 해맞이해안로 402 보롬코지펜션",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1045354520?c=14112627.3146218,3969776.8270448,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411006_01.jpg",
+                "/assets/img/main/064/2206411/2206411006_02.jpg",
+                "/assets/img/main/064/2206411/2206411006_03.jpg",
+                "/assets/img/main/064/2206411/2206411006_04.jpg",
+                "/assets/img/main/064/2206411/2206411006_05.jpg",
+                "/assets/img/main/064/2206411/2206411006_06.jpg",
+                "/assets/img/main/064/2206411/2206411006_07.jpg",
+                "/assets/img/main/064/2206411/2206411006_08.jpg",
+                "/assets/img/main/064/2206411/2206411006_09.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411007,
+              "name": "월정힐",
+              "time": 10,
+              "price": 109500,
+              "address": "제주 제주시 구좌읍 월정중길 19-9",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1722288868?c=14112492.2172879,3969598.8645621,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411007_01.jpg",
+                "/assets/img/main/064/2206411/2206411007_02.jpg",
+                "/assets/img/main/064/2206411/2206411007_03.jpg",
+                "/assets/img/main/064/2206411/2206411007_04.jpg",
+                "/assets/img/main/064/2206411/2206411007_05.jpg",
+                "/assets/img/main/064/2206411/2206411007_06.jpg",
+                "/assets/img/main/064/2206411/2206411007_07.jpg",
+                "/assets/img/main/064/2206411/2206411007_08.jpg",
+                "/assets/img/main/064/2206411/2206411007_09.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411008,
+              "name": "더앨리시아",
+              "time": 5,
+              "price": 100000,
+              "address": "제주 제주시 구좌읍 월정중길 62-1 더앨리시아",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1357526160?c=14112803.3271856,3969564.3175059,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411008_01.jpg",
+                "/assets/img/main/064/2206411/2206411008_02.jpg",
+                "/assets/img/main/064/2206411/2206411008_03.jpg",
+                "/assets/img/main/064/2206411/2206411008_04.jpg",
+                "/assets/img/main/064/2206411/2206411008_05.jpg",
+                "/assets/img/main/064/2206411/2206411008_06.jpg",
+                "/assets/img/main/064/2206411/2206411008_07.jpg",
+                "/assets/img/main/064/2206411/2206411008_08.jpg",
+                "/assets/img/main/064/2206411/2206411008_09.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1000
+            }, {
+              "id": 2206411009,
+              "name": "풀스토리 키즈풀빌라펜션",
+              "time": 9,
+              "price": 410000,
+              "address": "제주 제주시 구좌읍 월정중길 12",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1843459987?c=14112506.0769856,3969414.3756496,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411009_01.jpg",
+                "/assets/img/main/064/2206411/2206411009_02.jpg",
+                "/assets/img/main/064/2206411/2206411009_03.jpg",
+                "/assets/img/main/064/2206411/2206411009_04.jpg",
+                "/assets/img/main/064/2206411/2206411009_05.jpg",
+                "/assets/img/main/064/2206411/2206411009_06.jpg",
+                "/assets/img/main/064/2206411/2206411009_07.jpg",
+                "/assets/img/main/064/2206411/2206411009_08.jpg",
+                "/assets/img/main/064/2206411/2206411009_09.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411010,
+              "name": "풀빌라키즈토이",
+              "time": 9,
+              "price": 120000,
+              "address": "제주 제주시 구좌읍 월정중길 12 D동",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1156435469?c=14112509.1823782,3969392.0510793,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411010_01.jpg",
+                "/assets/img/main/064/2206411/2206411010_02.jpg",
+                "/assets/img/main/064/2206411/2206411010_03.jpg",
+                "/assets/img/main/064/2206411/2206411010_04.jpg",
+                "/assets/img/main/064/2206411/2206411010_05.jpg",
+                "/assets/img/main/064/2206411/2206411010_06.jpg",
+                "/assets/img/main/064/2206411/2206411010_07.jpg",
+                "/assets/img/main/064/2206411/2206411010_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411011,
+              "name": "루나마르풀리조트",
+              "time": 10,
+              "price": 100000,
+              "address": "제주 제주시 구좌읍 월정1길 36",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/36874281?c=14112518.0434098,3969138.7289835,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411011_01.jpg",
+                "/assets/img/main/064/2206411/2206411011_02.jpg",
+                "/assets/img/main/064/2206411/2206411011_03.jpg",
+                "/assets/img/main/064/2206411/2206411011_04.jpg",
+                "/assets/img/main/064/2206411/2206411011_05.jpg",
+                "/assets/img/main/064/2206411/2206411011_06.jpg",
+                "/assets/img/main/064/2206411/2206411011_07.jpg",
+                "/assets/img/main/064/2206411/2206411011_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411012,
+              "name": "제주 문릿",
+              "time": 12,
+              "price": 400000,
+              "address": "제주 제주시 구좌읍 월정1길 13",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1238549353?c=14112401.2581320,3968956.7690328,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411012_01.jpg",
+                "/assets/img/main/064/2206411/2206411012_02.jpg",
+                "/assets/img/main/064/2206411/2206411012_03.jpg",
+                "/assets/img/main/064/2206411/2206411012_04.jpg",
+                "/assets/img/main/064/2206411/2206411012_05.jpg",
+                "/assets/img/main/064/2206411/2206411012_06.jpg",
+                "/assets/img/main/064/2206411/2206411012_07.jpg",
+                "/assets/img/main/064/2206411/2206411012_08.jpg",
+                "/assets/img/main/064/2206411/2206411012_09.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411013,
+              "name": "독채펜션 제주별하",
+              "time": 5,
+              "price": 280000,
+              "address": "제주 제주시 구좌읍 월정3길 45 1층",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1079098879?c=14112784.0564949,3969233.8046600,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411013_01.jpg",
+                "/assets/img/main/064/2206411/2206411013_02.jpg",
+                "/assets/img/main/064/2206411/2206411013_03.jpg",
+                "/assets/img/main/064/2206411/2206411013_04.jpg",
+                "/assets/img/main/064/2206411/2206411013_05.jpg",
+                "/assets/img/main/064/2206411/2206411013_06.jpg",
+                "/assets/img/main/064/2206411/2206411013_07.jpg",
+                "/assets/img/main/064/2206411/2206411013_08.jpg",
+                "/assets/img/main/064/2206411/2206411013_09.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411014,
+              "name": "일상호사",
+              "time": 5,
+              "price": 450000,
+              "address": "제주 제주시 구좌읍 월정1길 54-15",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1343842813?c=14112715.8804087,3969294.4698519,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411014_01.jpg",
+                "/assets/img/main/064/2206411/2206411014_02.jpg",
+                "/assets/img/main/064/2206411/2206411014_03.jpg",
+                "/assets/img/main/064/2206411/2206411014_04.jpg",
+                "/assets/img/main/064/2206411/2206411014_05.jpg",
+                "/assets/img/main/064/2206411/2206411014_06.jpg",
+                "/assets/img/main/064/2206411/2206411014_07.jpg",
+                "/assets/img/main/064/2206411/2206411014_08.jpg",
+                "/assets/img/main/064/2206411/2206411014_09.jpg",
+                "/assets/img/main/064/2206411/2206411014_10.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411015,
+              "name": "킴스코티지",
+              "time": 6,
+              "price": 125000,
+              "address": "제주 제주시 구좌읍 월정1길 54-10",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1684891505?c=14112683.8427032,3969313.1044263,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411015_01.jpg",
+                "/assets/img/main/064/2206411/2206411015_02.jpg",
+                "/assets/img/main/064/2206411/2206411015_03.jpg",
+                "/assets/img/main/064/2206411/2206411015_04.jpg",
+                "/assets/img/main/064/2206411/2206411015_05.jpg",
+                "/assets/img/main/064/2206411/2206411015_06.jpg",
+                "/assets/img/main/064/2206411/2206411015_07.jpg",
+                "/assets/img/main/064/2206411/2206411015_08.jpg",
+                "/assets/img/main/064/2206411/2206411015_09.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1100
+            }, {
+              "id": 2206411016,
+              "name": "몰랑이 키즈펜션",
+              "time": 5,
+              "price": 220000,
+              "address": "제주 제주시 구좌읍 월정3길 42",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1490825029?c=14112784.7315139,3969170.5876315,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411016_01.jpg",
+                "/assets/img/main/064/2206411/2206411016_02.jpg",
+                "/assets/img/main/064/2206411/2206411016_03.jpg",
+                "/assets/img/main/064/2206411/2206411016_04.jpg",
+                "/assets/img/main/064/2206411/2206411016_05.jpg",
+                "/assets/img/main/064/2206411/2206411016_06.jpg",
+                "/assets/img/main/064/2206411/2206411016_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411017,
+              "name": "제주소풍",
+              "time": 11,
+              "price": 90000,
+              "address": "제주 제주시 구좌읍 월정1길 23",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/969747496?c=14112400.6739502,3969077.7694779,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411017_01.jpg",
+                "/assets/img/main/064/2206411/2206411017_02.jpg",
+                "/assets/img/main/064/2206411/2206411017_03.jpg",
+                "/assets/img/main/064/2206411/2206411017_04.jpg",
+                "/assets/img/main/064/2206411/2206411017_05.jpg",
+                "/assets/img/main/064/2206411/2206411017_06.jpg",
+                "/assets/img/main/064/2206411/2206411017_07.jpg"
+              ],
+              "checkin": 1400,
+              "checkout": 1100
+            }, {
+              "id": 2206411018,
+              "name": "월정리바다별",
+              "time": 11,
+              "price": 65000,
+              "address": "제주 제주시 구좌읍 월정1길 2",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/899286959?c=14112468.1082300,3968849.0808337,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411018_01.jpg",
+                "/assets/img/main/064/2206411/2206411018_02.jpg",
+                "/assets/img/main/064/2206411/2206411018_03.jpg",
+                "/assets/img/main/064/2206411/2206411018_04.jpg",
+                "/assets/img/main/064/2206411/2206411018_05.jpg",
+                "/assets/img/main/064/2206411/2206411018_06.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411019,
+              "name": "단겸",
+              "time": 9,
+              "price": 60000,
+              "address": "제주 제주시 구좌읍 월정3길 14",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1367767397?c=14112580.7216385,3968870.0336373,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411019_01.jpg",
+                "/assets/img/main/064/2206411/2206411019_02.jpg",
+                "/assets/img/main/064/2206411/2206411019_03.jpg",
+                "/assets/img/main/064/2206411/2206411019_04.jpg",
+                "/assets/img/main/064/2206411/2206411019_05.jpg",
+                "/assets/img/main/064/2206411/2206411019_06.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1030
+            }, {
+              "id": 2206411020,
+              "name": "비긴어게인펜션",
+              "time": 11,
+              "price": 105000,
+              "address": "제주 제주시 구좌읍 월정3길 5-1",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1726918750?c=14112495.3564977,3968890.5417726,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411020_01.jpg",
+                "/assets/img/main/064/2206411/2206411020_02.jpg",
+                "/assets/img/main/064/2206411/2206411020_03.jpg",
+                "/assets/img/main/064/2206411/2206411020_04.jpg",
+                "/assets/img/main/064/2206411/2206411020_05.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1100
+            }, {
+              "id": 2206411021,
+              "name": "아라파니",
+              "time": 9,
+              "price": 100000,
+              "address": "제주 제주시 구좌읍 월정5길 18-16",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1245053828?c=14113106.5227659,3968951.0118676,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411021_01.jpg",
+                "/assets/img/main/064/2206411/2206411021_02.jpg",
+                "/assets/img/main/064/2206411/2206411021_03.jpg",
+                "/assets/img/main/064/2206411/2206411021_04.jpg",
+                "/assets/img/main/064/2206411/2206411021_05.jpg",
+                "/assets/img/main/064/2206411/2206411021_06.jpg",
+                "/assets/img/main/064/2206411/2206411021_07.jpg",
+                "/assets/img/main/064/2206411/2206411021_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411022,
+              "name": "베또롱 독채펜션",
+              "time": 15,
+              "price": 120000,
+              "address": "제주 제주시 구좌읍 행원로 35-7",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/38299613?c=14113346.2492894,3968807.8183411,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411022_01.jpg",
+                "/assets/img/main/064/2206411/2206411022_02.jpg",
+                "/assets/img/main/064/2206411/2206411022_03.jpg",
+                "/assets/img/main/064/2206411/2206411022_04.jpg",
+                "/assets/img/main/064/2206411/2206411022_05.jpg",
+                "/assets/img/main/064/2206411/2206411022_06.jpg",
+                "/assets/img/main/064/2206411/2206411022_07.jpg",
+                "/assets/img/main/064/2206411/2206411022_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411023,
+              "name": "달비치펜션",
+              "time": 5,
+              "price": 98000,
+              "address": "제주 제주시 구좌읍 해맞이해안로 474",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/35258155?c=14113134.3192426,3969215.9913664,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411023_01.jpg",
+                "/assets/img/main/064/2206411/2206411023_02.jpg",
+                "/assets/img/main/064/2206411/2206411023_03.jpg",
+                "/assets/img/main/064/2206411/2206411023_04.jpg",
+                "/assets/img/main/064/2206411/2206411023_05.jpg",
+                "/assets/img/main/064/2206411/2206411023_06.jpg",
+                "/assets/img/main/064/2206411/2206411023_07.jpg",
+                "/assets/img/main/064/2206411/2206411023_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411024,
+              "name": "월정에비뉴풀빌라",
+              "time": 7,
+              "price": 1029000,
+              "address": "제주 제주시 구좌읍 해맞이해안로 486 3층",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1321305583?c=14113320.1671327,3969167.9828330,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411024_01.jpg",
+                "/assets/img/main/064/2206411/2206411024_02.jpg",
+                "/assets/img/main/064/2206411/2206411024_03.jpg",
+                "/assets/img/main/064/2206411/2206411024_04.jpg",
+                "/assets/img/main/064/2206411/2206411024_05.jpg",
+                "/assets/img/main/064/2206411/2206411024_06.jpg",
+                "/assets/img/main/064/2206411/2206411024_07.jpg",
+                "/assets/img/main/064/2206411/2206411024_08.jpg",
+                "/assets/img/main/064/2206411/2206411024_09.jpg",
+                "/assets/img/main/064/2206411/2206411024_10.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1100
+            }, {
+              "id": 2206411025,
+              "name": "터낭하우스 오션뷰펜션",
+              "time": 3,
+              "price": 55000,
+              "address": "제주 제주시 구좌읍 월정7길 61",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/36831410?c=14112917.0081819,3969239.0470107,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411025_01.jpg",
+                "/assets/img/main/064/2206411/2206411025_02.jpg",
+                "/assets/img/main/064/2206411/2206411025_03.jpg",
+                "/assets/img/main/064/2206411/2206411025_04.jpg",
+                "/assets/img/main/064/2206411/2206411025_05.jpg",
+                "/assets/img/main/064/2206411/2206411025_06.jpg",
+                "/assets/img/main/064/2206411/2206411025_07.jpg",
+                "/assets/img/main/064/2206411/2206411025_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1000
+            }, {
+              "id": 2206411026,
+              "name": "월정땅콩집",
+              "time": 7,
+              "price": 120000,
+              "address": "제주 제주시 구좌읍 월정7길 28-8",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/78541879?c=14113183.5001939,3969073.5025164,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411026_01.jpg",
+                "/assets/img/main/064/2206411/2206411026_02.jpg",
+                "/assets/img/main/064/2206411/2206411026_03.jpg",
+                "/assets/img/main/064/2206411/2206411026_04.jpg",
+                "/assets/img/main/064/2206411/2206411026_05.jpg",
+                "/assets/img/main/064/2206411/2206411026_06.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1000
+            }, {
+              "id": 2206411027,
+              "name": "윤스테이",
+              "time": 5,
+              "price": 300000,
+              "address": "제주 제주시 구좌읍 월정5길 42",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1096508387?c=14112900.9873949,3969084.2218593,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411027_01.jpg",
+                "/assets/img/main/064/2206411/2206411027_02.jpg",
+                "/assets/img/main/064/2206411/2206411027_03.jpg",
+                "/assets/img/main/064/2206411/2206411027_04.jpg",
+                "/assets/img/main/064/2206411/2206411027_05.jpg",
+                "/assets/img/main/064/2206411/2206411027_06.jpg",
+                "/assets/img/main/064/2206411/2206411027_07.jpg",
+                "/assets/img/main/064/2206411/2206411027_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411028,
+              "name": "스테이 달Ring",
+              "time": 3,
+              "price": 200000,
+              "address": "제주 제주시 구좌읍 월정7길 59",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/703637807?c=14112940.5788009,3969243.4955097,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411028_01.jpg",
+                "/assets/img/main/064/2206411/2206411028_02.jpg",
+                "/assets/img/main/064/2206411/2206411028_03.jpg",
+                "/assets/img/main/064/2206411/2206411028_04.jpg",
+                "/assets/img/main/064/2206411/2206411028_05.jpg",
+                "/assets/img/main/064/2206411/2206411028_06.jpg",
+                "/assets/img/main/064/2206411/2206411028_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411029,
+              "name": "월정 Cottage",
+              "time": 3,
+              "price": 180000,
+              "address": "제주 제주시 구좌읍 월정3길 53-13",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/348118412?c=14112808.7876557,3969386.1734732,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411029_01.jpg",
+                "/assets/img/main/064/2206411/2206411029_02.jpg",
+                "/assets/img/main/064/2206411/2206411029_03.jpg",
+                "/assets/img/main/064/2206411/2206411029_04.jpg",
+                "/assets/img/main/064/2206411/2206411029_05.jpg",
+                "/assets/img/main/064/2206411/2206411029_06.jpg",
+                "/assets/img/main/064/2206411/2206411029_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411030,
+              "name": "바다향기펜션",
+              "time": 9,
+              "price": 108000,
+              "address": "제주 제주시 구좌읍 행원로1길 32",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1036837689?c=14113440.3253911,3969189.8765160,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411030_01.jpg",
+                "/assets/img/main/064/2206411/2206411030_02.jpg",
+                "/assets/img/main/064/2206411/2206411030_03.jpg",
+                "/assets/img/main/064/2206411/2206411030_04.jpg",
+                "/assets/img/main/064/2206411/2206411030_05.jpg",
+                "/assets/img/main/064/2206411/2206411030_06.jpg",
+                "/assets/img/main/064/2206411/2206411030_07.jpg",
+                "/assets/img/main/064/2206411/2206411030_08.jpg"
+              ],
+              "checkin": 1530,
+              "checkout": 1030
+            }, {
+              "id": 2206411031,
+              "name": "월정 인더문",
+              "time": 9,
+              "price": 100000,
+              "address": "제주 제주시 구좌읍 행원로1길 32-2",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1406669845?c=14113447.6502133,3969161.6110979,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411031_01.jpg",
+                "/assets/img/main/064/2206411/2206411031_02.jpg",
+                "/assets/img/main/064/2206411/2206411031_03.jpg",
+                "/assets/img/main/064/2206411/2206411031_04.jpg",
+                "/assets/img/main/064/2206411/2206411031_05.jpg",
+                "/assets/img/main/064/2206411/2206411031_06.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411032,
+              "name": "아쿠아뷰티크",
+              "time": 12,
+              "price": 129000,
+              "address": "제주 제주시 구좌읍 해맞이해안로 522 1층 아쿠아뷰티크 풀빌라펜션",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/35523970?c=14113613.4605946,3969482.7803204,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411032_01.jpg",
+                "/assets/img/main/064/2206411/2206411032_02.jpg",
+                "/assets/img/main/064/2206411/2206411032_03.jpg",
+                "/assets/img/main/064/2206411/2206411032_04.jpg",
+                "/assets/img/main/064/2206411/2206411032_05.jpg",
+                "/assets/img/main/064/2206411/2206411032_06.jpg",
+                "/assets/img/main/064/2206411/2206411032_07.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1100
+            }, {
+              "id": 2206411033,
+              "name": "틴더타운",
+              "time": 13,
+              "price": 72000,
+              "address": "제주 제주시 구좌읍 해맞이해안로 518-1",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1143487946?c=14113593.6205880,3969423.3250696,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411033_01.jpg",
+                "/assets/img/main/064/2206411/2206411033_02.jpg",
+                "/assets/img/main/064/2206411/2206411033_03.jpg",
+                "/assets/img/main/064/2206411/2206411033_04.jpg",
+                "/assets/img/main/064/2206411/2206411033_05.jpg",
+                "/assets/img/main/064/2206411/2206411033_06.jpg",
+                "/assets/img/main/064/2206411/2206411033_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411034,
+              "name": "풍차펜션",
+              "time": 11,
+              "price": 70000,
+              "address": "제주 제주시 구좌읍 행원로3길 52",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1337370028?c=14113583.0704285,3969307.5741586,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411034_01.jpg",
+                "/assets/img/main/064/2206411/2206411034_02.jpg",
+                "/assets/img/main/064/2206411/2206411034_03.jpg",
+                "/assets/img/main/064/2206411/2206411034_04.jpg",
+                "/assets/img/main/064/2206411/2206411034_05.jpg",
+                "/assets/img/main/064/2206411/2206411034_06.jpg"
+              ],
+              "checkin": 1500,
+              "checkout": 1100
+            }, {
+              "id": 2206411035,
+              "name": "월정리썬시티",
+              "time": 7,
+              "price": 20000,
+              "address": "제주 제주시 구좌읍 월정5길 33 102동",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/78631206?c=14107309.2679827,3968994.9854604,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411035_01.jpg",
+                "/assets/img/main/064/2206411/2206411035_02.jpg",
+                "/assets/img/main/064/2206411/2206411035_03.jpg",
+                "/assets/img/main/064/2206411/2206411035_04.jpg",
+                "/assets/img/main/064/2206411/2206411035_05.jpg",
+                "/assets/img/main/064/2206411/2206411035_06.jpg",
+                "/assets/img/main/064/2206411/2206411035_07.jpg",
+                "/assets/img/main/064/2206411/2206411035_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411036,
+              "name": "소낭게스트하우스",
+              "time": 11,
+              "price": 30000,
+              "address": "제주 제주시 구좌읍 월정1길 1 소낭게스트하우스",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/37240842?c=14106843.2511987,3968808.9003006,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411036_01.jpg",
+                "/assets/img/main/064/2206411/2206411036_02.jpg",
+                "/assets/img/main/064/2206411/2206411036_03.jpg",
+                "/assets/img/main/064/2206411/2206411036_04.jpg",
+                "/assets/img/main/064/2206411/2206411036_05.jpg",
+                "/assets/img/main/064/2206411/2206411036_06.jpg",
+                "/assets/img/main/064/2206411/2206411036_07.jpg",
+                "/assets/img/main/064/2206411/2206411036_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1030
+            }, {
+              "id": 2206411037,
+              "name": "메이드인월정리",
+              "time": 14,
+              "price": 25000,
+              "address": "제주 제주시 구좌읍 일주동로 2393-64",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1068517971?c=14109270.5388407,3968844.6259257,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411037_01.jpg",
+                "/assets/img/main/064/2206411/2206411037_02.jpg",
+                "/assets/img/main/064/2206411/2206411037_03.jpg",
+                "/assets/img/main/064/2206411/2206411037_04.jpg",
+                "/assets/img/main/064/2206411/2206411037_05.jpg",
+                "/assets/img/main/064/2206411/2206411037_06.jpg",
+                "/assets/img/main/064/2206411/2206411037_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1030
+            }, {
+              "id": 2206411038,
+              "name": "달자게스트하우스",
+              "time": 6,
+              "price": 25000,
+              "address": "제주 제주시 구좌읍 월정7길 43-2",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1263538649?c=14109270.5388407,3968844.6259257,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411038_01.jpg",
+                "/assets/img/main/064/2206411/2206411038_02.jpg",
+                "/assets/img/main/064/2206411/2206411038_03.jpg",
+                "/assets/img/main/064/2206411/2206411038_04.jpg",
+                "/assets/img/main/064/2206411/2206411038_05.jpg",
+                "/assets/img/main/064/2206411/2206411038_06.jpg",
+                "/assets/img/main/064/2206411/2206411038_07.jpg"
+              ],
+              "checkin": 1700,
+              "checkout": 1000
+            }, {
+              "id": 2206411039,
+              "name": "콘크리트맨숀",
+              "time": 10,
+              "price": 25000,
+              "address": "제주 제주시 구좌읍 월정1길 27 가동",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1647106153?c=14107309.2679826,3968994.9854604,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411039_01.jpg",
+                "/assets/img/main/064/2206411/2206411039_02.jpg",
+                "/assets/img/main/064/2206411/2206411039_03.jpg",
+                "/assets/img/main/064/2206411/2206411039_04.jpg",
+                "/assets/img/main/064/2206411/2206411039_05.jpg",
+                "/assets/img/main/064/2206411/2206411039_06.jpg",
+                "/assets/img/main/064/2206411/2206411039_07.jpg",
+                "/assets/img/main/064/2206411/2206411039_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1000
+            }, {
+              "id": 2206411040,
+              "name": "월정뷰게스트하우스",
+              "time": 3,
+              "price": 25000,
+              "address": "제주 제주시 구좌읍 월정1길 70-6 2층, 3층",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1691432909?c=14107309.2679826,3968994.9854604,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411040_01.jpg",
+                "/assets/img/main/064/2206411/2206411040_02.jpg",
+                "/assets/img/main/064/2206411/2206411040_03.jpg",
+                "/assets/img/main/064/2206411/2206411040_04.jpg",
+                "/assets/img/main/064/2206411/2206411040_05.jpg",
+                "/assets/img/main/064/2206411/2206411040_06.jpg",
+                "/assets/img/main/064/2206411/2206411040_07.jpg",
+                "/assets/img/main/064/2206411/2206411040_08.jpg",
+                "/assets/img/main/064/2206411/2206411040_09.jpg"
+              ],
+              "checkin": 1700,
+              "checkout": 1000
+            }, {
+              "id": 2206411041,
+              "name": "제주말레콘",
+              "time": 6,
+              "price": 40000,
+              "address": "제주 제주시 구좌읍 월정리 639",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1907054529?c=14107309.2679826,3968994.9854604,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411041_01.jpg",
+                "/assets/img/main/064/2206411/2206411041_02.jpg",
+                "/assets/img/main/064/2206411/2206411041_03.jpg",
+                "/assets/img/main/064/2206411/2206411041_04.jpg",
+                "/assets/img/main/064/2206411/2206411041_05.jpg",
+                "/assets/img/main/064/2206411/2206411041_06.jpg",
+                "/assets/img/main/064/2206411/2206411041_07.jpg",
+                "/assets/img/main/064/2206411/2206411041_08.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1000
+            }, {
+              "id": 2206411042,
+              "name": "문스테이",
+              "time": 5,
+              "price": 50000,
+              "address": "제주 제주시 구좌읍 월정7길 53",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/31336682?c=14110481.8317600,3969466.9413997,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411042_01.jpg",
+                "/assets/img/main/064/2206411/2206411042_02.jpg",
+                "/assets/img/main/064/2206411/2206411042_03.jpg",
+                "/assets/img/main/064/2206411/2206411042_04.jpg",
+                "/assets/img/main/064/2206411/2206411042_05.jpg"
+              ],
+              "checkin": 1700,
+              "checkout": 1000
+            }, {
+              "id": 2206411043,
+              "name": "젠틀리하우스",
+              "time": 9,
+              "price": 65000,
+              "address": "제주 제주시 구좌읍 월정7길 24",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/316131243?c=14109287.0351076,3968916.4342881,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411043_01.jpg",
+                "/assets/img/main/064/2206411/2206411043_02.jpg",
+                "/assets/img/main/064/2206411/2206411043_03.jpg",
+                "/assets/img/main/064/2206411/2206411043_04.jpg",
+                "/assets/img/main/064/2206411/2206411043_05.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1030
+            },
+            {
+              "id": 2206411044,
+              "name": "라비",
+              "time": 9,
+              "price": 35000,
+              "address": "제주 제주시 구좌읍 월정중길 13 라비",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1200222181?c=14109287.0351076,3968916.4342881,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411044_01.jpg",
+                "/assets/img/main/064/2206411/2206411044_02.jpg",
+                "/assets/img/main/064/2206411/2206411044_03.jpg",
+                "/assets/img/main/064/2206411/2206411044_04.jpg",
+                "/assets/img/main/064/2206411/2206411044_05.jpg",
+                "/assets/img/main/064/2206411/2206411044_06.jpg",
+                "/assets/img/main/064/2206411/2206411044_07.jpg"
+              ],
+              "checkin": 1700,
+              "checkout": 1000
+            }, {
+              "id": 2206411045,
+              "name": "월정여관",
+              "time": 3,
+              "price": 120000,
+              "address": "제주 제주시 구좌읍 월정1길 66-3",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1850032833?c=14109287.0351076,3968916.4342881,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411045_01.jpg",
+                "/assets/img/main/064/2206411/2206411045_02.jpg",
+                "/assets/img/main/064/2206411/2206411045_03.jpg",
+                "/assets/img/main/064/2206411/2206411045_04.jpg",
+                "/assets/img/main/064/2206411/2206411045_05.jpg",
+                "/assets/img/main/064/2206411/2206411045_06.jpg",
+                "/assets/img/main/064/2206411/2206411045_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1200
+            }, {
+              "id": 2206411046,
+              "name": "빨간머리몽게스트하우스",
+              "time": 6,
+              "price": 80000,
+              "address": "제주 제주시 구좌읍 월정1길 51",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/1728000731?c=14109287.0351076,3968916.4342881,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411046_01.jpg",
+                "/assets/img/main/064/2206411/2206411046_02.jpg",
+                "/assets/img/main/064/2206411/2206411046_03.jpg",
+                "/assets/img/main/064/2206411/2206411046_04.jpg",
+                "/assets/img/main/064/2206411/2206411046_05.jpg",
+                "/assets/img/main/064/2206411/2206411046_06.jpg",
+                "/assets/img/main/064/2206411/2206411046_07.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411047,
+              "name": "달콤한아침",
+              "time": 15,
+              "price": 200000,
+              "address": "제주 제주시 구좌읍 행원로 35-9 1층",
+              "type": 4,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4/place/36302157?c=14111045.1277406,3968994.9854601,12,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411047_01.jpg",
+                "/assets/img/main/064/2206411/2206411047_02.jpg",
+                "/assets/img/main/064/2206411/2206411047_03.jpg",
+                "/assets/img/main/064/2206411/2206411047_04.jpg",
+                "/assets/img/main/064/2206411/2206411047_05.jpg",
+                "/assets/img/main/064/2206411/2206411047_06.jpg",
+                "/assets/img/main/064/2206411/2206411047_07.jpg",
+                "/assets/img/main/064/2206411/2206411047_08.jpg",
+                "/assets/img/main/064/2206411/2206411047_09.jpg",
+                "/assets/img/main/064/2206411/2206411047_10.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }, {
+              "id": 2206411048,
+              "name": "키즈풀빌라 앨리펜션",
+              "time": 9,
+              "price": 250000,
+              "address": "제주 제주시 구좌읍 월정중길 12",
+              "type": 2,
+              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1921340450?c=14112511.5646155,3969415.1607859,14,0,0,0,dh",
+              "image": [
+                "/assets/img/main/064/2206411/2206411048_01.jpg",
+                "/assets/img/main/064/2206411/2206411048_02.jpg",
+                "/assets/img/main/064/2206411/2206411048_03.jpg",
+                "/assets/img/main/064/2206411/2206411048_04.jpg",
+                "/assets/img/main/064/2206411/2206411048_05.jpg",
+                "/assets/img/main/064/2206411/2206411048_06.jpg",
+                "/assets/img/main/064/2206411/2206411048_07.jpg",
+                "/assets/img/main/064/2206411/2206411048_08.jpg",
+                "/assets/img/main/064/2206411/2206411048_09.jpg"
+              ],
+              "checkin": 1600,
+              "checkout": 1100
+            }
+          ]
         }
+        
       ]
     },
     {

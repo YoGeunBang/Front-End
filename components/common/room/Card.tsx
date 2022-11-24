@@ -70,7 +70,7 @@ const Card = ({ item }:any) => {
       </div>
       <div className="info-right">
         {showMap ? (
-          <MapView setShowMap={setShowMap} lat={item.lat} lng={item.lng} />
+          <MapView setShowMap={setShowMap} _lat={item.lat} _lng={item.lng} address={item.address}/>
         ) : null}
         {showImg ? <PhotoView setShowImg={setShowImg} item={item} /> : null}
       </div>
