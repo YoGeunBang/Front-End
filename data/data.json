@@ -8957,27 +8957,6 @@
               ],
               "checkin": 1600,
               "checkout": 1100
-            }, {
-              "id": 2206411048,
-              "name": "키즈풀빌라 앨리펜션",
-              "time": 9,
-              "price": 250000,
-              "address": "제주 제주시 구좌읍 월정중길 12",
-              "type": 2,
-              "url": "https://map.naver.com/v5/search/%EC%9B%94%EC%A0%95%EB%A6%AC%ED%95%B4%EC%88%98%EC%9A%95%EC%9E%A5%20%ED%8E%9C%EC%85%98/place/1921340450?c=14112511.5646155,3969415.1607859,14,0,0,0,dh",
-              "image": [
-                "/assets/img/main/064/2206411/2206411048_01.jpg",
-                "/assets/img/main/064/2206411/2206411048_02.jpg",
-                "/assets/img/main/064/2206411/2206411048_03.jpg",
-                "/assets/img/main/064/2206411/2206411048_04.jpg",
-                "/assets/img/main/064/2206411/2206411048_05.jpg",
-                "/assets/img/main/064/2206411/2206411048_06.jpg",
-                "/assets/img/main/064/2206411/2206411048_07.jpg",
-                "/assets/img/main/064/2206411/2206411048_08.jpg",
-                "/assets/img/main/064/2206411/2206411048_09.jpg"
-              ],
-              "checkin": 1600,
-              "checkout": 1100
             }
           ]
         }
