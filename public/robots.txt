@@ -1,0 +1,3 @@
+Sitemap: https://yogeunbang.swygbro.com/sitemap.xml
+User-agent: *   
+Allow: /     
