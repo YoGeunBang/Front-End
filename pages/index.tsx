@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import type { NextPageWithLayout } from 'pages/_app';
 import { ReactElement } from 'react';
 import { AppLayout } from 'components/layout';
