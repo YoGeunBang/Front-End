@@ -36,6 +36,7 @@ export default class MyDocument extends Document {
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1919598055512436"
             crossOrigin="anonymous"
           ></script>
+          
           <title>요근방ㅣ관광지 근처 숙소를 한 눈에</title>
           <meta
             name="description"
@@ -51,7 +52,10 @@ export default class MyDocument extends Document {
             name="og:description"
             content="뚜벅이들을 위한 숙소 추천 서비스! 관광지 도보 15분내 숙소를 쉽게 찾아보세요."
           />
-          <meta name="naver-site-verification" content="5159252a8c1603a92e7952445e7ce7badfae8db4" />
+          {/* 구글 사이트 소유 확인 */}
+          <meta name="google-site-verification" content="oY6hZ6xzO2_T9yWvvuI73zsyxWcIGSVKdaYzaYfoqCU" />
+          {/* 네이버 사이트 소유 확인 */}
+          <meta name="naver-site-verification" content="29e8927cdec26b5fcbaf5ab0250ee94a0545ae02" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <body>
