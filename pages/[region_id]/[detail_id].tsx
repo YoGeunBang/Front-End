@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import Data from 'data/data.json';
 import { TiWarningOutline } from 'react-icons/ti';
 import { Card } from 'components/common/room';
+import { InfoModal } from 'components/modal';
 import axios from 'pages/api/customAxios';
 import type { GetStaticProps, GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
@@ -13,10 +14,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   //const res = await axios.get('/api/rooms/list');
   // const data = res.data;
   const data = Data.region;
+
   const paths: any[] = [];
   data.forEach((region: any) => {
     region.detail.forEach((detailItem: any) => {
-      paths.push({ params: { region_id: region?.id?.toString(), detail_id: detailItem?.id?.toString() } });
+      paths.push({
+        params: {
+          region_id: region?.id?.toString(),
+          detail_id: detailItem?.id?.toString(),
+        },
+      });
     });
   });
   return { paths, fallback: 'blocking' };
@@ -42,7 +49,6 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
 
 const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
-  const { region_id, detail_id } = router.query;
   const [originalItems, setOriginalItems] = useState<any>(null); // 시간정렬 까지 된 오리진 데이터
   const [items, setItems] = useState<any>(null); // 타입 별 숙소 출력 용
   const [type, setType] = useState<number>(0); // 숙박시설의 종류 (게하,모텔,호텔 등)
@@ -290,6 +296,7 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
           )}
         </div>
       </RoomListLayout>
+      <InfoModal />
     </>
   );
 };
@@ -335,6 +342,7 @@ const RoomListLayout = styled.div`
         font-size: 1.6rem;
         color: #999;
         margin-right: 24px;
+        white-space: nowrap;
         background-color: transparent;
         &::after {
           content: '';
