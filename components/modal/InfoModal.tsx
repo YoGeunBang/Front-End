@@ -8,7 +8,7 @@ const InfoModal = () => {
       <BgLayout className={close ? '' : 'on'}></BgLayout>
       <ModalLayout className={close ? '' : 'on'}>
         <CgDanger size={40}/>
-        <span>해당 여행지는 차량 소요 시간으로 숙소를 추천드리며</span>
+        <span>제주 공항은 차량 소요 시간으로 숙소를 추천드리며</span>
         <span>교통량에 따라 소요 시간이 상이할 수 있습니다.</span>
         <button onClick={() => setClose(true)}>확인</button>
       </ModalLayout>
