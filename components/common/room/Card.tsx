@@ -109,7 +109,6 @@ const CardEl = styled.div`
       padding: 20px !important;
       .card-locate {
         margin: 0 0 0 auto !important;
-        border: none !important;
       }
     }
   }
@@ -177,6 +176,7 @@ const CardEl = styled.div`
       display: block;
       font-size: 1.6rem;
       font-family: "Pretendard-Regular";
+      white-space: nowrap;
       color: #e5e5ec;
       span {
         color: #767676;
@@ -194,7 +194,7 @@ const CardEl = styled.div`
       padding: 0 10px;
       font-size: 1.4rem;
       margin: 3% 0 3% auto;
-      border: 1px solid #e5e5ec;
+      border: none;
       border-radius: 4px;
       background-color: transparent;
       color: #205cff;

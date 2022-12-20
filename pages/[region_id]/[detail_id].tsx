@@ -7,7 +7,6 @@ import Data from 'data/data.json';
 import { TiWarningOutline } from 'react-icons/ti';
 import { Card } from 'components/common/room';
 import { InfoModal } from 'components/modal';
-import axios from 'pages/api/customAxios';
 import type { GetStaticProps, GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {

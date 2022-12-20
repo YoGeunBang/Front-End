@@ -8,8 +8,8 @@ const InfoModal = () => {
       <BgLayout className={close ? '' : 'on'}></BgLayout>
       <ModalLayout className={close ? '' : 'on'}>
         <CgDanger size={40}/>
-        <span>해당 숙소들의 도착 예상 시간은 도보가 아닌 차량을 기준으로</span>
-        <span>측정되었으며 교통량에 따라 상이할 수 있음을 알립니다.</span>
+        <span>해당 여행지는 차량 소요 시간으로 숙소를 추천드리며</span>
+        <span>교통량에 따라 소요 시간이 상이할 수 있습니다.</span>
         <button onClick={() => setClose(true)}>확인</button>
       </ModalLayout>
     </>
@@ -46,7 +46,7 @@ const ModalLayout = styled.div`
   transform: translate(-50%, -50%);
   height: 250px;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #F7F7FB;
   svg {
     margin-bottom: 20px;
   }

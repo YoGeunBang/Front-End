@@ -7400,7 +7400,7 @@
           "name": "함덕해수욕장",
           "description": "함덕해수욕장 함더 ㄱ?",
           "car": false,
-          "image": "/assets/img/main/064/064_8.jpg",
+          "image": "/assets/img/main/064/064_10.jpg",
           "items": [{
             "id": 2206410001,
             "name": "유탑유블레스호텔제주",
@@ -8033,9 +8033,9 @@
         {
           "id": 2206411,
           "name": "월정리해수욕장",
-          "description": "월정리를 보면서 11월 정리..",
+          "description": "월정리와 함께 12월 정리..",
           "car": false,
-          "image": "/assets/img/main/064/064_8.jpg",
+          "image": "/assets/img/main/064/064_11.jpg",
           "items": [{
               "id": 2206411001,
               "name": "섯동네펜션",
