@@ -1,1 +1,1 @@
-export {default as InfoModal} from './infoModal'
+export {default as InfoModal} from './InfoModal'

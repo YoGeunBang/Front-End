@@ -9,35 +9,35 @@ import { Card } from 'components/common/room';
 import { BsArrowRight } from "react-icons/bs";
 
 const Page: NextPageWithLayout = () => {
-  const router = useRouter();
-  const { keyword }: any = router.query;
+  // const router = useRouter();
+  // const { keyword }: any = router.query;
 
-  // region(지역별) 배열 내에서 검색
-  const searchRegion = Data.region.filter((it) => new RegExp(keyword, 'i').test(it.name));
+  // // region(지역별) 배열 내에서 검색
+  // const searchRegion = Data.region.filter((it) => new RegExp(keyword, 'i').test(it.name));
 
-  // detail(관광지별) 배열 내에서 검색
-  let searchDetail: any[] = [];
-  for (let i = 0; i < Data.region.length; i++) {
-    /** region 배열 내 여행지에서 검색어가 포함된 name 의 배열을 찾아 detail 에 저장 */
-    let detail = Data.region[i].detail.filter((it) => new RegExp(keyword, 'i').test(it.name));
-    if (detail.length != 0) searchDetail = [...detail];
-  }
+  // // detail(관광지별) 배열 내에서 검색
+  // let searchDetail: any[] = [];
+  // for (let i = 0; i < Data.region.length; i++) {
+  //   /** region 배열 내 여행지에서 검색어가 포함된 name 의 배열을 찾아 detail 에 저장 */
+  //   let detail = Data.region[i].detail.filter((it) => new RegExp(keyword, 'i').test(it.name));
+  //   if (detail.length != 0) searchDetail = [...detail];
+  // }
 
-  // detail 내에 items(숙소) 배열 내에서 검색
-  let searchRoom = [];
-  for (let i = 0; i < Data.region.length; i++) {
-    /** region 배열 내 여행지에서 검색어가 포함된 name 의 배열을 찾아 detail 에 저장 */
-    for (let j = 0; j < Data.region[i].detail.length; j++) {
-      let room = Data.region[i].detail[j].items.filter((it) => new RegExp(keyword, 'i').test(it.name));
-      if (room.length != 0) searchRoom.push(room);
-    }
-  }
-  searchRoom = searchRoom.flat();
+  // // detail 내에 items(숙소) 배열 내에서 검색
+  // let searchRoom = [];
+  // for (let i = 0; i < Data.region.length; i++) {
+  //   /** region 배열 내 여행지에서 검색어가 포함된 name 의 배열을 찾아 detail 에 저장 */
+  //   for (let j = 0; j < Data.region[i].detail.length; j++) {
+  //     let room = Data.region[i].detail[j].items.filter((it:any) => new RegExp(keyword, 'i').test(it.name));
+  //     if (room.length != 0) searchRoom.push(room);
+  //   }
+  // }
+  // searchRoom = searchRoom.flat();
 
   return (
     <SearchEL>
       <div className="container">
-        {/* keyword 의 값이 없을 경우 대비 */}
+        {/* keyword 의 값이 없을 경우 대비
         {keyword != '' ? (
           <h1>
             <span className="keyword">'{keyword}'</span> 에 대한 검색 결과
@@ -124,7 +124,7 @@ const Page: NextPageWithLayout = () => {
               ''
             )}
           </div>
-        </SearchContent>
+        </SearchContent> */}
       </div>
     </SearchEL>
   );

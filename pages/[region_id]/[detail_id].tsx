@@ -42,11 +42,15 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
   const _roomsData = _regionData?.detail?.find((detail) => {
     return detail.id === Number(_detail_id);
   })?.items;
+
+  const _isCar = _regionData?.detail?.find((detail) => {
+    return detail.id === Number(_detail_id);
+  })?.car;
   //const data = res?.data;
-  return { props: { data: _roomsData }, revalidate: 2 };
+  return { props: {roomsData:_roomsData,isCar:_isCar }};
 };
 
-const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
   const [originalItems, setOriginalItems] = useState<any>(null); // 시간정렬 까지 된 오리진 데이터
   const [items, setItems] = useState<any>(null); // 타입 별 숙소 출력 용
@@ -124,7 +128,7 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
   }, []);
 
   useEffect(() => {
-    const _items = data?.sort((a: any, b: any) => {
+    const _items = roomsData?.sort((a: any, b: any) => {
       return parseFloat(a.time) - parseFloat(b.time);
     });
 
@@ -227,7 +231,7 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
                           }}
                           ref={(section_nav) => (sections_nav.current[0] = section_nav)}
                         >
-                          {items.car ? '차량' : '도보'} 5분 내
+                          {isCar ? '차량' : '도보'} 5분 내
                         </button>
                       </li>
                       <li>
@@ -240,7 +244,7 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
                           }}
                           ref={(section_nav) => (sections_nav.current[1] = section_nav)}
                         >
-                          {items.car ? '차량' : '도보'} 6~10분 내
+                          {isCar ? '차량' : '도보'} 6~10분 내
                         </button>
                       </li>
                       <li>
@@ -253,7 +257,7 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
                           }}
                           ref={(section_nav) => (sections_nav.current[2] = section_nav)}
                         >
-                          {items.car ? '차량' : '도보'} 11~15분 내
+                          {isCar ? '차량' : '도보'} 11~15분 내
                         </button>
                       </li>
                     </ul>
@@ -261,21 +265,21 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
 
                   <section ref={(section) => (sections.current[0] = section)}>
                     <h2 className="distance">
-                      {items.car ? '차량' : '도보'} <b>5분</b> 내 위치 숙소
+                      {isCar ? '차량' : '도보'} <b>5분</b> 내 위치 숙소
                     </h2>
                     <div className="card-wrap">{distance_5}</div>
                   </section>
 
                   <section ref={(section) => (sections.current[1] = section)}>
                     <h2 className="distance">
-                      {items.car ? '차량' : '도보'} <b>10분</b> 내 위치 숙소
+                      {isCar ? '차량' : '도보'} <b>10분</b> 내 위치 숙소
                     </h2>
                     <div className="card-wrap">{distance_10}</div>
                   </section>
 
                   <section ref={(section) => (sections.current[2] = section)}>
                     <h2 className="distance">
-                      {items.car ? '차량' : '도보'} <b>15분</b> 내 위치 숙소
+                      {isCar ? '차량' : '도보'} <b>15분</b> 내 위치 숙소
                     </h2>
                     <div className="card-wrap">{distance_15}</div>
                   </section>
@@ -295,7 +299,7 @@ const Page: NextPageWithLayout = ({ data }: InferGetStaticPropsType<typeof getSt
           )}
         </div>
       </RoomListLayout>
-      <InfoModal />
+      {isCar && <InfoModal />}
     </>
   );
 };
