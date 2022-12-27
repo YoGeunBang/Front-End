@@ -41,12 +41,15 @@ const ModalLayout = styled.div`
   z-index: 99999;
   top: 50%;
   left: 50%;
-  width: 50%;
+  width: 90%;
   max-width: 400px;
   transform: translate(-50%, -50%);
   height: 250px;
   border-radius: 10px;
   background-color: #F7F7FB;
+  @media screen and (max-width: 480px) {
+    height: 220px;
+  }
   svg {
     margin-bottom: 20px;
   }
