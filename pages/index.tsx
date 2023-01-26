@@ -8,22 +8,22 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { AiFillLock } from 'react-icons/ai';
 
 const Page: NextPageWithLayout = () => {
-  const region = Data.region;
+  const region_list = Data.region;
 
-  const regionList = region.map((region, i) =>
-    region.open ? (
-      <Link href={`/${region.id}`} key={i}>
+  const region_JSX = region_list.map((_region, i) =>
+    _region.open ? (
+      <Link href={`/${_region.id}`} key={i}>
         <a className="card">
-          <img src={region.image} alt="여행지이미지" />
+          <img src={_region.image} alt="여행지이미지" />
           <div className="card-title">
-            <span>{region.name}</span>
+            <span>{_region.name}</span>
             <IoIosArrowForward size="20" />
           </div>
         </a>
       </Link>
     ) : (
-      <div className="card not" key={region.id}>
-        <img src={region.image} alt="여행지이미지" />
+      <div className="card not" key={_region.id}>
+        <img src={_region.image} alt="여행지이미지" />
         <AiFillLock size="50" color="#ededed" />
         <div className="card-title">
           <span>Comming Soon</span>
@@ -37,7 +37,7 @@ const Page: NextPageWithLayout = () => {
       <div className="main">
         <div className="container">
           <h2 className="title">어디로 떠나세요?</h2>
-          <div className="card-wrap">{regionList}</div>
+          <div className="card-wrap">{region_JSX}</div>
         </div>
       </div>
     </TemplateEl>

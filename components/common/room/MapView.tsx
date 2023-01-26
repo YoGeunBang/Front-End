@@ -2,13 +2,12 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { GrFormClose } from 'react-icons/gr';
-import { Zoom } from 'swiper';
 
 interface MapProps {
-  _lat: number;
-  _lng: number;
+  _lat?: number;
+  _lng?: number;
+  address?: string;
   setShowMap: any;
-  address: string;
 }
 
 const Map = ({ _lat, _lng, setShowMap, address }: MapProps) => {
@@ -24,7 +23,7 @@ const Map = ({ _lat, _lng, setShowMap, address }: MapProps) => {
     let container = document.getElementById('map');
 
 
-    const markerSetMap = (_lat: number, _lng: number) => {
+    const markerSetMap = (_lat: number|undefined, _lng: number|undefined) => {
       //마커가 표시 될 위치
       let markerPosition = new window.kakao.maps.LatLng(_lat, _lng);
       console.log(markerPosition);
@@ -54,8 +53,8 @@ const Map = ({ _lat, _lng, setShowMap, address }: MapProps) => {
       window.kakao.maps.load(() => {
         // 위도 경도 정보가 없을 경우
         if (!_lat) {
-          let lat: number = _lat;
-          let lng: number = _lng;
+          let lat: number|undefined = _lat;
+          let lng: number|undefined = _lng;
           var geocoder = new window.kakao.maps.services.Geocoder();
           // 주소를 통한 검색 메서드
           geocoder.addressSearch(address, function (result: any, status: any) {

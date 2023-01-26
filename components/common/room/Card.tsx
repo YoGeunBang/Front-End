@@ -3,13 +3,15 @@ import styled from "styled-components";
 import { RiMapPinLine } from "react-icons/ri";
 import { IoIosArrowForward } from "react-icons/io";
 import { SkeletonCard, MapView, PhotoView } from "../room";
-
-const Card = ({ item }:any) => {
-  const [showMap, setShowMap] = useState(false);
-  const [showImg, setShowImg] = useState(false);
+interface CardPropsTypes {
+  item:RoomTypes;
+}
+const Card = ({ item }:CardPropsTypes) => {
+  const [showMap, setShowMap] = useState<boolean>(false);
+  const [showImg, setShowImg] = useState<boolean>(false);
 
   // 렌더링 전 후 구분 (스켈레톤 ui 출력을 위함)
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState<boolean>(true);
 
   const isShowMap = () => {
     setShowMap(true);
@@ -32,7 +34,7 @@ const Card = ({ item }:any) => {
     }
   };
   // 가격 정수형 데이터 반점 찍어주기
-  const price = (_price:any) => {
+  const price = (_price:number) => {
     if (_price == null) return "가격 정보 없음";
     else return `${_price.toLocaleString("ko-KR")} 원 ~`;
   };

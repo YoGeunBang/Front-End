@@ -15,8 +15,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const data = Data.region;
 
   const paths: any[] = [];
-  data.forEach((region: any) => {
-    region.detail.forEach((detailItem: any) => {
+  data.forEach((region) => {
+    region.detail.forEach((detailItem) => {
       paths.push({
         params: {
           region_id: region?.id?.toString(),
@@ -47,17 +47,17 @@ export const getStaticProps: GetStaticProps = async ({ params }: GetStaticPropsC
     return detail.id === Number(_detail_id);
   })?.car;
   //const data = res?.data;
-  return { props: {roomsData:_roomsData,isCar:_isCar }};
+  return { props: { roomsData: _roomsData, isCar: _isCar } };
 };
 
-const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Page: NextPageWithLayout = ({ roomsData, isCar }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const router = useRouter();
-  const [originalItems, setOriginalItems] = useState<any>(null); // 시간정렬 까지 된 오리진 데이터
-  const [items, setItems] = useState<any>(null); // 타입 별 숙소 출력 용
+  const [originalItems, setOriginalItems] = useState<RoomTypes[]>([]); // 시간정렬 까지 된 오리진 데이터
+  const [items, setItems] = useState<RoomTypes[]>([]); // 타입 별 숙소 출력 용
   const [type, setType] = useState<number>(0); // 숙박시설의 종류 (게하,모텔,호텔 등)
-  const room = useRef<any>(null);
-  const sections = useRef<any[]>([]);
-  const sections_nav = useRef<any[]>([]);
+  const room = useRef<HTMLDivElement>(null);
+  const sections = useRef<null[] | HTMLElement[]>([]);
+  const sections_nav = useRef<null[] | HTMLElement[]>([]);
   let open = true; // 해당 여행지 숙소 정보 등록 유무
 
   // 숙소 전체목록이 0개 일 시 준비 중
@@ -65,7 +65,7 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
   //     open = false;
   //   }
 
-  const isActive = (_num: any) => {
+  const isActive = (_num: number) => {
     if (_num === type) {
       return true;
     } else {
@@ -75,38 +75,38 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
 
   /** 시간별 구분 -> 가격순으로 재정렬 후 map으로 jsx 로 반환  */
   const distance_5 = items
-    ?.filter((item: any) => item.time <= 5)
-    .sort((a: any, b: any) => {
-      return parseFloat(a.price) - parseFloat(b.price);
+    ?.filter((item: RoomTypes) => item.time <= 5)
+    .sort((a: RoomTypes, b: RoomTypes) => {
+      return a.price - b.price;
     })
-    .map((item: any) => <Card item={item} key={item.id} />);
+    .map((item: RoomTypes) => <Card item={item} key={item.id} />);
 
   const distance_10 = items
-    ?.filter((item: any) => item.time > 5 && item.time <= 10)
-    .sort((a: any, b: any) => {
-      return parseFloat(a.price) - parseFloat(b.price);
+    ?.filter((item: RoomTypes) => item.time > 5 && item.time <= 10)
+    .sort((a: RoomTypes, b: RoomTypes) => {
+      return a.price - b.price;
     })
-    .map((item: any) => <Card item={item} key={item.id} />);
+    .map((item: RoomTypes) => <Card item={item} key={item.id} />);
 
   const distance_15 = items
-    ?.filter((item: any) => item.time > 10 && item.time >= 15)
-    .sort((a: any, b: any) => {
-      return parseFloat(a.price) - parseFloat(b.price);
+    ?.filter((item: RoomTypes) => item.time > 10 && item.time >= 15)
+    .sort((a: RoomTypes, b: RoomTypes) => {
+      return a.price - b.price;
     })
-    .map((item: any) => <Card item={item} key={item.id} />);
+    .map((item: RoomTypes) => <Card item={item} key={item.id} />);
 
   /** 도보 거리 별 섹션 스크롤 진입 함수 */
   const isScroll = () => {
     // current 배열에서 null 제거해주는 작업 진행 해야할 듯..!
-    sections.current.forEach((element: any, index: number) => {
+    sections.current.forEach((element: Element | null, index: number) => {
       if (element != null) {
         if (50 > element.getBoundingClientRect().top) {
-          sections_nav.current[index].classList.add('active');
+          sections_nav.current[index]?.classList.add('active');
         } else if (50 <= element.getBoundingClientRect().top) {
-          sections_nav.current[index].classList.remove('active');
+          sections_nav.current[index]?.classList.remove('active');
         }
         if (50 > element.getBoundingClientRect().bottom) {
-          sections_nav.current[index].classList.remove('active');
+          sections_nav.current[index]?.classList.remove('active');
         }
       }
     });
@@ -128,8 +128,8 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
   }, []);
 
   useEffect(() => {
-    const _items = roomsData?.sort((a: any, b: any) => {
-      return parseFloat(a.time) - parseFloat(b.time);
+    const _items = roomsData?.sort((a: RoomTypes, b: RoomTypes) => {
+      return a.time - b.time;
     });
 
     setOriginalItems(_items);
@@ -139,7 +139,7 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
   useEffect(() => {
     if (type !== 0) {
       setItems(
-        originalItems.filter((item: any) => {
+        originalItems.filter((item: RoomTypes) => {
           return item.type === type;
         }),
       );
@@ -151,7 +151,7 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
   return (
     <>
       <RoomListLayout ref={room}>
-        <nav className="nav">
+        <NavArea>
           <div className="container">
             <div className="gnb">
               <button
@@ -211,9 +211,8 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
               </button>
             </div>
           </div>
-        </nav>
-
-        <div className="main">
+        </NavArea>
+        <MainArea>
           {open ? (
             items &&
             (items.length !== 0 ? (
@@ -224,10 +223,12 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
                       <li>
                         <button
                           onClick={() => {
-                            window.scrollTo({
-                              top: window.pageYOffset + sections.current[0].getBoundingClientRect().top - 48,
-                              behavior: 'smooth',
-                            });
+                            if (sections.current[0]) {
+                              window.scrollTo({
+                                top: window.pageYOffset + sections.current[0].getBoundingClientRect().top - 48,
+                                behavior: 'smooth',
+                              });
+                            }
                           }}
                           ref={(section_nav) => (sections_nav.current[0] = section_nav)}
                         >
@@ -237,10 +238,12 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
                       <li>
                         <button
                           onClick={() => {
-                            window.scrollTo({
-                              top: window.pageYOffset + sections.current[1].getBoundingClientRect().top - 48,
-                              behavior: 'smooth',
-                            });
+                            if (sections.current[1]) {
+                              window.scrollTo({
+                                top: window.pageYOffset + sections.current[1].getBoundingClientRect().top - 48,
+                                behavior: 'smooth',
+                              });
+                            }
                           }}
                           ref={(section_nav) => (sections_nav.current[1] = section_nav)}
                         >
@@ -250,10 +253,12 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
                       <li>
                         <button
                           onClick={() => {
-                            window.scrollTo({
-                              top: window.pageYOffset + sections.current[2].getBoundingClientRect().top - 48,
-                              behavior: 'smooth',
-                            });
+                            if (sections.current[2]) {
+                              window.scrollTo({
+                                top: window.pageYOffset + sections.current[2].getBoundingClientRect().top - 48,
+                                behavior: 'smooth',
+                              });
+                            }
                           }}
                           ref={(section_nav) => (sections_nav.current[2] = section_nav)}
                         >
@@ -297,7 +302,7 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
               <span>준비 중 입니다 !</span>
             </div>
           )}
-        </div>
+        </MainArea>
       </RoomListLayout>
       {isCar && <InfoModal />}
     </>
@@ -307,7 +312,195 @@ const Page: NextPageWithLayout = ({ roomsData,isCar }: InferGetStaticPropsType<t
 Page.getLayout = function getLayout(page: ReactElement) {
   return <AppLayout>{page}</AppLayout>;
 };
+const NavArea = styled.nav`
+  position: fixed;
+  top: 80px;
+  display: block;
+  z-index: 99999;
+  width: 100%;
+  padding: 0 12.5%;
+  height: 48px;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5ec;
+  @media screen and (max-width: 480px) {
+    padding: 0 4%;
+  }
+  .container {
+    height: 100%;
+  }
+  .gnb {
+    position: relative;
+    display: flex;
+    height: 100%;
+    button {
+      position: relative;
+      border: 0;
+      font-size: 1.6rem;
+      color: #999;
+      margin-right: 24px;
+      white-space: nowrap;
+      background-color: transparent;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        display: block;
+        width: 0;
+        height: 3px;
+        background-color: #fff;
+        transition: 0.3s;
+      }
+      &.active {
+        font-weight: bold;
+        color: #000;
+        &::after {
+          width: 100%;
+          background-color: #000;
+        }
+      }
+    }
+  }
+`;
+const MainArea = styled.div`
+  position: relative;
+  padding: 104px 12.5% 120px 12.5%;
+  min-height: calc(100vh - (228px));
+  .container {
+    .section-nav {
+      z-index: 9999;
+      position: fixed;
+      top: 128px;
+      &::before {
+        content: '';
+        position: fixed;
+        left: 0;
+        display: block;
+        width: 100vw;
+        height: 56px;
+        background: rgba(255, 255, 255, 0.7);
+        backdrop-filter: blur(10px);
+      }
+      ul {
+        position: relative;
+        display: flex;
+        height: 56px;
+        align-items: center;
+        li {
+          button {
+            position: relative;
+            display: block;
+            padding: 7px 12px;
+            border-radius: 4px;
+            background-color: #e9e9ed;
+            color: #999;
+            font-size: 1.4rem;
+            margin-right: 16px;
+            opacity: 0.7;
+            border: 0;
+            &.active {
+              background-color: #00c2d6;
+              opacity: 1;
+              color: #fff;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 1024px) {
+        ul,
+        &::before {
+          height: 48px;
+        }
+        li button {
+          margin-right: 8px !important;
+        }
+      }
+    }
+    section {
+      position: relative;
+      padding-top: 150px;
+      @media screen and (max-width: 1024px) {
+        padding-top: 104px;
+        padding-bottom: 56px;
+        &::before {
+          content: '';
+          position: absolute;
+          display: block;
+          left: 50%;
+          transform: translateX(-50%);
+          bottom: 0;
+          width: 100vw;
+          height: 8px;
+          background-color: #e9e9ed;
+        }
+        .distance {
+          top: 56px !important;
+        }
+        &:last-child {
+          padding-bottom: 0;
+          &::before {
+            content: none;
+          }
+        }
+      }
+      .distance {
+        position: absolute;
+        display: block;
+        top: 80px;
+        font-family: 'Pretendard-Bold';
+        font-size: 2.8rem;
+        b {
+          color: #205cff;
+        }
+      }
+      .card-wrap {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-column-gap: 2.5%;
+        grid-row-gap: 40px;
+        @media screen and (max-width: 1024px) {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .time {
+          position: relative;
+          font-size: 2.8rem;
+          font-family: 'Pretendard-ExtraBold';
+        }
+        img {
+        }
+      }
+    }
+  }
+  .empty {
+    position: absolute;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
 
+    span {
+      position: relative;
+      display: block;
+      font-size: 2rem;
+      color: #999;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-top: 96px;
+  }
+  @media screen and (max-width: 480px) {
+    padding: 96px 4%;
+    .card-wrap {
+      grid-template-columns: repeat(1, 1fr) !important;
+    }
+  }
+  @media screen and (max-width: 390px) {
+  }
+`;
 const RoomListLayout = styled.div`
   margin-top: 80px;
   &.scroll {
@@ -316,197 +509,6 @@ const RoomListLayout = styled.div`
     }
     .section-nav {
       top: 48px !important;
-    }
-  }
-  nav {
-    position: fixed;
-    top: 80px;
-
-    display: block;
-    z-index: 99999;
-    width: 100%;
-    padding: 0 12.5%;
-    height: 48px;
-    background-color: #fff;
-    border-bottom: 1px solid #e5e5ec;
-    @media screen and (max-width: 480px) {
-      padding: 0 4%;
-    }
-    .container {
-      height: 100%;
-    }
-    .gnb {
-      position: relative;
-      display: flex;
-      height: 100%;
-      button {
-        position: relative;
-        border: 0;
-        font-size: 1.6rem;
-        color: #999;
-        margin-right: 24px;
-        white-space: nowrap;
-        background-color: transparent;
-        &::after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%);
-          bottom: 0;
-          display: block;
-          width: 0;
-          height: 3px;
-          background-color: #fff;
-          transition: 0.3s;
-        }
-        &.active {
-          font-weight: bold;
-          color: #000;
-          &::after {
-            width: 100%;
-            background-color: #000;
-          }
-        }
-      }
-    }
-  }
-  // ------------------------------------------main -----------------------------------------
-  .main {
-    position: relative;
-    padding: 104px 12.5% 120px 12.5%;
-    min-height: calc(100vh - (228px));
-    .container {
-      .section-nav {
-        z-index: 9999;
-        position: fixed;
-        top: 128px;
-        &::before {
-          content: '';
-          position: fixed;
-          left: 0;
-          display: block;
-          width: 100vw;
-          height: 56px;
-          background: rgba(255, 255, 255, 0.7);
-          backdrop-filter: blur(10px);
-        }
-        ul {
-          position: relative;
-          display: flex;
-          height: 56px;
-          align-items: center;
-          li {
-            button {
-              position: relative;
-              display: block;
-              padding: 7px 12px;
-              border-radius: 4px;
-              background-color: #e9e9ed;
-              color: #999;
-              font-size: 1.4rem;
-              margin-right: 16px;
-              opacity: 0.7;
-              border: 0;
-              &.active {
-                background-color: #00c2d6;
-                opacity: 1;
-                color: #fff;
-              }
-            }
-          }
-        }
-        @media screen and (max-width: 1024px) {
-          ul,
-          &::before {
-            height: 48px;
-          }
-          li button {
-            margin-right: 8px !important;
-          }
-        }
-      }
-      section {
-        position: relative;
-        padding-top: 150px;
-        @media screen and (max-width: 1024px) {
-          padding-top: 104px;
-          padding-bottom: 56px;
-          &::before {
-            content: '';
-            position: absolute;
-            display: block;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: 0;
-            width: 100vw;
-            height: 8px;
-            background-color: #e9e9ed;
-          }
-          .distance {
-            top: 56px !important;
-          }
-          &:last-child {
-            padding-bottom: 0;
-            &::before {
-              content: none;
-            }
-          }
-        }
-        .distance {
-          position: absolute;
-          display: block;
-          top: 80px;
-          font-family: 'Pretendard-Bold';
-          font-size: 2.8rem;
-          b {
-            color: #205cff;
-          }
-        }
-        .card-wrap {
-          position: relative;
-          display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          grid-column-gap: 2.5%;
-          grid-row-gap: 40px;
-          @media screen and (max-width: 1024px) {
-            grid-template-columns: repeat(2, 1fr);
-          }
-          .time {
-            position: relative;
-            font-size: 2.8rem;
-            font-family: 'Pretendard-ExtraBold';
-          }
-          img {
-          }
-        }
-      }
-    }
-    .empty {
-      position: absolute;
-      display: block;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-
-      span {
-        position: relative;
-        display: block;
-        font-size: 2rem;
-        color: #999;
-      }
-    }
-
-    @media screen and (max-width: 1024px) {
-      padding-top: 96px;
-    }
-    @media screen and (max-width: 480px) {
-      padding: 96px 4%;
-      .card-wrap {
-        grid-template-columns: repeat(1, 1fr) !important;
-      }
-    }
-    @media screen and (max-width: 390px) {
     }
   }
 `;

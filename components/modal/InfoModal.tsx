@@ -1,13 +1,13 @@
 import styled from 'styled-components';
-import { CgDanger } from 'react-icons/cg'
+import { CgDanger } from 'react-icons/cg';
 import { useState } from 'react';
 const InfoModal = () => {
-  const [ close, setClose] = useState(false);
+  const [close, setClose] = useState<boolean>(false);
   return (
     <>
       <BgLayout className={close ? '' : 'on'}></BgLayout>
       <ModalLayout className={close ? '' : 'on'}>
-        <CgDanger size={40}/>
+        <CgDanger size={40} />
         <span>제주 공항은 차량 소요 시간으로 숙소를 추천드리며</span>
         <span>교통량에 따라 소요 시간이 상이할 수 있습니다.</span>
         <button onClick={() => setClose(true)}>확인</button>
@@ -18,7 +18,7 @@ const InfoModal = () => {
 const BgLayout = styled.div`
   position: fixed;
   z-index: 99999;
-  top:0;
+  top: 0;
   left: 0;
   display: none;
   &.on {
@@ -27,7 +27,7 @@ const BgLayout = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: #000;
-  opacity:.5;
+  opacity: 0.5;
 `;
 const ModalLayout = styled.div`
   position: fixed;
@@ -46,7 +46,7 @@ const ModalLayout = styled.div`
   transform: translate(-50%, -50%);
   height: 250px;
   border-radius: 10px;
-  background-color: #F7F7FB;
+  background-color: #f7f7fb;
   @media screen and (max-width: 480px) {
     height: 220px;
   }

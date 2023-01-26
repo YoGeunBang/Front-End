@@ -11,8 +11,13 @@ import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
 
-const PhotoView = ({ setShowImg, item }: any) => {
-  const itemList = item.image;
+interface PhotoViewPropsType {
+  setShowImg:any;
+  item:RoomTypes;
+}
+
+const PhotoView = ({ setShowImg, item }: PhotoViewPropsType) => {
+  const itemImgList:string[] = item.image;
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperCore>();
   
   return (
@@ -43,9 +48,9 @@ const PhotoView = ({ setShowImg, item }: any) => {
             }}
             className="main-swiper"
           >
-            {itemList.map((item: any, index: number) => (
+            {itemImgList.map((itemImg: string, index: number) => (
               <SwiperSlide key={index}>
-                <img src={item} className="img-item" />
+                <img src={itemImg} className="img-item" />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -68,7 +73,7 @@ const PhotoView = ({ setShowImg, item }: any) => {
             modules={[FreeMode, Navigation, Thumbs]}
             className="nav-swiper"
           >
-            {itemList.map((item: any, index: number) => (
+            {itemImgList.map((item: any, index: number) => (
               <SwiperSlide key={index}>
                 <img src={item} className="img-item" />
               </SwiperSlide>

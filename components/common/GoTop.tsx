@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { IoIosArrowRoundUp } from 'react-icons/io';
+
 const GoTop = () => {
   // window 절대좌표 Y 값을 저장할 state
-  const [scrollY, setScrollY] = useState(0);
+  const [scrollY, setScrollY] = useState<number>(0);
   // 버튼에 class 부여하기 위한 state
-  const [down, setDown] = useState(false);
+  const [down, setDown] = useState<boolean>(false);
 
   useEffect(() => {
     // scroll 이 감지되면 hnandleFollow 함수 실행
