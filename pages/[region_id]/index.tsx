@@ -121,7 +121,7 @@ const TemplateEl = styled.div`
         grid-column-gap: 20px;
         grid-row-gap: 40px;
         .card {
-          border-radius: 5px;
+          border-radius: 4px;
           overflow: hidden;
           box-shadow: 5px 10px 30px -5px #ddd;
           border: 1px solid #f0f0f6;

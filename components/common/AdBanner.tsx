@@ -2,9 +2,9 @@ import styled from "styled-components";
 import React, { useEffect } from 'react';
 
 const AdBanner = () => {
-  useEffect(() => {
-    (window.adsbygoogle = window.adsbygoogle || []).push({});
-  },[]);
+  // useEffect(() => {
+  //   (window.adsbygoogle = window.adsbygoogle || []).push({});
+  // },[]);
   
   return (
     <AdBannerEl>

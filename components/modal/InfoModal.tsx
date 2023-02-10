@@ -45,7 +45,7 @@ const ModalLayout = styled.div`
   max-width: 400px;
   transform: translate(-50%, -50%);
   height: 250px;
-  border-radius: 10px;
+  border-radius: 8px;
   background-color: #f7f7fb;
   @media screen and (max-width: 480px) {
     height: 220px;

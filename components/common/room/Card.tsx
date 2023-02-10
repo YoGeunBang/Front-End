@@ -197,7 +197,6 @@ const CardEl = styled.div`
       font-size: 1.4rem;
       margin: 3% 0 3% auto;
       border: none;
-      border-radius: 4px;
       background-color: transparent;
       color: #205cff;
       svg {
