@@ -1,6 +1,7 @@
 interface Window {
   adsbygoogle: any; // 구글 애드센스
   kakao: any; // 카카오
+  naver: any;
   dataLayer: any; // 구글 GA 태그 매니저
 }
 
