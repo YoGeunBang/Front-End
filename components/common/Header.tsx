@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { SearchInput } from 'components/common';
+import { LoginButton } from 'components/common';
 
 const Header = () => {
   const router = useRouter();
@@ -46,6 +46,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
+          <LoginButton />
         </div>
       )}
     </HeaderEl>

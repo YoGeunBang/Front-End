@@ -61,13 +61,13 @@ const TemplateEl = styled.div`
       opacity: 1;
     }
   }
-
   .main {
-    padding: 6.25% 12.5%;
+    
     .title {
       position: relative;
       font-size: 2.8rem;
       margin-bottom: 2.5%;
+      font-weight: 600;
     }
     .card-wrap {
       position: relative;
