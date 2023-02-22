@@ -64,7 +64,6 @@ const HeaderEl = styled.div`
   z-index: 99999;
   background-color: #fff;
   border-bottom: 1px solid #e5e5ec;
-  padding: 0 12.5%;
   @media screen and (max-width: 480px) {
     padding: 0 4%;
   }

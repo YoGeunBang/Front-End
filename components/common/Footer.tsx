@@ -29,7 +29,6 @@ const Footer = () => {
 // styled-components
 const FooterEl = styled.div`
   position: relative;
-  font-family: 'Pretendard-Regular';
   display: flex;
   align-items: center;
   width: 100%;

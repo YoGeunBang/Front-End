@@ -49,7 +49,7 @@ const Card = ({ item }:CardPropsTypes) => {
           onLoad={() => setLoading(false)}
         />
         <button className="img-btn">
-          <img src="/img.png"></img>
+          <img src="/assets/img/img.png"></img>
         </button>
       </div>
       <div className="card-info">
@@ -177,7 +177,6 @@ const CardEl = styled.div`
       position: relative;
       display: block;
       font-size: 1.6rem;
-      font-family: "Pretendard-Regular";
       white-space: nowrap;
       color: #e5e5ec;
       span {
@@ -190,7 +189,7 @@ const CardEl = styled.div`
     .card-locate {
       position: relative;
       display: flex;
-      font-family: "Pretendard-SemiBold";
+      font-weight: 400;
       align-items: center;
       height: 36px;
       padding: 0 10px;
@@ -206,9 +205,8 @@ const CardEl = styled.div`
     .price {
       text-align: right;
       font-size: 1.6rem;
-      font-family: "Pretendard-Regular";
       em {
-        font-family: "Pretendard-ExtraBold";
+        font-weight: 600;
         font-size: 2.4rem;
       }
     }
@@ -216,10 +214,10 @@ const CardEl = styled.div`
   .move {
     position: relative;
     display: flex;
-    font-family: "Pretendard-Bold";
     justify-content: center;
     align-items: center;
     width: 100%;
+    font-weight: 600;
     height: 56px;
     border: 0;
     font-size: 1.6rem;

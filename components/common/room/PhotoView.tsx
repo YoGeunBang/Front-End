@@ -141,7 +141,7 @@ const PhotoViewEl = styled.div`
       margin-top: 2.2%;
       margin-bottom: 4.4%;
       padding: 0 7.5%;
-      font-family: 'Pretendard-Bold';
+      font-weight: 600;
       color: #fff;
       font-size: 3.2rem;
     }
