@@ -148,6 +148,7 @@ const PhotoViewEl = styled.div`
     .main-swiper {
       width: 100%;
       height: calc(100vh - 42vh);
+      user-select: none; /* standard syntax */
       .img-item {
         position: relative;
         display: block;
@@ -155,6 +156,7 @@ const PhotoViewEl = styled.div`
         width: 100%;
         height: 100%;
         object-fit: contain;
+        user-select: none; /* standard syntax */
       }
       .swiper-button-next,
       .swiper-button-prev {
