@@ -7,7 +7,6 @@ import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
 import { wrapper } from 'store';
 import TagManager from 'react-gtm-module';
-
 import { ReactElement, ReactNode, useEffect } from 'react';
 
 export type NextPageWithLayout = NextPage & {
@@ -37,7 +36,6 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   useEffect(() => {
     TagManager.initialize({ gtmId: gtag.GTM_ID });
-    
   }, []);
   // /GA
   return getLayout(

@@ -2,16 +2,24 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { LoginButton } from 'components/common';
+import { LogInButton,LogOutButton } from 'components/common';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
 
 const Header = () => {
   const router = useRouter();
-
+  
+  const { token } = useSelector((state: RootState) => state.token);
+  useEffect(() => {
+    console.log(token);
+    if(token) {
+      console.log(token);
+    }
+  }, [token]);
   // header Dom class 제어를 위한 ref 선언
-  const header = useRef<HTMLDivElement|null>(null);
+  const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
   const [showHeader, setShowHeader] = useState<boolean>(true);
-
   useEffect(() => {
     if (router.pathname === '/[region_id]/[detail_id]') {
       setRoomsPage(true);
@@ -34,7 +42,7 @@ const Header = () => {
       setShowHeader(true);
     }
   };
-  
+
   return (
     <HeaderEl ref={header}>
       {showHeader && (
@@ -46,7 +54,8 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          <LoginButton />
+          {token ? <LogOutButton/>: <LogInButton />}
+          
         </div>
       )}
     </HeaderEl>
