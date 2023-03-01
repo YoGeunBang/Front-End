@@ -8,32 +8,13 @@ import { RootState } from 'store';
 
 const Header = () => {
   const router = useRouter();
-  
   const { token } = useSelector((state: RootState) => state.token);
-  useEffect(() => {
-    console.log(token);
-    if(token) {
-      console.log(token);
-    }
-  }, [token]);
+  const [ isToken, setIsToken ] = useState('');
+  
   // header Dom class 제어를 위한 ref 선언
   const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
   const [showHeader, setShowHeader] = useState<boolean>(true);
-  useEffect(() => {
-    if (router.pathname === '/[region_id]/[detail_id]') {
-      setRoomsPage(true);
-    } else setRoomsPage(false);
-  });
-
-  useEffect(() => {
-    if (roomsPage) {
-      window.addEventListener('scroll', isScroll);
-    }
-    return () => {
-      window.removeEventListener('scroll', isScroll);
-    };
-  }, [roomsPage]);
 
   const isScroll = () => {
     if (window.pageYOffset >= 80) {
@@ -43,6 +24,28 @@ const Header = () => {
     }
   };
 
+  useEffect(() => {
+    setIsToken(token);
+    if (router.pathname === '/[region_id]/[detail_id]') {
+      setRoomsPage(true);
+    } else setRoomsPage(false);
+  });
+
+  useEffect(() => {
+    console.log(token);
+    if(token) {
+      console.log(token);
+    }
+  }, [token]);
+
+  useEffect(() => {
+    if (roomsPage) {
+      window.addEventListener('scroll', isScroll);
+    }
+    return () => {
+      window.removeEventListener('scroll', isScroll);
+    };
+  }, [roomsPage]);
   return (
     <HeaderEl ref={header}>
       {showHeader && (
@@ -54,7 +57,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {token ? <LogOutButton/>: <LogInButton />}
+          {isToken ? <LogOutButton/>: <LogInButton />}
           
         </div>
       )}

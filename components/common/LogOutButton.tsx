@@ -1,12 +1,27 @@
 import styled from 'styled-components';
-import Router from 'next/router'
-const LogOutButton = () => {
+import Router from 'next/router';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import { deleteTokenAction } from 'store/token';
+import { useDispatch } from 'react-redux';
+import { RootState } from 'store';
 
-  const moveLogOut = () => {
-    
-  }
+const LogOutButton = () => {
+  const dispatch = useDispatch();
+  const { token } = useSelector((state: RootState) => state.token);
+
+  useEffect(()=> {
+    if(!token) {
+      Router.push(
+        {
+          pathname: '/',
+        },
+      );
+    }
+  },[token])
+  
   return (
-    <LogOutButtonEl onClick={moveLogOut}>
+    <LogOutButtonEl onClick={() => dispatch(deleteTokenAction())}>
       <span>로그아웃</span>
     </LogOutButtonEl>
   );

@@ -5,9 +5,12 @@ import Head from 'next/head';
 import Script from 'next/script';
 import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
-import { wrapper } from 'store';
 import TagManager from 'react-gtm-module';
 import { ReactElement, ReactNode, useEffect } from 'react';
+import { store, wrapper } from "store";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { persistor } from "store";
 
 export type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -65,7 +68,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <PersistGate persistor={persistor} loading={null}>
+          <Component {...pageProps} />
+        </PersistGate>
+      </Provider>
     </>,
   );
 }
