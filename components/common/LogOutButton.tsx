@@ -12,6 +12,7 @@ const LogOutButton = () => {
 
   useEffect(()=> {
     if(!token) {
+      alert('로그아웃되었습니다.');
       Router.push(
         {
           pathname: '/',
@@ -19,7 +20,7 @@ const LogOutButton = () => {
       );
     }
   },[token])
-  
+
   return (
     <LogOutButtonEl onClick={() => dispatch(deleteTokenAction())}>
       <span>로그아웃</span>
