@@ -57,7 +57,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {isToken ? <LogOutButton/>: <LogInButton />}
+          {/* {isToken ? <LogOutButton/>: <LogInButton />} */}
           
         </div>
       )}
