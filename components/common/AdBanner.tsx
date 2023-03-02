@@ -22,7 +22,6 @@ const AdBannerEl = styled.div`
   position: relative;
   display: block;
   width: 100%;
-  padding: 0 12.5%;
   margin-bottom: 8.5%;
   .container {
     display: flex;
@@ -45,7 +44,6 @@ const AdBannerEl = styled.div`
     }
   }
   @media screen and (max-width: 480px) {
-    padding: 0 4%;
   }
 `;
 export default AdBanner;

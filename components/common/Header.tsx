@@ -76,9 +76,6 @@ const HeaderEl = styled.div`
   z-index: 99999;
   background-color: #fff;
   border-bottom: 1px solid #e5e5ec;
-  @media screen and (max-width: 480px) {
-    padding: 0 4%;
-  }
   .container {
     position: relative;
     justify-content: space-between;

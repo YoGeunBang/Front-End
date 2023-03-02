@@ -9,9 +9,6 @@ export const NavArea = styled.nav`
   height: 48px;
   background-color: #fff;
   border-bottom: 1px solid #e5e5ec;
-  @media screen and (max-width: 480px) {
-    padding: 0 4%;
-  }
   .container {
     height: 100%;
   }
@@ -177,10 +174,9 @@ export const MainArea = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    padding-top: 96px;
+      padding-top: 96px;
   }
   @media screen and (max-width: 480px) {
-    padding: 96px 4%;
     .card-wrap {
       grid-template-columns: repeat(1, 1fr) !important;
     }

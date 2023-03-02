@@ -109,7 +109,6 @@ export const TemplateEl = styled.div`
     }
     .detail {
       .detail-main {
-        padding: 0 4%;
         .card-wrap {
           grid-template-columns: repeat(1, 1fr);
           grid-row-gap: 20px;
