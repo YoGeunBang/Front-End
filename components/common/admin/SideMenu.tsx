@@ -18,16 +18,16 @@ const Page: NextPageWithLayout = () => {
   const router = useRouter();
   const menuData: MenuType[] = [
     { id: 'region_manage', name: '지역 관리', path: '/admin/region' },
-    { id: 'detail_manage', name: '관광지 관리', path: '/admin/detail' },
+    { id: 'detail_manage', name: '관광지 관리', path: '/admin/spot' },
     {
-      id: 'rooms_manage',
+      id: 'room_manage',
       name: '숙소 관리',
-      path: '/admin/rooms',
+      path: '/admin/room',
       subMenu: [
-        { id: 'rooms_registered', name: '등록된 숙소', path: '/admin/rooms/registered' },
-        { id: 'rooms_crawled', name: '크롤링 데이터', path: '/admin/rooms/crawled' },
-        { id: 'rooms_temp', name: '임시 저장', path: '/admin/rooms/temp' },
-        { id: 'rooms_deleted', name: '휴지통', path: '/admin/rooms/deleted' },
+        { id: 'room_registered', name: '등록된 숙소', path: '/admin/room/registered' },
+        { id: 'room_crawled', name: '크롤링 데이터', path: '/admin/room/crawled' },
+        { id: 'room_temp', name: '임시 저장', path: '/admin/room/temp' },
+        { id: 'room_deleted', name: '휴지통', path: '/admin/room/deleted' },
       ],
     },
   ];
