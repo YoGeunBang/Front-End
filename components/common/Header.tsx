@@ -2,21 +2,41 @@ import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { LoginButton } from 'components/common';
+import { LogInButton,LogOutButton } from 'components/common';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store';
 
 const Header = () => {
   const router = useRouter();
-
+  const { token } = useSelector((state: RootState) => state.token);
+  const [ isToken, setIsToken ] = useState('');
+  
   // header Dom class 제어를 위한 ref 선언
-  const header = useRef<HTMLDivElement|null>(null);
+  const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
   const [showHeader, setShowHeader] = useState<boolean>(true);
 
+  const isScroll = () => {
+    if (window.pageYOffset >= 80) {
+      setShowHeader(false);
+    } else {
+      setShowHeader(true);
+    }
+  };
+
   useEffect(() => {
+    setIsToken(token);
     if (router.pathname === '/[region_id]/[detail_id]') {
       setRoomsPage(true);
     } else setRoomsPage(false);
   });
+
+  useEffect(() => {
+    console.log(token);
+    if(token) {
+      console.log(token);
+    }
+  }, [token]);
 
   useEffect(() => {
     if (roomsPage) {
@@ -26,15 +46,6 @@ const Header = () => {
       window.removeEventListener('scroll', isScroll);
     };
   }, [roomsPage]);
-
-  const isScroll = () => {
-    if (window.pageYOffset >= 80) {
-      setShowHeader(false);
-    } else {
-      setShowHeader(true);
-    }
-  };
-  
   return (
     <HeaderEl ref={header}>
       {showHeader && (
@@ -46,7 +57,8 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          <LoginButton />
+          {/* {isToken ? <LogOutButton/>: <LogInButton />} */}
+          
         </div>
       )}
     </HeaderEl>
@@ -64,9 +76,6 @@ const HeaderEl = styled.div`
   z-index: 99999;
   background-color: #fff;
   border-bottom: 1px solid #e5e5ec;
-  @media screen and (max-width: 480px) {
-    padding: 0 4%;
-  }
   .container {
     position: relative;
     justify-content: space-between;

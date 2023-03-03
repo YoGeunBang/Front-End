@@ -13,7 +13,8 @@ export const TemplateEl = styled.div`
     }
   }
   .container {
-    padding: 6.25vh 12.5%;
+    margin-top: 6.25vh;
+    margin-bottom: 6.25vh;
   }
   .title {
     position: relative;

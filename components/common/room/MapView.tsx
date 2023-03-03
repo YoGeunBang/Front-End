@@ -117,7 +117,6 @@ const MapViewEl = styled.div`
     width: 100%;
     height: 48px;
     border-bottom: 1px solid #e5e5ec;
-    padding: 0 12.5%;
 
     @media screen and (max-width: 480px) {
       padding: 0;

@@ -1,6 +1,6 @@
 /* 관리자 페이지 메인 화면 */
 import type { NextPageWithLayout } from 'pages/_app';
-import { AppLayout } from 'components/layout';
+import { AppLayout, AdminLayout } from 'components/layout';
 import { ReactElement } from 'react';
 import * as S from 'styles/admin/index.style'
 
@@ -10,7 +10,11 @@ const Page: NextPageWithLayout = () => {
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
-  return <AppLayout>{page}</AppLayout>;
+  return (
+    <AppLayout>
+      <AdminLayout>{page}</AdminLayout>
+    </AppLayout>
+  );
 };
 
 

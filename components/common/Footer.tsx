@@ -34,7 +34,6 @@ const FooterEl = styled.div`
   width: 100%;
   height: 150px;
   background-color: #e9e9ed;
-  padding: 0 12.5%;
   font-size: 1.2rem;
   line-height: 1.5;
   .container {
@@ -79,7 +78,6 @@ const FooterEl = styled.div`
       display: none;
     }
     word-break: keep-all;
-    padding: 0 4%;
   }
 `;
 

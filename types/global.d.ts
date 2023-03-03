@@ -36,3 +36,7 @@ interface regionTypes {
   banner: string;
   detail: detailTypes[];
 }
+
+interface tokenTypes {
+  token: string | undefined;
+}
