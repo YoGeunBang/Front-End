@@ -47,7 +47,7 @@ const Header = () => {
     };
   }, [roomsPage]);
   return (
-    <HeaderEl ref={header}>
+    <HeaderEl ref={header} className="template">
       {showHeader && (
         <div className="container">
           <Link href="/">
@@ -57,7 +57,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {/* {isToken ? <LogOutButton/>: <LogInButton />} */}
+          {isToken ? <LogOutButton/>: <LogInButton />}
           
         </div>
       )}
@@ -81,6 +81,7 @@ const HeaderEl = styled.div`
     justify-content: space-between;
     align-items: center;
     display: flex;
+    width: 100%;
     height: 80px;
     .logo {
       position: relative;

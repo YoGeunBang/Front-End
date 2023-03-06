@@ -3,7 +3,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import { AppLayout } from 'components/layout';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import * as Detail from '../../styles/detail.styled'
+import * as Detail from '../../styles/detail.styled';
 import Data from 'data/data.json';
 
 // json 타입
@@ -20,31 +20,29 @@ const Page: NextPageWithLayout = () => {
     setRegionData(data);
   }, [router.isReady]);
   return (
-    <Detail.TemplateEl className="Template">
+    <Detail.TemplateEl className="template">
       {regionData && (
-        <div className="detail">
-          <div className="container">
-            <div className="detail-name">
-              <img src={regionData?.banner} alt="여행지이미지" />
-              <h1>{regionData?.name}</h1>
-            </div>
-            <div className="detail-main">
-              <h2 className="title">인기있는 관광지에요</h2>
-              <div className="card-wrap">
-                {regionData?.detail?.map((_detail: detailTypes) => {
-                  return (
-                    <Link href={`/${regionData.id}/${_detail?.id}`} key={_detail?.id}>
-                      <a className="card">
-                        <img src={_detail?.image} alt="여행지이미지" />
-                        <div className="card-txt">
-                          <h2 className="card-title">{_detail?.name}</h2>
-                          <p className="card-desc">{_detail?.description}</p>
-                        </div>
-                      </a>
-                    </Link>
-                  );
-                })}
-              </div>
+        <div className="container">
+          <div className="detail-name">
+            <img src={regionData?.banner} alt="여행지이미지" />
+            <h1>{regionData?.name}</h1>
+          </div>
+          <div className="detail-main">
+            <h2 className="title">인기있는 관광지에요</h2>
+            <div className="card-wrap">
+              {regionData?.detail?.map((_detail: detailTypes) => {
+                return (
+                  <Link href={`/${regionData.id}/${_detail?.id}`} key={_detail?.id}>
+                    <a className="card">
+                      <img src={_detail?.image} alt="여행지이미지" />
+                      <div className="card-txt">
+                        <h2 className="card-title">{_detail?.name}</h2>
+                        <p className="card-desc">{_detail?.description}</p>
+                      </div>
+                    </a>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>
@@ -56,6 +54,5 @@ const Page: NextPageWithLayout = () => {
 Page.getLayout = function getLayout(page: ReactElement) {
   return <AppLayout>{page}</AppLayout>;
 };
-
 
 export default Page;

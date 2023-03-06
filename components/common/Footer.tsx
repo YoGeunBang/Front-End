@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Footer = () => {
   return (
     <>
-      <FooterEl>
+      <FooterEl className='template'>
         <div className="container">
           <div className="footer-notice">
             <p style={{ marginBottom: '8px' }}>

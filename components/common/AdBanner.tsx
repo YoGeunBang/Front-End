@@ -7,7 +7,7 @@ const AdBanner = () => {
   // },[]);
   
   return (
-    <AdBannerEl>
+    <AdBannerEl className="template">
       <div className="container">
         <ins
           className="adsbygoogle ad"

@@ -34,6 +34,10 @@ img {
   border: 0;
   vertical-align: middle;
 }
+.template {
+  display: flex;
+  justify-content: center;
+}
 .container {
   position: relative;
   display: block;
