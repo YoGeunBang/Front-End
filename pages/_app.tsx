@@ -7,6 +7,8 @@ import * as gtag from '../lib/gtag';
 import { useRouter } from 'next/router';
 import { wrapper } from 'store';
 import TagManager from 'react-gtm-module';
+import { ThemeProvider } from 'styled-components';
+import theme from 'theme/theme';
 
 import { ReactElement, ReactNode, useEffect } from 'react';
 
@@ -41,7 +43,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   }, []);
   // /GA
   return getLayout(
-    <>
+    <ThemeProvider theme={theme}>
       <Head>
         {/* 네아로 */}
         <script
@@ -68,7 +70,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         }}
       />
       <Component {...pageProps} />
-    </>,
+    </ThemeProvider>,
   );
 }
 
