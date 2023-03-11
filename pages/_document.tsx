@@ -58,6 +58,7 @@ export default class MyDocument extends Document {
           <meta name="naver-site-verification" content="29e8927cdec26b5fcbaf5ab0250ee94a0545ae02" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
+        
         <body>
           <Main />
           <NextScript />
