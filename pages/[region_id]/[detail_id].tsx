@@ -151,7 +151,7 @@ const Page: NextPageWithLayout = ({ roomsData, isCar }: InferGetStaticPropsType<
   return (
     <>
       <Room.RoomListLayout ref={room}>
-        <Room.NavArea>
+        <Room.NavArea className="template">
           <div className="container">
             <div className="gnb">
               <button
@@ -211,8 +211,8 @@ const Page: NextPageWithLayout = ({ roomsData, isCar }: InferGetStaticPropsType<
               </button>
             </div>
           </div>
-        </Room.NavArea>
-        <Room.MainArea>
+          </Room.NavArea>
+        <Room.MainArea className='template'>
           {open ? (
             items &&
             (items.length !== 0 ? (

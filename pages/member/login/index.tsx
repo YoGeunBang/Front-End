@@ -3,13 +3,15 @@ import { AppLayout } from 'components/layout';
 import Link from 'next/link';
 import { ReactElement } from 'react';
 import styled from 'styled-components';
-
+import { useSelector } from 'react-redux';
+import Router from 'next/router';
 import { useEffect } from 'react';
+import { RootState } from 'store';
 
 const Page: NextPageWithLayout = () => {
 
   let naverLogin: any;
-
+  const { token } = useSelector((state: RootState) => state.token);
   const login = () => {
     naverLogin = new window.naver.LoginWithNaverId({
       clientId: process.env.NEXT_PUBLIC_NAVER_CLIENT_ID, // ClientID
@@ -27,7 +29,17 @@ const Page: NextPageWithLayout = () => {
   
 
   useEffect(() => {
-    login();
+    if(!token) {
+      login();
+    }
+    else {
+      Router.push(
+        {
+          pathname: '/',
+        },
+      );
+      alert('이미 로그인 상태 입니다.');
+    }
   }, []);
 
   return (

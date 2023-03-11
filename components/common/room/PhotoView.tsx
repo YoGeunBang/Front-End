@@ -93,7 +93,6 @@ const PhotoViewEl = styled.div`
   width: 100vw;
   height: 100vh;
   z-index: 99999;
-  padding: 0 12.5%;
   background: rgba(17, 17, 17, 0.9);
   .photo-bar {
     position: relative;
@@ -230,13 +229,7 @@ const PhotoViewEl = styled.div`
   }
   @media screen and (max-width: 480px) {
     padding: 0;
-    .photo-bar {
-      padding: 0 4%;
-    }
     .photo-area {
-      h1 {
-        padding: 0 4%;
-      }
       .nav-swiper {
         display: none;
       }

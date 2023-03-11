@@ -3,16 +3,13 @@ import styled from 'styled-components';
 export const NavArea = styled.nav`
   position: fixed;
   top: 80px;
-  display: block;
   z-index: 99999;
-  width: 100%;
   height: 48px;
   background-color: #fff;
   border-bottom: 1px solid #e5e5ec;
-  @media screen and (max-width: 480px) {
-    padding: 0 4%;
-  }
+  width: 100%;
   .container {
+    width: 100%;
     height: 100%;
   }
   .gnb {
@@ -177,10 +174,9 @@ export const MainArea = styled.div`
   }
 
   @media screen and (max-width: 1024px) {
-    padding-top: 96px;
+      padding-top: 96px;
   }
   @media screen and (max-width: 480px) {
-    padding: 96px 4%;
     .card-wrap {
       grid-template-columns: repeat(1, 1fr) !important;
     }
