@@ -19,7 +19,6 @@ const Page: NextPageWithLayout = () => {
       isPopup: false, // 팝업 형태로 인증 여부
       loginButton: {
         type: 3, // 버튼 크기
-        height: '60', // 버튼 높이
       }, // 로그인 버튼 설정
     });
 
@@ -69,6 +68,16 @@ const LoginEl = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media screen and (max-width: 970px) {
+    .logo > img {
+      width: 190px !important;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo > img {
+      width: 145px !important;
+    }
+  }
   .logo {
     position: relative;
     img {
@@ -81,6 +90,19 @@ const ButtonArea = styled.div`
   position: relative;
   display: block;
   margin-top: 72px;
+  #naverIdLogin_loginButton > img {
+    height: 60px;
+  }
+  @media screen and (max-width: 970px) {
+    #naverIdLogin_loginButton > img {
+      height: 50px !important;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    #naverIdLogin_loginButton > img {
+      height: 45px !important;
+    }
+  }
 `;
 const NaverIdLogin = styled.div``;
 export default Page;
