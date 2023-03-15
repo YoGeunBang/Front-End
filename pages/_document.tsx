@@ -37,7 +37,6 @@ export default class MyDocument extends Document {
             crossOrigin="anonymous"
           ></script>
           
-          <title>요근방ㅣ관광지 근처 숙소를 한 눈에</title>
           <meta
             name="description"
             content="뚜벅이들을 위한 숙소 추천 서비스! 관광지 도보 15분내 숙소를 쉽게 찾아보세요."

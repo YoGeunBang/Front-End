@@ -44,6 +44,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return getLayout(
     <>
       <Head>
+      <title>요근방ㅣ관광지 근처 숙소를 한 눈에</title>
         {/* 네아로 */}
         <script
           type="text/javascript"
