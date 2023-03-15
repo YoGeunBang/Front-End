@@ -41,6 +41,7 @@ img {
 .container {
   position: relative;
   display: block;
+  width: 100%;
   max-width: 1280px;
   margin: 0 12.5%;
 }
