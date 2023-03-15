@@ -1,10 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { LogInButton,LogOutButton } from 'components/common';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
+
 
 const Header = () => {
   const router = useRouter();
@@ -15,7 +16,6 @@ const Header = () => {
   const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
   const [showHeader, setShowHeader] = useState<boolean>(true);
-
   const isScroll = () => {
     if (window.pageYOffset >= 80) {
       setShowHeader(false);
@@ -31,12 +31,6 @@ const Header = () => {
     } else setRoomsPage(false);
   });
 
-  useEffect(() => {
-    console.log(token);
-    if(token) {
-      console.log(token);
-    }
-  }, [token]);
 
   useEffect(() => {
     if (roomsPage) {
@@ -81,7 +75,6 @@ const HeaderEl = styled.div`
     justify-content: space-between;
     align-items: center;
     display: flex;
-    width: 100%;
     height: 80px;
     .logo {
       position: relative;

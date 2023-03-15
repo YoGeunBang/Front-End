@@ -36,9 +36,6 @@ const FooterEl = styled.div`
   background-color: #e9e9ed;
   font-size: 1.2rem;
   line-height: 1.5;
-  .container {
-    width: 100%;
-  }
   color: #767676;
   .footer-notice {
     margin-bottom: 25px;
