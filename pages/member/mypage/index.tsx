@@ -20,7 +20,6 @@ const Page: NextPageWithLayout = () => {
         <MyProfileSection>
           <div className="row-1">
             <span className='col-1'>내 프로필</span>
-            <span className='col-2'>서비스에서 사용하는 내 계정 정보를 확인할 수 있습니다.</span>
           </div>
           <div className="row-2">
             <span className='col-1'>이름</span>
@@ -79,14 +78,15 @@ const UserProfileImgArea = styled.div`
   button {
     position: absolute;
     display: block;
-    bottom: -12px;
-    right: -3px;
+    bottom: 0;
+    right: -16px;
     border-radius: 50%;
     border: none;
-    background-color: #767676;
-    width: 35px;
-    height: 35px;
+    background-color: #9E9E9E;
+    width: 40px;
+    height: 40px;
     padding: 0;
+    border: #fff solid 2px;
     svg {
       color: white;
     }
@@ -104,8 +104,11 @@ const MyProfileSection = styled.section`
     display: flex;
     align-items: center;
     height: 72px;
+    white-space: nowrap;
+    padding: 0 3.75%;
     .col-1 {
       color:#424242;
+      width: 15%;
     }
     .col-2 {
       color: #616161;
@@ -117,11 +120,10 @@ const MyProfileSection = styled.section`
         font-size: 2.4rem;
         color: #212121;
       }
-      .col-2 {
-        font-size: 1.8rem;
-        color: #757575;
-      }
     }
+  }
+
+  @media screen and (max-width: 970px) {
   }
 `;
 
