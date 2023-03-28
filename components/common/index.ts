@@ -5,3 +5,4 @@ export { default as LogInButton } from './LogInButton';
 export { default as LogOutButton } from './LogOutButton';
 export { default as Footer } from './Footer';
 export { default as AdBanner } from './AdBanner';
+export { default as AdminSideMenu } from './admin/SideMenu';
