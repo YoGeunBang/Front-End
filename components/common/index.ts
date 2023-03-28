@@ -6,4 +6,4 @@ export { default as LogOutButton } from './LogOutButton';
 export { default as Footer } from './Footer';
 export { default as AdBanner } from './AdBanner';
 export { default as AdminSideMenu } from './admin/SideMenu';
-export { default as Session } from './session';
+export { default as Session } from './Session';
