@@ -1,5 +1,4 @@
 import type { NextPageWithLayout } from 'pages/_app';
-import { AppLayout } from 'components/layout';
 import { ReactElement, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
@@ -24,7 +23,12 @@ const Page: NextPageWithLayout = () => {
         accessToken: _token,
       })
       .then((res) => {
-        dispatch(saveTokenAction({ token: res.data.accessToken }));
+        const session_token = {
+          key : res.data.accessToken,
+          expire : Date.now() + 86400
+        }
+        const sessionTokenString = JSON.stringify(session_token);
+        dispatch(saveTokenAction({ token: sessionTokenString }));
       });
   };
   const getToken = () => {
