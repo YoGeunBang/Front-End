@@ -1,5 +1,17 @@
 import styled from 'styled-components';
 
+export const RoomListLayout = styled.div`
+  margin-top: 80px;
+  &.scroll {
+    nav {
+      top: 0;
+    }
+    .section-nav {
+      top: 48px !important;
+    }
+  }
+`;
+
 export const NavArea = styled.nav`
   position: fixed;
   top: 80px;
@@ -9,7 +21,6 @@ export const NavArea = styled.nav`
   border-bottom: 1px solid #e5e5ec;
   width: 100%;
   .container {
-    width: 100%;
     height: 100%;
   }
   .gnb {
@@ -182,16 +193,5 @@ export const MainArea = styled.div`
     }
   }
   @media screen and (max-width: 390px) {
-  }
-`;
-export const RoomListLayout = styled.div`
-  margin-top: 80px;
-  &.scroll {
-    nav {
-      top: 0;
-    }
-    .section-nav {
-      top: 48px !important;
-    }
   }
 `;

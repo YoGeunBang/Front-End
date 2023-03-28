@@ -9,13 +9,18 @@ import axios from 'axios';
 import { RootState } from 'store';
 
 const Page: NextPageWithLayout = () => {
-  
   const { token } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
-  const BACKEND_URL = 'https://ygb.server.swygbro.com/members';
+  
+  // develop 환경에서는 프록시 서버를 통한 테스트 cors 에러 처리
+  const BACKEND_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members'
+      : 'https://ygb.server.swygbro.com/members';
+
   const postToken = (_token: any) => {
     axios
-      .post(`https://cors-anywhere.herokuapp.com/${BACKEND_URL}`, {
+      .post(BACKEND_URL, {
         accessToken: _token,
       })
       .then((res) => {
@@ -33,16 +38,14 @@ const Page: NextPageWithLayout = () => {
     history.replaceState({}, '', location.pathname);
     getToken();
   }, []);
-  
-  useEffect(()=> {
-    if(token) {
-      Router.push(
-        {
-          pathname: '/',
-        },
-      );
+
+  useEffect(() => {
+    if (token) {
+      Router.push({
+        pathname: '/',
+      });
     }
-  },[token])
+  }, [token]);
 
   return (
     <Container>
@@ -79,10 +82,10 @@ const ContentBox = styled.div`
     overflow: hidden;
     @keyframes Move {
       0% {
-        transform:translateX(0);
+        transform: translateX(0);
       }
       100% {
-        transform:translateX(700%);
+        transform: translateX(700%);
       }
     }
     &::before {
