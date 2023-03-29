@@ -55,10 +55,9 @@ const Button = styled.button`
   }
 
   &[aria-current] {
-    border: 1px solid #212121;
-    color:#212121;
+    border: 1px solid #00c2d6;
+    color:#00c2d6;
     border-radius: 4px;
-    font-weight: bold;
     cursor: revert;
     transform: revert;
   }
