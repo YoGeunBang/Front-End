@@ -1,7 +1,26 @@
+import { useState } from 'react';
 import Data from 'data/mock.json';
 import styled from 'styled-components';
+import Pagination from './Pagination';
 const DataBox = () => {
   const mock = Data.region[0].detail[0].items;
+  const [limit, setLimit] = useState(10);
+  const [page, setPage] = useState(1);
+  const offset = (page - 1) * limit;
+  const data_list = mock.map((item: RoomTypes) => {
+    return (
+      <div>
+        <span>{item.name}</span>
+        <span>
+          {item.type == 1 && '호텔'}
+          {item.type == 2 && '펜션'}
+          {item.type == 3 && '모텔'}
+          {item.type == 4 && '게스트하우스'}
+        </span>
+        <span>{item.update}</span>
+      </div>
+    );
+  });
   return (
     <>
       <SettingBox>
@@ -19,9 +38,13 @@ const DataBox = () => {
           <button>삭제</button>
         </ControlBox>
       </SettingBox>
-      <DataList>
-        
-      </DataList>
+      <DataList>{data_list.slice(offset, offset + limit)}</DataList>
+      <Pagination
+          total={data_list.length}
+          limit={limit}
+          page={page}
+          setPage={setPage}
+        />
     </>
   );
 };
@@ -71,8 +94,8 @@ const ControlBox = styled.div`
   }
 `;
 const DataList = styled.div`
-position: relative;
-padding-top: 64px;
-padding-left: 108px;
+  position: relative;
+  padding-top: 64px;
+  padding-left: 7.5%;
 `;
 export default DataBox;

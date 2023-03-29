@@ -10,14 +10,15 @@ interface RoomTypes {
   name: string;
   time: number;
   price: number;
-  lat?: number;
-  lng?: number;
-  address?: string;
   type: number;
   url: string;
   image: string[];
   checkin: number;
   checkout: number;
+  lat?: number;
+  lng?: number;
+  address?: string;
+  update?: string;
 }
 
 interface detailTypes {
