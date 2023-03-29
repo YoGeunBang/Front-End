@@ -16,7 +16,7 @@ const Pagination = ({ total, limit, page, setPage }: paginationPropsType) => {
         {i + 1}
       </Button>
     ));
-    
+
   return (
     <Nav>
       <Button onClick={() => setPage(page - 1)} disabled={page === 1}>

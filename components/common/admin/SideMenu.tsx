@@ -70,6 +70,7 @@ const MenuWrapper = styled.nav`
   position: absolute;
   width: 300px;
   font-size: 2rem;
+  z-index: 99;
   color: #212121;
   li {
     font-weight: 900;
