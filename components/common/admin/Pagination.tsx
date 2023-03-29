@@ -22,7 +22,7 @@ const Pagination = ({ total, limit, page, setPage }: paginationPropsType) => {
       <Button onClick={() => setPage(page - 1)} disabled={page === 1}>
         &lt;
       </Button>
-      {pagination_JSX.slice((Math.ceil(page/5) -1)*5, ((Math.ceil(page/5) -1)*5) + 5)}
+      {pagination_JSX.slice((Math.ceil(page / 5) - 1) * 5, (Math.ceil(page / 5) - 1) * 5 + 5)}
       <Button onClick={() => setPage(page + 1)} disabled={page === totalPages}>
         &gt;
       </Button>
@@ -34,33 +34,30 @@ const Nav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 4px;
-  margin: 16px;
+  margin-top: 56px;
+  gap: 10px;
 `;
 
 const Button = styled.button`
   border: none;
-  border-radius: 8px;
-  padding: 8px;
-  margin: 0;
-  background: black;
-  color: white;
-  font-size: 1rem;
-
+  color: #bdbdbd;
+  padding: 0;
+  font-size: 1.2rem;
+  background-color: transparent;
+  width: 18px;
+  height: 18px;
   &:hover {
-    background: tomato;
-    cursor: pointer;
-    transform: translateY(-2px);
   }
 
   &[disabled] {
-    background: grey;
     cursor: revert;
     transform: revert;
   }
 
   &[aria-current] {
-    background: deeppink;
+    border: 1px solid #212121;
+    color:#212121;
+    border-radius: 4px;
     font-weight: bold;
     cursor: revert;
     transform: revert;
