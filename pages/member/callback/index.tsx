@@ -1,5 +1,4 @@
 import type { NextPageWithLayout } from 'pages/_app';
-import { AppLayout } from 'components/layout';
 import { ReactElement, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
@@ -11,7 +10,7 @@ import { RootState } from 'store';
 const Page: NextPageWithLayout = () => {
   const { token } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
-  
+
   // develop 환경에서는 프록시 서버를 통한 테스트 cors 에러 처리
   const BACKEND_URL =
     process.env.NODE_ENV === 'development'
@@ -24,7 +23,15 @@ const Page: NextPageWithLayout = () => {
         accessToken: _token,
       })
       .then((res) => {
-        dispatch(saveTokenAction({ token: res.data.accessToken }));
+        const session_token = {
+          key: res.data.accessToken,
+          expire: Date.now() + 86400000,
+        };
+        const sessionTokenString = JSON.stringify(session_token);
+        dispatch(saveTokenAction({ token: sessionTokenString }));
+      })
+      .catch((res) => {
+        console.log(res);
       });
   };
   const getToken = () => {
@@ -32,6 +39,7 @@ const Page: NextPageWithLayout = () => {
     if (hash) {
       const token = hash.split('=')[1].split('&')[0]; // token값 확인
       postToken(token);
+      console.log(token);
     }
   };
   useEffect(() => {

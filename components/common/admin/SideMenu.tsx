@@ -67,9 +67,9 @@ Page.getLayout = function getLayout(page: ReactElement) {
 };
 
 const MenuWrapper = styled.nav`
-
-  width: 300px;
-  font-size: 20px;
+  position: fixed;
+  font-size: 2rem;
+  z-index: 99;
   color: #212121;
   li {
     font-weight: 900;
@@ -78,7 +78,7 @@ const MenuWrapper = styled.nav`
     padding-left: 60px;
     ul {
       li {
-        font-size: 18px;
+        font-size: 1.8rem;
         font-weight: 500;
         padding-left: 0px;
         color: #9e9e9e;

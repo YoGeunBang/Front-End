@@ -11,6 +11,5 @@ const AdminLayout = (props: { children: React.ReactNode }) => {
 
 const Wrapper = styled.div` 
     padding-top:160px;
-    display:flex;
 `
 export default AdminLayout;

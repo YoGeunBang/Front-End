@@ -1,10 +1,19 @@
 import type { NextPageWithLayout } from 'pages/_app';
 import { AppLayout, AdminLayout } from 'components/layout';
+import { DataBox } from 'components/common/admin'
 import { ReactElement } from 'react';
+import styled from 'styled-components';
 import * as S from 'styles/admin/index.style';
 
 const Page: NextPageWithLayout = () => {
-  return <S.Wrapper>숙소 크롤링 데이터 목록 입니다.</S.Wrapper>;
+  return (
+    <S.Wrapper>
+      <div className="container">
+        <Title>크롤링 데이터</Title>
+        <DataBox />
+      </div>
+    </S.Wrapper>
+  );
 };
 
 Page.getLayout = function getLayout(page: ReactElement) {
@@ -14,5 +23,9 @@ Page.getLayout = function getLayout(page: ReactElement) {
     </AppLayout>
   );
 };
+const Title = styled.h2`
+  font-size: 2.8rem;
+  font-weight: bold;
+`;
 
 export default Page;
