@@ -17,6 +17,18 @@ const colors = {
   mainColor: '#00C2D6',
   naverGreen: '#03C75A',
   textColor: '#212121',
+  blackColors: {
+    grey_900: '#212121',
+    grey_800: '#424242',
+    grey_700: '#616161',
+    grey_600: '#757575',
+    grey_500: '#9e9e9e',
+    grey_400: '#bdbdbd',
+    grey_300: '#e0e0e0',
+    grey_200: '#eeeeee',
+    grey_100: '#f5f5f5',
+    grey_50: '#fafafa',
+  },
 };
 
 export type ColorsTypes = typeof colors;
