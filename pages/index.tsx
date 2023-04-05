@@ -5,7 +5,7 @@ import Data from 'data/data.json';
 import Link from 'next/link';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiFillLock } from 'react-icons/ai';
-import * as Main from '../styles/index.styled'
+import * as Main from '../styles/index.style'
 import axios from 'axios';
 
 const Page: NextPageWithLayout = () => {
