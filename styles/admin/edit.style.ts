@@ -142,6 +142,7 @@ export const AmenitiesCheckBoxGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 16px;
+  
   @media (max-width: 720px) {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
@@ -153,6 +154,9 @@ export const AmenitiesCheckBox = styled.div`
     display: none;
   }
   label {
+    &:hover {
+      cursor: pointer;
+    }
     height: 220px;
     display: flex;
     align-items: center;

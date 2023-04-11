@@ -1,9 +1,75 @@
 import type { NextPageWithLayout } from 'pages/_app';
 import { AppLayout, AdminLayout } from 'components/layout';
-import { ReactElement } from 'react';
+import { ReactElement, useState, useEffect } from 'react';
 import * as Index from 'styles/admin/index.style';
 import * as Edit from 'styles/admin/edit.style';
+
+interface amenitiesDataType {
+  name: string;
+  value: string;
+  notCheckedImgSrc?: string;
+  checkedImgSrc?: string;
+}
+
 const Page: NextPageWithLayout = () => {
+  const [amenitiyCheckList, setAmenitiyCheckList] = useState<boolean[]>([]); /* 편의 시설 존재 여부 리스트*/
+
+  const amenitiyDataList: amenitiesDataType[] = [
+    {
+      name: '조식',
+      value: 'breakfast',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/breakfast.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/breakfast_checked.svg',
+    },
+    {
+      name: '이벤트',
+      value: 'event',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/event.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/event_checked.svg',
+    },
+    {
+      name: '라운지/바',
+      value: 'lounge_bar',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/lounge_bar.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/lounge_bar_checked.svg',
+    },
+    {
+      name: '조리가능',
+      value: 'cookable',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/cookable.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/cookable_checked.svg',
+    },
+    {
+      name: '세탁',
+      value: 'laundry',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/laundry.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/laundry_checked.svg',
+    },
+    {
+      name: '피트니스',
+      value: 'fitness',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/fitness.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/fitness_checked.svg',
+    },
+    {
+      name: '수영장',
+      value: 'swimming_pool',
+      notCheckedImgSrc: '/assets/img/admin/room_edit_svg/swimming_pool.svg',
+      checkedImgSrc: '/assets/img/admin/room_edit_svg/swimming_pool_checked.svg',
+    },
+    { name: '기타', value: 'etc' },
+  ];
+
+  const amenityIsCheck = (idx: number) => {
+    let _amenitiyCheckList = [...amenitiyCheckList];
+    _amenitiyCheckList[idx] = !_amenitiyCheckList[idx];
+    setAmenitiyCheckList(_amenitiyCheckList);
+  };
+
+  useEffect(() => {
+    setAmenitiyCheckList(new Array(8).fill(false));
+  }, []);
+
   return (
     <Index.Wrapper>
       <div className="container">
@@ -127,75 +193,28 @@ const Page: NextPageWithLayout = () => {
             <Edit.InputItem>
               <label className="input-title">편의</label>
               <Edit.AmenitiesCheckBoxGrid>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="breakfast" id="breakfast" />
-                  <label htmlFor="breakfast">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/breakfast.svg`} alt="조식 픽토그램" />
-                    </div>
-                    <p>조식</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="event" id="event" />
-                  <label htmlFor="event">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/event.svg`} alt="이벤트 픽토그램" />
-                    </div>
-                    <p>이벤트</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="lounge_bar" id="lounge_bar" />
-                  <label htmlFor="lounge_bar">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/lounge_bar.svg`} alt="라운지/바 픽토그램" />
-                    </div>
-                    <p>라운지/바</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="cookable" id="cookable" />
-                  <label htmlFor="cookable">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/cookable.svg`} alt="조리가능 픽토그램" />
-                    </div>
-                    <p>조리가능</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="laundry" id="laundry" />
-                  <label htmlFor="laundry">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/laundry.svg`} alt="세탁 픽토그램" />
-                    </div>
-                    <p>세탁</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="fitness" id="fitness" />
-                  <label htmlFor="fitness">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/fitness.svg`} alt="피트니스 픽토그램" />
-                    </div>
-                    <p>피트니스</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="swimming_pool" id="swimming_pool" />
-                  <label htmlFor="swimming_pool">
-                    <div>
-                      <img src={`/assets/img/admin/room_edit_svg/swimming_pool.svg`} alt="수영장 픽토그램" />
-                    </div>
-                    <p>수영장</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
-                <Edit.AmenitiesCheckBox>
-                  <input type="checkbox" name="amenities" value="etc" id="etc" />
-                  <label htmlFor="etc">
-                    <p>추가(기타)</p>
-                  </label>
-                </Edit.AmenitiesCheckBox>
+                {amenitiyDataList.map((amenity:amenitiesDataType,idx:number)=>{return (
+                  <Edit.AmenitiesCheckBox>
+                    <input
+                      type="checkbox"
+                      name="amenities"
+                      value={amenity.value}
+                      id={amenity.value}
+                      onChange={()=>{amenityIsCheck(idx)}}
+                    />
+                    <label htmlFor={amenity.value}>
+                      {amenity.checkedImgSrc && (
+                        <div>
+                          <img
+                            src={amenitiyCheckList[idx] ? amenity.checkedImgSrc : amenity.notCheckedImgSrc}
+                            alt={`${amenity.name} 픽토그램`}
+                          />
+                        </div>
+                      )}
+                      <p>{amenity.name}</p>
+                    </label>
+                  </Edit.AmenitiesCheckBox>
+                );})}
               </Edit.AmenitiesCheckBoxGrid>
             </Edit.InputItem>
           </Edit.InputRow>
