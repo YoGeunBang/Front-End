@@ -11,7 +11,7 @@ import axios from 'axios';
 import Router from 'next/router';
 
 const Page: NextPageWithLayout = () => {
-  const { token,nickname,profile_img } = useSelector((state: RootState) => state.token);
+  const { token, nickname, profile_img } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
   // 서비스 토큰으로 변경될 예정
   const BACKEND_URL =
@@ -30,8 +30,8 @@ const Page: NextPageWithLayout = () => {
         Router.push({
           pathname: '/',
         });
-      } catch(err) {
-        console.log(err);
+      } catch (res) {
+        console.log(res);
       }
     }
   };
@@ -47,7 +47,7 @@ const Page: NextPageWithLayout = () => {
                 <img src="/assets/img/edit.svg" alt="프로필이미지수정버튼" />
               </button>
             </UserProfileImgArea>
-            <span>{nickname}</span>
+            <span>닉네임</span>
           </UserProfileArea>
           <MyProfileSection>
             <div className="row-1">
@@ -96,6 +96,9 @@ const UserProfileArea = styled.div`
   align-items: center;
   flex-direction: column;
   padding: 80px 0;
+  @media screen and (max-width: 970px) {
+    padding: 56px 0 36px;
+  }
   span {
     position: relative;
     margin-top: 30px;
@@ -137,6 +140,7 @@ const MyProfileSection = styled.section`
   font-weight: 500;
   font-size: 2rem;
   margin-bottom: 80px;
+  
   > * {
     position: relative;
     display: flex;
@@ -169,8 +173,6 @@ const MyProfileSection = styled.section`
     span {
       font-size: 2rem;
     }
-  }
-  @media screen and (max-width: 970px) {
   }
 `;
 
