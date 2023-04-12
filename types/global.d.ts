@@ -38,6 +38,8 @@ interface regionTypes {
   detail: detailTypes[];
 }
 
-interface tokenTypes {
+interface userType {
   token: string | undefined;
+  nickname: string | undefined;
+  profile_img: string | undefined;
 }

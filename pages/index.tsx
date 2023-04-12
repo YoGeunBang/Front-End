@@ -14,9 +14,8 @@ const Page: NextPageWithLayout = () => {
   //   process.env.NODE_ENV === 'development'
   //     ? 'https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/regions/0/spots'
   //     : 'https://ygb.server.swygbro.com/regions/0/spots';
-  // axios.get(BACKEND_URL).then((res)=> {
-  //   console.log(res);
-  // })
+  
+  
   const region_JSX = region_list.map((_region, i) =>
     _region.open ? (
       <Link href={`/${_region.id}`} key={i}>

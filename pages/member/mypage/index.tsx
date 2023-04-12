@@ -5,36 +5,36 @@ import styled from 'styled-components';
 import { TemplateEl } from 'styles/detail.styled';
 import { LogOutButton } from 'components/common';
 import { deleteTokenAction } from 'store/token';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
 import axios from 'axios';
 import Router from 'next/router';
 
 const Page: NextPageWithLayout = () => {
-  const { token } = useSelector((state: RootState) => state.token);
+  const { token,nickname,profile_img } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
   // 서비스 토큰으로 변경될 예정
-  const TOKEN_KEY = JSON.parse(token).key;
   const BACKEND_URL =
     process.env.NODE_ENV === 'development'
-      ? `https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members/${TOKEN_KEY}`
-      : `https://ygb.server.swygbro.com/members/${TOKEN_KEY}`;
-  
-  const deleteMember = () => {
+      ? `https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members/`
+      : `https://ygb.server.swygbro.com/members/`;
+
+  const deleteMember = async () => {
     let isDelete = confirm('정말로 탈퇴하시겠습니까?');
-    // if(isDelete) {
-    //   axios.delete(BACKEND_URL).then((res)=> {
-    //     dispatch(deleteTokenAction());
-    //     Router.push(
-    //       {
-    //         pathname: '/',
-    //       },
-    //     );
-    //   }).catch((res)=> {
-    //     console.log(res);
-    //   })
-    // }
-  }
+    if (isDelete && token) {
+      try {
+        const delete_res = await axios.delete(BACKEND_URL, {
+          headers: { Authorization: JSON.parse(token).key },
+        });
+        dispatch(deleteTokenAction());
+        Router.push({
+          pathname: '/',
+        });
+      } catch(err) {
+        console.log(err);
+      }
+    }
+  };
 
   return (
     <>
@@ -42,12 +42,12 @@ const Page: NextPageWithLayout = () => {
         <div className="container">
           <UserProfileArea>
             <UserProfileImgArea>
-              <img src="/assets/img/profile_default.svg" alt="프로필이미지"></img>
+              <img src={profile_img ? profile_img : '/assets/img/profile_default.svg'} alt="프로필이미지"></img>
               <button>
                 <img src="/assets/img/edit.svg" alt="프로필이미지수정버튼" />
               </button>
             </UserProfileImgArea>
-            <span>닉네임</span>
+            <span>{nickname}</span>
           </UserProfileArea>
           <MyProfileSection>
             <div className="row-1">
@@ -59,7 +59,7 @@ const Page: NextPageWithLayout = () => {
             </div>
             <div className="row-3">
               <span className="col-1">별명</span>
-              <span className="col-2">침착맨</span>
+              <span className="col-2">{nickname}</span>
             </div>
           </MyProfileSection>
           <MyProfileSection>
@@ -67,8 +67,10 @@ const Page: NextPageWithLayout = () => {
               <span className="col-1">계정 관리</span>
             </div>
             <div className="row-2">
-              <span className="col-1" >
-                <button onClick={deleteMember} style={{ textDecorationLine: 'underline' }}>회원 탈퇴</button>
+              <span className="col-1">
+                <button onClick={deleteMember} style={{ textDecorationLine: 'underline' }}>
+                  회원 탈퇴
+                </button>
               </span>
             </div>
             <div className="row-3">
@@ -163,7 +165,7 @@ const MyProfileSection = styled.section`
     background-color: transparent;
     font-size: 2rem;
     padding: 0;
-    color:#616161;
+    color: #616161;
     span {
       font-size: 2rem;
     }

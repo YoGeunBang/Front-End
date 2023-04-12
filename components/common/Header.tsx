@@ -2,16 +2,15 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { LogInButton,LogOutButton } from 'components/common';
+import { LogInButton, LogOutButton } from 'components/common';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
-
 
 const Header = () => {
   const router = useRouter();
   const { token } = useSelector((state: RootState) => state.token);
-  const [ isToken, setIsToken ] = useState('');
-  
+  const [isToken, setIsToken] = useState('');
+
   // header Dom class 제어를 위한 ref 선언
   const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
@@ -30,7 +29,6 @@ const Header = () => {
       setRoomsPage(true);
     } else setRoomsPage(false);
   });
-
 
   useEffect(() => {
     if (roomsPage) {
@@ -51,8 +49,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {isToken ? <LogOutButton/>: <LogInButton />}
-          
+          {isToken ? <LogOutButton /> : <LogInButton />}
         </div>
       )}
     </HeaderEl>
