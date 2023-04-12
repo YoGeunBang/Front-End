@@ -54,11 +54,7 @@ const Page: NextPageWithLayout = () => {
               <span className="col-1">내 프로필</span>
             </div>
             <div className="row-2">
-              <span className="col-1">이름</span>
-              <span className="col-2">이병건</span>
-            </div>
-            <div className="row-3">
-              <span className="col-1">별명</span>
+            <span className="col-1">별명</span>
               <span className="col-2">{nickname}</span>
             </div>
           </MyProfileSection>
