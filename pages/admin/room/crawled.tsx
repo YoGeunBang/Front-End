@@ -23,9 +23,13 @@ Page.getLayout = function getLayout(page: ReactElement) {
     </AppLayout>
   );
 };
+
 const Title = styled.h2`
   font-size: 2.8rem;
   font-weight: bold;
+  @media screen and (max-width: 1024px) {
+    margin-left: 7.5%;
+  }
 `;
 
 export default Page;

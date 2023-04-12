@@ -9,20 +9,16 @@ import { RootState } from 'store';
 const LogOutButton = () => {
   const dispatch = useDispatch();
   const { token } = useSelector((state: RootState) => state.token);
-
-  useEffect(()=> {
-    if(!token) {
-      alert('로그아웃되었습니다.');
-      Router.push(
-        {
-          pathname: '/',
-        },
-      );
-    }
-  },[token])
+  const onClick = () => {
+    dispatch(deleteTokenAction());
+    alert('로그아웃되었습니다.');
+    Router.push({
+      pathname: '/',
+    });
+  };
 
   return (
-    <LogOutButtonEl onClick={() => dispatch(deleteTokenAction())}>
+    <LogOutButtonEl onClick={onClick}>
       <span>로그아웃</span>
     </LogOutButtonEl>
   );

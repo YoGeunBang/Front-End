@@ -10,41 +10,43 @@ import { RootState } from 'store';
 const Page: NextPageWithLayout = () => {
   const { token } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
-
   // develop 환경에서는 프록시 서버를 통한 테스트 cors 에러 처리
   const BACKEND_URL =
     process.env.NODE_ENV === 'development'
       ? 'https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members'
       : 'https://ygb.server.swygbro.com/members';
 
-  const postToken = (_token: any) => {
-    axios
-      .post(BACKEND_URL, {
-        accessToken: _token,
-      })
-      .then((res) => {
-        const session_token = {
-          key: res.data.accessToken,
-          expire: Date.now() + 86400000,
-        };
-        const sessionTokenString = JSON.stringify(session_token);
-        dispatch(saveTokenAction({ token: sessionTokenString }));
-      })
-      .catch((res) => {
-        console.log(res);
-      });
-  };
-  const getToken = () => {
+  const saveUserInfo = async () => {
     const hash = Router.asPath.split('#')[1]; // 네이버 로그인을 통해 전달받은 hash 값
     if (hash) {
-      const token = hash.split('=')[1].split('&')[0]; // token값 확인
-      postToken(token);
-      console.log(token);
+      try {
+        const hash_token = hash.split('=')[1].split('&')[0]; // token값 확인
+        const postToken_res = await axios.post(BACKEND_URL, {
+          accessToken: hash_token,
+        });
+        const sessionToken = JSON.stringify({
+          key: postToken_res.data.accessToken,
+          expire: Date.now() + 86400000,
+        });
+        const getUserInfo_res = await axios.get(BACKEND_URL, {
+          headers: { Authorization: postToken_res.data.accessToken },
+        });
+        dispatch(
+          saveTokenAction({
+            token: sessionToken,
+            nickname: getUserInfo_res.data.nickname,
+            profile_img: getUserInfo_res.data.profileImage,
+          }),
+        );
+      } catch (err) {
+        console.log(err);
+      }
     }
   };
+
   useEffect(() => {
     history.replaceState({}, '', location.pathname);
-    getToken();
+    saveUserInfo();
   }, []);
 
   useEffect(() => {

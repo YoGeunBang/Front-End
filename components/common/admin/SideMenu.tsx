@@ -67,15 +67,18 @@ Page.getLayout = function getLayout(page: ReactElement) {
 };
 
 const MenuWrapper = styled.nav`
-  position: fixed;
+  position: absolute;
+  left: 3%;
   font-size: 2rem;
   z-index: 99;
   color: #212121;
   li {
-    font-weight: 900;
+    font-weight: 800;
     height: 80px;
     line-height: 80px;
-    padding-left: 60px;
+    a {
+      white-space: nowrap;
+    }
     ul {
       li {
         font-size: 1.8rem;

@@ -29,7 +29,7 @@ const DataBox = () => {
           {item.type == 3 && '모텔'}
           {item.type == 4 && '게스트하우스'}
         </span>
-        <span className="item-update">{item.update}</span>
+        <span id="item-update">{item.update}</span>
       </Item>
     );
   });
@@ -76,7 +76,6 @@ const DataBox = () => {
             <option value="1">호텔</option>
             <option value="2">펜션</option>
             <option value="3">모텔</option>
-            <option value="3">게스트하우스</option>
           </select>
           <img src="/assets/img/admin/dropdown.svg" />
         </FillterBox>
@@ -98,7 +97,7 @@ const DataBox = () => {
           <label htmlFor="check-head"></label>
           <span id="item-name">숙소 이름</span>
           <span id="item-type">숙소 타입</span>
-          <span className="item-update">업데이트 날짜</span>
+          <span id="item-update">업데이트 날짜</span>
         </Item>
         {dataListSlice_JSX}
       </DataList>
@@ -108,6 +107,9 @@ const DataBox = () => {
 };
 const SettingBox = styled.div`
   position: relative;
+  @media screen and (max-width: 1024px) {
+    margin-left: 7.5%;
+  }
 `;
 const FillterBox = styled.div`
   position: relative;
@@ -163,7 +165,7 @@ const Item = styled.div`
   height: 56px;
   align-items: center;
   font-size: 1.8rem;
-  font-weight: 500;
+  font-weight: 400;
   color: #616161;
   input[type='checkbox'] {
     display: none;
@@ -176,6 +178,10 @@ const Item = styled.div`
     margin-left: 2.5%;
     margin-right: 3.75%;
     position: relative;
+    border-radius: 4px;
+  }
+  input[id='check-head'] + label {
+    border-color: #212121;
   }
   input[type='checkbox']:checked + label::after {
     content: '✔';
@@ -197,12 +203,13 @@ const Item = styled.div`
   #item-name {
     position: relative;
     display: block;
-    width: 22.5%;
+    width: 45%;
   }
   #item-type {
-    width: 37.5%;
+    width: 25%;
   }
   #item-update {
+    white-space: nowrap;
   }
 `;
 export default DataBox;
