@@ -1,20 +1,31 @@
 import type { NextPageWithLayout } from 'pages/_app';
 import { AppLayout, AdminLayout } from 'components/layout';
-import { ReactElement, useState, useEffect } from 'react';
+import { ReactElement, useState, useEffect, ChangeEvent } from 'react';
+import { useInput } from 'hooks';
 import * as Index from 'styles/admin/index.style';
 import * as Edit from 'styles/admin/edit.style';
 
-interface amenitiesDataType {
+/* 추후 input 입력 개선 방법 연습해보기 */
+/* 브라우저 새로고침, 나가기 이벤트 잡아서 '나가시겠습니까? 변경된 내용은 저장되지 않습니다'  알려주기 */
+interface AmenitiesDataType {
   name: string;
   value: string;
   notCheckedImgSrc?: string;
   checkedImgSrc?: string;
 }
+interface RoomDistanceDataType {
+  name: string;
+  value: RoomDistanceType;
+}
+interface RoomTypeDataType {
+  name: string;
+  value: RoomNumberType;
+}
+type RoomNumberType = 1 | 2 | 3 | 4;
+type RoomDistanceType = 'walk_5' | 'walk_10' | 'walk_15';
 
 const Page: NextPageWithLayout = () => {
-  const [amenitiyCheckList, setAmenitiyCheckList] = useState<boolean[]>([]); /* 편의 시설 존재 여부 리스트*/
-
-  const amenitiyDataList: amenitiesDataType[] = [
+  const amenitiyDataList: AmenitiesDataType[] = [
     {
       name: '조식',
       value: 'breakfast',
@@ -59,6 +70,61 @@ const Page: NextPageWithLayout = () => {
     },
     { name: '기타', value: 'etc' },
   ];
+  const roomDistanceDataList: RoomDistanceDataType[] = [
+    { name: '도보 5분 내', value: 'walk_5' },
+    { name: '도보 5~10분 내', value: 'walk_10' },
+    { name: '도보 10~15분 내', value: 'walk_15' },
+  ];
+  const roomTypeDataList: RoomTypeDataType[] = [
+    { name: '호텔', value: 1 },
+    { name: '펜션', value: 2 },
+    { name: '모텔', value: 3 },
+    { name: '게스트하우스', value: 4 },
+  ];
+  const regionDataList: string[] = ['제주도'];
+  const spotDataList: string[] = [
+    '제주국제공항',
+    '성산일출봉',
+    '신양섭지/섭지코지',
+    '중문 관광단지',
+    '이중섭거리/올레시장',
+    '곽지해수욕장',
+    '한담해변',
+    '협재해수욕장',
+    '금능해수욕장',
+    '함덕해수욕장',
+    '월정리해수욕장',
+  ];
+  const [amenitiyCheckList, setAmenitiyCheckList] = useState<boolean[]>([]); /* 편의 시설 존재 여부 리스트*/
+
+  /* 숙소 정보 State , 변수명이 변경될 수 있음. 백엔드랑 맞추기 위해서 */
+  const [roomName, setRoomName, clearRoomName, roomNameHandler] = useInput<string>(''); /* 숙소 이름 */
+  const [roomAddress, setRoomAddress, clearRoomAddress, roomAddressHandler] = useInput<string>(''); /* 숙소 주소 */
+  const [roomLink, setRoomLink, clearRoomLink, roomLinkHandler] = useInput<string>(''); /* 숙소 링크 */
+  const [roomCharge, setRoomCharge, clearRoomCharge, roomChargeHandler] = useInput<string>(''); /* 숙소 최저가 */
+  const [roomExplanation, setRoomExplanation, clearRoomExplation, roomExplationHandler] =
+    useInput<string>(''); /* 숙소 설명*/
+
+  /* 도보거리, 숙소 타입 radio Group State 관리 */
+  const [roomDistance, setRoomDistance] =
+    useState<RoomDistanceType>('walk_5'); /* 숙소 도보 거리 기본 값을 '도보 5분 내'로 설정*/
+  const [roomType, setRoomType] = useState<RoomNumberType>(1); /* 숙소 타입. 기본 값을 '호텔'로 설정*/
+  const [roomCheckInTime, setRoomCheckInTime, clearRoomCheckInTime, roomCheckInTimeHandler] =
+    useInput<string>(''); /* 숙소 체크인 시간 */
+  const [roomCheckOutTime, setRoomCheckOutTime, clearRoomCheckOutTime, roomCheckOutTimeHandler] =
+    useInput<string>(''); /* 숙소 체크아웃 시간 */
+
+  const [roomRegion, setRoomRegion, clearRoomRegion, roomRegionHandler] = useInput<string>('');
+  const [roomSpot, setRoomSpot, clearRoomSpot, roomSpotHandler] = useInput<string>('');
+  const roomTypeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const _value = Number(e.target.value);
+    if (_value === 1 || _value === 2 || _value === 3 || _value === 4) setRoomType(_value);
+  };
+
+  const roomDistanceHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    const _value = e.target.value;
+    if (_value === 'walk_5' || _value === 'walk_10' || _value === 'walk_15') setRoomDistance(_value);
+  };
 
   const amenityIsCheck = (idx: number) => {
     let _amenitiyCheckList = [...amenitiyCheckList];
@@ -66,8 +132,41 @@ const Page: NextPageWithLayout = () => {
     setAmenitiyCheckList(_amenitiyCheckList);
   };
 
+  const roomRegistration = () => {
+    const roomTypeDataObj = { 1: '호텔', 2: '펜션', 3: '모텔', 4: '게스트하우스' };
+    const roomDistanceDataObj = { walk_5: '도보 5분 내', walk_10: '도보 5~10분', walk_15: '도보 10~15분' };
+    const verification =
+      !!roomName &&
+      !!roomAddress &&
+      !!roomLink &&
+      !!roomCharge &&
+      !!roomExplanation &&
+      !!roomCheckInTime &&
+      !!roomCheckOutTime &&
+      !!roomRegion &&
+      !!roomSpot;
+    if (verification)
+      console.log({
+        roomName,
+        roomAddress,
+        roomLink,
+        roomCharge,
+        roomExplanation,
+        roomCheckInTime,
+        roomCheckOutTime,
+        roomRegion,
+        roomSpot,
+        roomType: roomTypeDataObj[roomType],
+        roomDistnace: roomDistanceDataObj[roomDistance],
+      });
+  };
+
   useEffect(() => {
-    setAmenitiyCheckList(new Array(8).fill(false));
+    setRoomRegion('제주도');
+    setRoomSpot('제주국제공항');
+    setRoomCheckInTime('00:00');
+    setRoomCheckOutTime('00:00');
+    setAmenitiyCheckList([false, false, false, false, false, false, false, false]);
   }, []);
 
   return (
@@ -75,53 +174,57 @@ const Page: NextPageWithLayout = () => {
       <div className="container">
         <Index.Title>숙소 등록하기</Index.Title>
         <Edit.FormWrapper>
-          <Edit.InputCol>
-            <Edit.InputRow>
+          <Edit.InputRow rowCount={2}>
+            <Edit.InputCol>
               <Edit.InputItem required>
                 <label className="input-title">숙소 이름</label>
-                <Edit.InputField type="text" />
+                <Edit.InputField type="text" value={roomName} onChange={roomNameHandler} />
               </Edit.InputItem>
               <Edit.InputItem required>
                 <label className="input-title">숙소 타입</label>
                 <div className="radio-group-wrapper">
-                  <div>
-                    <input type="radio" name="room_type" value="hotel" id="hotel" />
-                    <label htmlFor="hotel">호텔</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="room_type" value="rental_cottage" id="rental_cottage" />
-                    <label htmlFor="rental_cottage">펜션</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="room_type" value="motel" id="motel" />
-                    <label htmlFor="motel">모텔</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="room_type" value="guest_house" id="guest_house" />
-                    <label htmlFor="guest_house">게스트하우스</label>
-                  </div>
+                  {roomTypeDataList.map((_roomType: RoomTypeDataType, idx: number) => {
+                    return (
+                      <div key={idx}>
+                        <input
+                          type="radio"
+                          name="room_type"
+                          value={_roomType.value}
+                          id={`${_roomType.name} ${_roomType.value}`}
+                          onChange={roomTypeHandler}
+                          checked={roomType === _roomType.value}
+                        />
+                        <label htmlFor={`${_roomType.name} ${_roomType.value}`}>{_roomType.name}</label>
+                      </div>
+                    );
+                  })}
                 </div>
               </Edit.InputItem>
               <Edit.InputItem required>
                 <label className="input-title">주소</label>
-                <Edit.InputField type="text" placeholder="OO시 OO구 OO로 OO길" />
+                <Edit.InputField
+                  type="text"
+                  placeholder="OO시 OO구 OO로 OO길"
+                  value={roomAddress}
+                  onChange={roomAddressHandler}
+                />
               </Edit.InputItem>
               <Edit.InputItem required>
                 <label className="input-title">숙소 링크</label>
-                <Edit.InputField type="text" placeholder="http:// ~ " />
+                <Edit.InputField type="text" placeholder="http:// ~ " value={roomLink} onChange={roomLinkHandler} />
               </Edit.InputItem>
-              <Edit.InputCol>
+              <Edit.InputRow rowCount={2}>
                 <Edit.InputItem required>
                   <label className="input-title">체크인 시간</label>
-                  <Edit.InputField type="text" />
+                  <Edit.InputField type="time" value={roomCheckInTime} onChange={roomCheckInTimeHandler} />
                 </Edit.InputItem>
                 <Edit.InputItem required>
                   <label className="input-title">체크아웃 시간</label>
-                  <Edit.InputField type="text" />
+                  <Edit.InputField type="time" value={roomCheckOutTime} onChange={roomCheckOutTimeHandler} />
                 </Edit.InputItem>
-              </Edit.InputCol>
-            </Edit.InputRow>
-            <Edit.InputRow>
+              </Edit.InputRow>
+            </Edit.InputCol>
+            <Edit.InputCol>
               <Edit.RoomThumbnailUpload>
                 <input type="file" id="room-thumbnail-upload" />
                 <label htmlFor="room-thumbnail-upload">
@@ -131,48 +234,82 @@ const Page: NextPageWithLayout = () => {
                   </div>
                 </label>
               </Edit.RoomThumbnailUpload>
-            </Edit.InputRow>
-          </Edit.InputCol>
-          <Edit.InputCol>
-            <Edit.InputRow>
+            </Edit.InputCol>
+          </Edit.InputRow>
+          <Edit.InputRow rowCount={2}>
+            <Edit.InputCol>
               <Edit.InputItem required>
                 <label className="input-title">도보 소요시간</label>
                 <div className="radio-group-wrapper">
-                  <div>
-                    <input type="radio" name="walking_time" value="5minute" id="5minute" />
-                    <label htmlFor="5minute">도보 5분 내</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="walking_time" value="10minute" id="10minute" />
-                    <label htmlFor="10minute">도보 5~10분 내</label>
-                  </div>
-                  <div>
-                    <input type="radio" name="walking_time" value="15minute" id="15minute" />
-                    <label htmlFor="15minute">도보 10~15분 내</label>
-                  </div>
+                  {roomDistanceDataList.map((_roomDistance: RoomDistanceDataType, idx: number) => {
+                    return (
+                      <div key={idx}>
+                        <input
+                          type="radio"
+                          name="walking_time"
+                          value={_roomDistance.value}
+                          id={_roomDistance.value}
+                          onChange={roomDistanceHandler}
+                          checked={_roomDistance.value === roomDistance}
+                        />
+                        <label htmlFor={_roomDistance.value}>{_roomDistance.name}</label>
+                      </div>
+                    );
+                  })}
                 </div>
               </Edit.InputItem>
-              <Edit.InputCol>
+              <Edit.InputRow rowCount={2}>
                 <Edit.InputItem required>
                   <label className="input-title">지역</label>
-                  <Edit.InputField type="text" />
+                  <Edit.SelectField onChange={roomRegionHandler}>
+                    <option value="" disabled hidden>
+                      지역 선택
+                    </option>
+                    {regionDataList.map((region: string, idx: number) => {
+                      return (
+                        <option key={`region-${idx}`} value={region}>
+                          {region}
+                        </option>
+                      );
+                    })}
+                  </Edit.SelectField>
                 </Edit.InputItem>
                 <Edit.InputItem required>
                   <label className="input-title">주변 관광지</label>
-                  <Edit.InputField type="text" />
+                  <Edit.SelectField onChange={roomSpotHandler}>
+                    <option value="" disabled hidden>
+                      관광지 선택
+                    </option>
+                    {spotDataList.map((spot: string, idx: number) => {
+                      return (
+                        <option key={`spot-${idx}`} value={spot}>
+                          {spot}
+                        </option>
+                      );
+                    })}
+                  </Edit.SelectField>
                 </Edit.InputItem>
-              </Edit.InputCol>
+              </Edit.InputRow>
               <Edit.InputItem required>
                 <label className="input-title">가격</label>
-                <Edit.InputField type="text" placeholder="최저가 입력" />
+                <Edit.InputField
+                  type="text"
+                  placeholder="최저가 입력"
+                  value={roomCharge}
+                  onChange={roomChargeHandler}
+                />
               </Edit.InputItem>
-            </Edit.InputRow>
-            <Edit.InputRow></Edit.InputRow>
-          </Edit.InputCol>
-          <Edit.InputRow>
+            </Edit.InputCol>
+            <Edit.InputCol></Edit.InputCol>
+          </Edit.InputRow>
+          <Edit.InputRow rowCount={1}>
             <Edit.InputItem>
               <label className="input-title">설명</label>
-              <Edit.InputTextarea placeholder="숙소에 관한 설명을 입력해주세요." />
+              <Edit.InputTextarea
+                placeholder="숙소에 관한 설명을 입력해주세요."
+                value={roomExplanation}
+                onChange={roomExplationHandler}
+              />
             </Edit.InputItem>
             <Edit.InputItem required>
               <label className="input-title">이미지 업로드</label>
@@ -193,32 +330,39 @@ const Page: NextPageWithLayout = () => {
             <Edit.InputItem>
               <label className="input-title">편의</label>
               <Edit.AmenitiesCheckBoxGrid>
-                {amenitiyDataList.map((amenity:amenitiesDataType,idx:number)=>{return (
-                  <Edit.AmenitiesCheckBox>
-                    <input
-                      type="checkbox"
-                      name="amenities"
-                      value={amenity.value}
-                      id={amenity.value}
-                      onChange={()=>{amenityIsCheck(idx)}}
-                    />
-                    <label htmlFor={amenity.value}>
-                      {amenity.checkedImgSrc && (
-                        <div>
-                          <img
-                            src={amenitiyCheckList[idx] ? amenity.checkedImgSrc : amenity.notCheckedImgSrc}
-                            alt={`${amenity.name} 픽토그램`}
-                          />
-                        </div>
-                      )}
-                      <p>{amenity.name}</p>
-                    </label>
-                  </Edit.AmenitiesCheckBox>
-                );})}
+                {amenitiyDataList.map((amenity: AmenitiesDataType, idx: number) => {
+                  return (
+                    <Edit.AmenitiesCheckBox key={idx}>
+                      <input
+                        type="checkbox"
+                        name="amenities"
+                        value={amenity.value}
+                        id={amenity.value}
+                        onChange={() => {
+                          amenityIsCheck(idx);
+                        }}
+                      />
+                      <label htmlFor={amenity.value}>
+                        {amenity.checkedImgSrc && (
+                          <div>
+                            <img
+                              src={amenitiyCheckList[idx] ? amenity.checkedImgSrc : amenity.notCheckedImgSrc}
+                              alt={`${amenity.name} 픽토그램`}
+                            />
+                          </div>
+                        )}
+                        <p>{amenity.name}</p>
+                      </label>
+                    </Edit.AmenitiesCheckBox>
+                  );
+                })}
               </Edit.AmenitiesCheckBoxGrid>
             </Edit.InputItem>
           </Edit.InputRow>
         </Edit.FormWrapper>
+        <Edit.ButtonWrapper>
+          <Edit.SubmitButton onClick={roomRegistration}>등록하기</Edit.SubmitButton>
+        </Edit.ButtonWrapper>
       </div>
     </Index.Wrapper>
   );

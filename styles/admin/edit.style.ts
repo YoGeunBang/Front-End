@@ -7,16 +7,17 @@ export const FormWrapper = styled.div`
   line-height: 150%;
   letter-spacing: -2%;
 `;
-export const InputRow = styled.div`
-  width: 100%;
-`;
-export const InputCol = styled.div`
+export const InputRow = styled.div<{ rowCount: number }>`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${({ rowCount }) => `repeat(${rowCount},1fr)`};
   gap: 16px;
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
   }
+`;
+
+export const InputCol = styled.div`
+  width: 100%;
 `;
 export const RoomThumbnailUpload = styled.div`
   margin-bottom: 32px;
@@ -118,12 +119,27 @@ export const InputItem = styled.div<{ required?: boolean }>`
     }
   }
 `;
+
+export const SelectField = styled.select`
+  font-family: 'Pretendard';
+  border-radius: 4px;
+  height: 40px;
+  border: solid 1.5px ${({ theme }) => theme.colors.blackColors.grey_500};
+  padding: 0 12px;
+  outline: none;
+  width: 100%;
+  option {
+    border-radius: 0;
+    height: 40px;
+  }
+`;
+
 export const InputField = styled.input`
   font-family: 'Pretendard';
   border-radius: 4px;
   height: 40px;
   border: solid 1.5px ${({ theme }) => theme.colors.blackColors.grey_500};
-  padding-left: 12px;
+  padding: 0 12px;
   outline: none;
   width: 100%;
 `;
@@ -142,8 +158,8 @@ export const AmenitiesCheckBoxGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 16px;
-  
-  @media (max-width: 720px) {
+
+  @media (max-width: 768px) {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 8px;
   }
@@ -162,6 +178,7 @@ export const AmenitiesCheckBox = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    color: ${({ theme }) => theme.colors.blackColors.grey_600};
     border-radius: 4px;
     border: solid 1.5px ${({ theme }) => theme.colors.blackColors.grey_300};
     div {
@@ -181,5 +198,28 @@ export const AmenitiesCheckBox = styled.div`
     p {
       font-weight: 900;
     }
+  }
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 120px;
+  width: 100%;
+  justify-content: center;
+`;
+export const SubmitButton = styled.button`
+  font-family: 'Pretendard';
+  background-color: ${({ theme }) => theme.colors.mainColor};
+  color: ${({ theme }) => theme.colors.blackColors.grey_900};
+  font-weight: 500;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  border: none;
+  width: 238px;
+  height: 70px;
+  outline: none;
+  &:hover {
+    cursor: pointer;
   }
 `;
