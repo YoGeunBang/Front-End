@@ -1,11 +1,11 @@
 import type { NextPageWithLayout } from 'pages/_app';
 import { ReactElement, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import Router from 'next/router';
+import { useDispatch, useSelector } from 'react-redux';
 import { saveTokenAction } from 'store/token';
-import axios from 'axios';
 import { RootState } from 'store';
+import Router from 'next/router';
+import axios from 'axios';
 
 const Page: NextPageWithLayout = () => {
   const { token } = useSelector((state: RootState) => state.token);
@@ -18,7 +18,6 @@ const Page: NextPageWithLayout = () => {
       : 'https://ygb.server.swygbro.com/members';
 
   const saveUserInfo = async () => {
-
     const hash = Router.asPath.split('#')[1]; // 네이버에서 응답받은 hash 값
 
     if (hash) {
@@ -29,7 +28,8 @@ const Page: NextPageWithLayout = () => {
           // 백엔드에 네이버 토큰으로  및 서비스 토큰 발급
           accessToken: hash_token,
         });
-        const getUserInfo_res = await axios.get(BACKEND_URL, { // 사용자 정보 조회
+        const getUserInfo_res = await axios.get(BACKEND_URL, {
+          // 사용자 정보 조회
           headers: { Authorization: postToken_res.data.accessToken },
         });
 
@@ -72,6 +72,15 @@ const Page: NextPageWithLayout = () => {
 };
 
 const Container = styled.div`
+  @keyframes Move {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(700%);
+    }
+  }
+  
   padding: 80px 12.5% 10% 12.5%;
   position: relative;
   min-height: calc(100vh - 150px);
@@ -95,14 +104,7 @@ const ContentBox = styled.div`
     color: #fff;
     padding: 10px 0;
     overflow: hidden;
-    @keyframes Move {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(700%);
-      }
-    }
+
     &::before {
       content: '';
       position: absolute;

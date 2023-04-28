@@ -13,7 +13,7 @@ import Router from 'next/router';
 const Page: NextPageWithLayout = () => {
   const { token, nickname, profile_img } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
-  // 서비스 토큰으로 변경될 예정
+
   const BACKEND_URL =
     process.env.NODE_ENV === 'development'
       ? `https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members/`
@@ -24,7 +24,7 @@ const Page: NextPageWithLayout = () => {
     if (isDelete && token) {
       try {
         const delete_res = await axios.delete(BACKEND_URL, {
-          headers: { Authorization: JSON.parse(token).key },
+          headers: { Authorization: token },
         });
         dispatch(deleteTokenAction());
         Router.push({
