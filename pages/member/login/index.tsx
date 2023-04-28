@@ -15,7 +15,7 @@ const Page: NextPageWithLayout = () => {
   const login = () => {
     naverLogin = new window.naver.LoginWithNaverId({
       clientId: process.env.NEXT_PUBLIC_NAVER_CLIENT_ID, // ClientID
-      callbackUrl: 'http://localhost:3000/member/callback', // Callback URL
+      callbackUrl: 'http://localhost:3000/member/login/callback', // Callback URL
       isPopup: false, // 팝업 형태로 인증 여부
       loginButton: {
         type: 3, // 버튼 크기

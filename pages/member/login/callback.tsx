@@ -24,16 +24,12 @@ const Page: NextPageWithLayout = () => {
         const postToken_res = await axios.post(BACKEND_URL, {
           accessToken: hash_token,
         });
-        const sessionToken = JSON.stringify({
-          key: postToken_res.data.accessToken,
-          expire: Date.now() + 86400000,
-        });
         const getUserInfo_res = await axios.get(BACKEND_URL, {
           headers: { Authorization: postToken_res.data.accessToken },
         });
         dispatch(
           saveTokenAction({
-            token: sessionToken,
+            token: postToken_res.data.accessToken,
             nickname: getUserInfo_res.data.nickname,
             profile_img: getUserInfo_res.data.profileImage,
           }),
