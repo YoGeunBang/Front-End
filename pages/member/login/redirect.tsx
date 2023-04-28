@@ -10,23 +10,30 @@ import { RootState } from 'store';
 const Page: NextPageWithLayout = () => {
   const { token } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
-  // develop 환경에서는 프록시 서버를 통한 테스트 cors 에러 처리
+
+  // localhost에서 api 접근 시 cors 발생으로 테스트용으로 proxy 데모 서버 사용. 추후 백엔드에서 처리
   const BACKEND_URL =
     process.env.NODE_ENV === 'development'
       ? 'https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members'
       : 'https://ygb.server.swygbro.com/members';
 
   const saveUserInfo = async () => {
-    const hash = Router.asPath.split('#')[1]; // 네이버 로그인을 통해 전달받은 hash 값
+
+    const hash = Router.asPath.split('#')[1]; // 네이버에서 응답받은 hash 값
+
     if (hash) {
       try {
-        const hash_token = hash.split('=')[1].split('&')[0]; // token값 확인
+        const hash_token = hash.split('=')[1].split('&')[0]; // hash 내 token string 파싱
+
         const postToken_res = await axios.post(BACKEND_URL, {
+          // 백엔드에 네이버 토큰으로  및 서비스 토큰 발급
           accessToken: hash_token,
         });
-        const getUserInfo_res = await axios.get(BACKEND_URL, {
+        const getUserInfo_res = await axios.get(BACKEND_URL, { // 사용자 정보 조회
           headers: { Authorization: postToken_res.data.accessToken },
         });
+
+        // 응답값 redux 저장
         dispatch(
           saveTokenAction({
             token: postToken_res.data.accessToken,
@@ -41,11 +48,13 @@ const Page: NextPageWithLayout = () => {
   };
 
   useEffect(() => {
+    // 페이지 진입시 url로 발급받은 hash 제거 (토큰 노출 방지)
     history.replaceState({}, '', location.pathname);
     saveUserInfo();
   }, []);
 
   useEffect(() => {
+    // 토큰 발급이 완료되면 홈으로 이동
     if (token) {
       Router.push({
         pathname: '/',
@@ -109,7 +118,7 @@ const ContentBox = styled.div`
   }
 `;
 Page.getLayout = function getLayout(page: ReactElement) {
-  return <>{page}</>;
+  return page;
 };
 
 export default Page;
