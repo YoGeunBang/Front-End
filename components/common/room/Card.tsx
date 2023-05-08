@@ -49,7 +49,7 @@ const Card = ({ item }:CardPropsTypes) => {
           onLoad={() => setLoading(false)}
         />
         <button className="img-btn">
-          <img src="/assets/img/img.png"></img>
+        <img src="/assets/img/picture.png"></img>
         </button>
       </div>
       <div className="card-info">
