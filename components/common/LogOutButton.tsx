@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import Router from 'next/router';
-import { useEffect } from 'react';
-import { useSelector } from 'react-redux';
 import { deleteTokenAction } from 'store/token';
 import { useDispatch } from 'react-redux';
-import { RootState } from 'store';
-
-const LogOutButton = () => {
+interface logOutButtonPropsType {
+  imgSrc?:string;
+  children?:string;
+}
+const LogOutButton = ({children,imgSrc}:logOutButtonPropsType) => {
   const dispatch = useDispatch();
-  const { token } = useSelector((state: RootState) => state.token);
   const onClick = () => {
     dispatch(deleteTokenAction());
     alert('로그아웃되었습니다.');
@@ -16,10 +15,10 @@ const LogOutButton = () => {
       pathname: '/',
     });
   };
-
   return (
     <LogOutButtonEl onClick={onClick}>
-      <span>로그아웃</span>
+      {children && <span>{children}</span>}
+      {imgSrc && <img src={imgSrc} alt='로그아웃버튼이미지'/>}
     </LogOutButtonEl>
   );
 };
