@@ -39,7 +39,7 @@ interface regionTypes {
 }
 
 interface userType {
-  token: string | undefined;
+  isLogined: boolean;
   nickname: string | undefined;
   profile_img: string | undefined;
 }

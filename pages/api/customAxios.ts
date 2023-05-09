@@ -25,7 +25,6 @@ export const getTokenApi = (_code: string): Promise<AxiosResponse> => {
     accessToken: _code,
   });
 };
-
 // 회원 정보를 가져오는 api
 export const getUserInfoApi = () => {
   return authAxios.get('/members');

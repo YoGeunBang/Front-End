@@ -1,8 +1,8 @@
 import { combineReducers, Store, CombinedState, AnyAction } from 'redux';
 import { configureStore, EnhancedStore } from '@reduxjs/toolkit';
 import { MakeStore, createWrapper, HYDRATE } from 'next-redux-wrapper';
-import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from "redux-persist";
-import token from './token';
+import { persistStore, persistReducer} from "redux-persist";
+import user from './user';
 import storage from 'redux-persist/lib/storage' 
 
 const rootReducer = (state: any, action: AnyAction): CombinedState<any> => {
@@ -10,7 +10,7 @@ const rootReducer = (state: any, action: AnyAction): CombinedState<any> => {
     case HYDRATE:
       return { ...state, ...action.payload };
     default: {
-      const combinedReducer = combineReducers({ token });
+      const combinedReducer = combineReducers({ user });
       return combinedReducer(state, action);
     }
   }
