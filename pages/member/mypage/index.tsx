@@ -8,7 +8,6 @@ import { LogOutButton } from 'components/common';
 import { deleteTokenAction } from 'store/token';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
-import axios from 'axios';
 import Router from 'next/router';
 import { DeleteMemberApi } from 'lib/customAxios';
 
@@ -30,11 +29,7 @@ const Page: NextPageWithLayout = () => {
       };
     });
   };
-  const BACKEND_URL =
-    process.env.NODE_ENV === 'development'
-      ? `${process.env.NEXT_PUBLIC_DEVELOP_URL}/members/`
-      : `${process.env.NEXT_PUBLIC_PRODUCT_URL}/members/`;
-
+  
   const deleteMember = async () => {
     let isDelete = confirm('정말로 탈퇴하시겠습니까?');
     if (isDelete) {
@@ -55,7 +50,7 @@ const Page: NextPageWithLayout = () => {
         <div className="container">
           <UserProfileArea>
             <UserProfileImgArea>
-              <img src={imageSrc ? imageSrc : '/assets/img/profile_default.svg'} alt="프로필이미지"></img>
+              <img src={imageSrc ? imageSrc : '/assets/img/profile_default.svg'} alt="프로필이미지" />
               <input
                 id="upload-btn"
                 alt="프로필이미지수정버튼"
