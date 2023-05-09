@@ -9,7 +9,7 @@ import { deleteTokenAction } from 'store/token';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
 import Router from 'next/router';
-import { DeleteMemberApi } from 'lib/customAxios';
+import { DeleteMemberApi } from 'pages/api/customAxios';
 
 const Page: NextPageWithLayout = () => {
   const { nickname, profile_img } = useSelector((state: RootState) => state.token);
