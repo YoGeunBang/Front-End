@@ -10,9 +10,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
 import axios from 'axios';
 import Router from 'next/router';
+import { DeleteMemberApi } from 'lib/customAxios';
 
 const Page: NextPageWithLayout = () => {
-  const { token, nickname, profile_img } = useSelector((state: RootState) => state.token);
+  const { nickname, profile_img } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
   const [imageSrc, setImageSrc] = useState<any>(profile_img);
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
@@ -31,16 +32,14 @@ const Page: NextPageWithLayout = () => {
   };
   const BACKEND_URL =
     process.env.NODE_ENV === 'development'
-      ? `https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members/`
-      : `https://ygb.server.swygbro.com/members/`;
+      ? `${process.env.NEXT_PUBLIC_DEVELOP_URL}/members/`
+      : `${process.env.NEXT_PUBLIC_PRODUCT_URL}/members/`;
 
   const deleteMember = async () => {
     let isDelete = confirm('정말로 탈퇴하시겠습니까?');
-    if (isDelete && token) {
+    if (isDelete) {
       try {
-        const delete_res = await axios.delete(BACKEND_URL, {
-          headers: { Authorization: token },
-        });
+        const delete_res = await DeleteMemberApi();
         dispatch(deleteTokenAction());
         Router.push({
           pathname: '/',
