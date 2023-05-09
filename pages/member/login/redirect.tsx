@@ -1,4 +1,5 @@
 import type { NextPageWithLayout } from 'pages/_app';
+import { getCookie, setCookie } from 'cookies-next';
 import { ReactElement, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
@@ -6,6 +7,7 @@ import { saveTokenAction } from 'store/token';
 import { RootState } from 'store';
 import Router from 'next/router';
 import axios from 'axios';
+import { getTokenApi, getUserInfoApi } from 'lib/customAxios';
 
 const Page: NextPageWithLayout = () => {
   const { token } = useSelector((state: RootState) => state.token);
@@ -13,32 +15,29 @@ const Page: NextPageWithLayout = () => {
 
   // localhost에서 api 접근 시 cors 발생으로 테스트용으로 proxy 데모 서버 사용. 추후 백엔드에서 처리
   const BACKEND_URL =
-    process.env.NODE_ENV === 'development'
-      ? 'https://cors-anywhere.herokuapp.com/https://ygb.server.swygbro.com/members'
-      : 'https://ygb.server.swygbro.com/members';
+  process.env.NODE_ENV === 'development'
+    ? `${process.env.NEXT_PUBLIC_DEVELOP_URL}/members`
+    : `${process.env.NEXT_PUBLIC_PRODUCT_URL}/members`; // 기본 서버 주소 입력
 
   const saveUserInfo = async () => {
     const hash = Router.asPath.split('#')[1]; // 네이버에서 응답받은 hash 값
 
     if (hash) {
       try {
-        const hash_token = hash.split('=')[1].split('&')[0]; // hash 내 token string 파싱
+        const code = hash.split('=')[1].split('&')[0]; // hash 내 token string 파싱
 
-        const postToken_res = await axios.post(BACKEND_URL, {
-          // 백엔드에 네이버 토큰으로  및 서비스 토큰 발급
-          accessToken: hash_token,
+        const token = await getTokenApi(code);
+        setCookie('token', token.data.accessToken, {
+          path: '/',
+          secure: true,
         });
-        const getUserInfo_res = await axios.get(BACKEND_URL, {
-          // 사용자 정보 조회
-          headers: { Authorization: postToken_res.data.accessToken },
-        });
-
+        const getUserInfo = await getUserInfoApi();
         // 응답값 redux 저장
         dispatch(
           saveTokenAction({
-            token: postToken_res.data.accessToken,
-            nickname: getUserInfo_res.data.nickname,
-            profile_img: getUserInfo_res.data.profileImage,
+            token: token.data.accessToken,
+            nickname: getUserInfo.data.nickname,
+            profile_img: getUserInfo.data.profileImage,
           }),
         );
       } catch (err) {
@@ -80,7 +79,7 @@ const Container = styled.div`
       transform: translateX(700%);
     }
   }
-  
+
   padding: 80px 12.5% 10% 12.5%;
   position: relative;
   min-height: calc(100vh - 150px);

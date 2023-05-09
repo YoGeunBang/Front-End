@@ -10,7 +10,7 @@ const Header = () => {
   const router = useRouter();
   const { token } = useSelector((state: RootState) => state.token);
   const [isToken, setIsToken] = useState('');
-
+  
   // header Dom class 제어를 위한 ref 선언
   const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
@@ -49,7 +49,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {isToken ? <LogOutButton /> : <LogInButton />}
+          {isToken ? <LogOutButton>로그아웃</LogOutButton> : <LogInButton />}
         </div>
       )}
     </HeaderEl>

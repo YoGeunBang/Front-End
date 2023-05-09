@@ -2,6 +2,7 @@ import { useState, useCallback, useEffect } from 'react';
 import Data from 'data/mock.json';
 import styled from 'styled-components';
 import Pagination from './Pagination';
+import axios from 'axios';
 const DataBox = () => {
   const mock = Data.region[0].detail[0].items;
   const [page, setPage] = useState(1); // 현재 페이지 위치
@@ -9,7 +10,13 @@ const DataBox = () => {
   const offset = (page - 1) * limit; // 뿌려줄 데이터의 시작지점
   const data_list_slice = mock.slice(offset, offset + limit); // 현재 페이지에 맞는 데이터 자르기
   const [checkedList, setCheckedLists] = useState<number[]>([]);
-
+  // const BACKEND_URL =
+  //   process.env.NODE_ENV === 'development'
+  //     ? 'https://cors-anywhere.herokuapp.com/http://ygb.server.swygbro.com/spots/220641/accommodations'
+  //     : 'https://ygb.server.swygbro.com/regions/0';
+  // axios.get(BACKEND_URL).then((res)=> {
+  //   console.log(res)
+  // })
   const dataListSlice_JSX = data_list_slice.map((item: RoomTypes, i: number) => {
     return (
       <Item key={i}>
@@ -34,7 +41,6 @@ const DataBox = () => {
     );
   });
 
-  console.log(checkedList);
   // 전체 체크 클릭 시 발생하는 함수
   const onCheckedAll = useCallback(
     (checked: boolean) => {
