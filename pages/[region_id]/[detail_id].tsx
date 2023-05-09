@@ -10,8 +10,6 @@ import { InfoModal } from 'components/modal';
 import type { GetStaticProps, GetStaticPaths, GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  //const res = await axios.get('/api/rooms/list');
-  // const data = res.data;
   const data = Data.region;
 
   const paths: any[] = [];

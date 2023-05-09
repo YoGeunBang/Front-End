@@ -6,18 +6,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { saveTokenAction } from 'store/token';
 import { RootState } from 'store';
 import Router from 'next/router';
-import axios from 'axios';
-import { getTokenApi, getUserInfoApi } from 'lib/customAxios';
+import { getTokenApi, getUserInfoApi } from 'pages/api/customAxios';
 
 const Page: NextPageWithLayout = () => {
   const { token } = useSelector((state: RootState) => state.token);
   const dispatch = useDispatch();
-
-  // localhost에서 api 접근 시 cors 발생으로 테스트용으로 proxy 데모 서버 사용. 추후 백엔드에서 처리
-  const BACKEND_URL =
-  process.env.NODE_ENV === 'development'
-    ? `${process.env.NEXT_PUBLIC_DEVELOP_URL}/members`
-    : `${process.env.NEXT_PUBLIC_PRODUCT_URL}/members`; // 기본 서버 주소 입력
 
   const saveUserInfo = async () => {
     const hash = Router.asPath.split('#')[1]; // 네이버에서 응답받은 hash 값
