@@ -11,7 +11,8 @@ import { RootState } from 'store';
 const Page: NextPageWithLayout = () => {
 
   let naverLogin: any;
-  const { token } = useSelector((state: RootState) => state.token);
+  const { isLogined } = useSelector((state: RootState) => state.user);
+
   const login = () => {
     naverLogin = new window.naver.LoginWithNaverId({
       clientId: process.env.NEXT_PUBLIC_NAVER_CLIENT_ID, // ClientID
@@ -28,7 +29,7 @@ const Page: NextPageWithLayout = () => {
   
 
   useEffect(() => {
-    if(!token) {
+    if(!isLogined) {
       login();
     }
     else {

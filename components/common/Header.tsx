@@ -1,16 +1,15 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { LogInButton, LogOutButton } from 'components/common';
+import { LogInButton } from 'components/common';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store';
+import Profile from './Profile';
 
 const Header = () => {
   const router = useRouter();
-  const { token } = useSelector((state: RootState) => state.token);
-  const [isToken, setIsToken] = useState('');
-  
+  const { isLogined,profile_img } = useSelector((state: RootState) => state.user);
   // header Dom class 제어를 위한 ref 선언
   const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
@@ -22,9 +21,7 @@ const Header = () => {
       setShowHeader(true);
     }
   };
-
   useEffect(() => {
-    setIsToken(token);
     if (router.pathname === '/[region_id]/[detail_id]') {
       setRoomsPage(true);
     } else setRoomsPage(false);
@@ -49,7 +46,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {isToken ? <LogOutButton>로그아웃</LogOutButton> : <LogInButton />}
+          {isLogined ? <Profile profile_img={profile_img}/> : <LogInButton />}
         </div>
       )}
     </HeaderEl>

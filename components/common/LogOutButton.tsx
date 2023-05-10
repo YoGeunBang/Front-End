@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import Router from 'next/router';
-import { deleteTokenAction } from 'store/token';
+import { resetUserAction } from 'store/user';
 import { useDispatch } from 'react-redux';
 interface logOutButtonPropsType {
   imgSrc?:string;
@@ -9,7 +9,7 @@ interface logOutButtonPropsType {
 const LogOutButton = ({children,imgSrc}:logOutButtonPropsType) => {
   const dispatch = useDispatch();
   const onClick = () => {
-    dispatch(deleteTokenAction());
+    dispatch(resetUserAction());
     alert('로그아웃되었습니다.');
     Router.push({
       pathname: '/',

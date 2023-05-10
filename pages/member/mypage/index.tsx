@@ -1,20 +1,21 @@
 import type { NextPageWithLayout } from 'pages/_app';
 import { AppLayout } from 'components/layout';
 import NicknameModal from 'components/modal/NicknameModal';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { TemplateEl } from 'styles/detail.styled';
 import { LogOutButton } from 'components/common';
-import { deleteTokenAction } from 'store/token';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from 'store';
 import Router from 'next/router';
 import { DeleteMemberApi } from 'pages/api/customAxios';
+import { removeCookies } from 'cookies-next';
+import { resetUserAction } from 'store/user';
 
 const Page: NextPageWithLayout = () => {
-  const { nickname, profile_img } = useSelector((state: RootState) => state.token);
-  const dispatch = useDispatch();
+  const { nickname, profile_img, isLogined } = useSelector((state: RootState) => state.user);
   const [imageSrc, setImageSrc] = useState<any>(profile_img);
+  const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
   const onUpload = (e: any) => {
@@ -29,13 +30,14 @@ const Page: NextPageWithLayout = () => {
       };
     });
   };
-  
+
   const deleteMember = async () => {
     let isDelete = confirm('정말로 탈퇴하시겠습니까?');
     if (isDelete) {
       try {
         const delete_res = await DeleteMemberApi();
-        dispatch(deleteTokenAction());
+        removeCookies('token');
+        dispatch(resetUserAction());
         Router.push({
           pathname: '/',
         });
@@ -44,6 +46,13 @@ const Page: NextPageWithLayout = () => {
       }
     }
   };
+  useEffect(() => {
+    if (!isLogined) {
+      Router.push({
+        pathname: '/member/login',
+      });
+    }
+  }, []);
   return (
     <>
       <TemplateEl className="template">
@@ -75,7 +84,7 @@ const Page: NextPageWithLayout = () => {
               </span>
               <button
                 onClick={() => {
-                  setIsOpenModal((current) =>!current);
+                  setIsOpenModal((current) => !current);
                 }}
               >
                 <img src="/assets/img/arrow_right.png" alt="프로필닉네임수정버튼" />

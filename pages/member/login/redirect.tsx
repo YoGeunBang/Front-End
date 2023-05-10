@@ -3,13 +3,13 @@ import { getCookie, setCookie } from 'cookies-next';
 import { ReactElement, useEffect } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
-import { saveTokenAction } from 'store/token';
+import { saveUserAction } from 'store/user';
 import { RootState } from 'store';
 import Router from 'next/router';
-import { getTokenApi, getUserInfoApi } from 'pages/api/customAxios';
+import { getTokenApi, notAuthAxios } from 'pages/api/customAxios';
 
 const Page: NextPageWithLayout = () => {
-  const { token } = useSelector((state: RootState) => state.token);
+  const { isLogined } = useSelector((state: RootState) => state.user);
   const dispatch = useDispatch();
 
   const saveUserInfo = async () => {
@@ -24,11 +24,16 @@ const Page: NextPageWithLayout = () => {
           path: '/',
           secure: true,
         });
-        const getUserInfo = await getUserInfoApi();
+
+        const getUserInfo = await notAuthAxios.get('/members', {
+          headers: {
+            Authorization: token.data.accessToken,
+          },
+        });
         // 응답값 redux 저장
         dispatch(
-          saveTokenAction({
-            token: token.data.accessToken,
+          saveUserAction({
+            isLogined: true,
             nickname: getUserInfo.data.nickname,
             profile_img: getUserInfo.data.profileImage,
           }),
@@ -47,12 +52,12 @@ const Page: NextPageWithLayout = () => {
 
   useEffect(() => {
     // 토큰 발급이 완료되면 홈으로 이동
-    if (token) {
+    if (isLogined) {
       Router.push({
         pathname: '/',
       });
     }
-  }, [token]);
+  }, [isLogined]);
 
   return (
     <Container>
