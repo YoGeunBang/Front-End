@@ -10,6 +10,7 @@ import Profile from './Profile';
 const Header = () => {
   const router = useRouter();
   const { isLogined,profile_img } = useSelector((state: RootState) => state.user);
+  const [ isLoginedState, setIsLoginedState ] = useState(false);
   // header Dom class 제어를 위한 ref 선언
   const header = useRef<HTMLDivElement | null>(null);
   const [roomsPage, setRoomsPage] = useState<boolean>(false);
@@ -25,7 +26,8 @@ const Header = () => {
     if (router.pathname === '/[region_id]/[detail_id]') {
       setRoomsPage(true);
     } else setRoomsPage(false);
-  });
+    setIsLoginedState(isLogined);
+  },[]);
 
   useEffect(() => {
     if (roomsPage) {
@@ -46,7 +48,7 @@ const Header = () => {
             </a>
           </Link>
           {/* <SearchInput /> */}
-          {isLogined ? <Profile profile_img={profile_img}/> : <LogInButton />}
+          {isLoginedState ? <Profile profile_img={profile_img}/> : <LogInButton />}
         </div>
       )}
     </HeaderEl>
