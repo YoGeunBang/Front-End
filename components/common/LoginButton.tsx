@@ -1,12 +1,15 @@
 import styled from 'styled-components';
 import Router from 'next/router'
+import { useCallback } from 'react';
+
 const LoginButton = () => {
 
-  const moveLogin = () => {
+  const moveLogin = useCallback(() => {
     Router.push({
       pathname: '/member/login',
     })
-  }
+  },[])
+  
   return (
     <LoginButtonEl onClick={moveLogin}>
       <span>로그인</span>

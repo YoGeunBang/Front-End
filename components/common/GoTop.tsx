@@ -9,7 +9,7 @@ const GoTop = () => {
   useEffect(() => {
     // scroll 이 감지되면 handler 함수 실행
     window.addEventListener('scroll', handler);
-  }, [window.pageYOffset]);
+  });
 
   const handler = () => {
     if (window.pageYOffset > 200) {
