@@ -22,7 +22,7 @@ const Header = () => {
   };
   useEffect(() => {
     setIsLoginedState(isLogined);
-  }, []);
+  }, [isLogined]);
 
   useEffect(() => {
     if (router.pathname === '/[region_id]/[detail_id]') {
