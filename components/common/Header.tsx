@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -9,55 +9,48 @@ import Profile from './Profile';
 
 const Header = () => {
   const router = useRouter();
-  const { isLogined,profile_img } = useSelector((state: RootState) => state.user);
-  const [ isLoginedState, setIsLoginedState ] = useState(false);
-  // header Dom class 제어를 위한 ref 선언
-  const header = useRef<HTMLDivElement | null>(null);
-  const [roomsPage, setRoomsPage] = useState<boolean>(false);
-  const [showHeader, setShowHeader] = useState<boolean>(true);
+  const { isLogined, profile_img } = useSelector((state: RootState) => state.user);
+  const [isLoginedState, setIsLoginedState] = useState(false);
+  const [hideHeader, setHideHeader] = useState<boolean>(false);
+  
   const isScroll = () => {
     if (window.pageYOffset >= 80) {
-      setShowHeader(false);
+      setHideHeader(true);
     } else {
-      setShowHeader(true);
+      setHideHeader(false);
     }
   };
   useEffect(() => {
-    if (router.pathname === '/[region_id]/[detail_id]') {
-      setRoomsPage(true);
-    } else setRoomsPage(false);
     setIsLoginedState(isLogined);
-  },[]);
+  }, []);
 
   useEffect(() => {
-    if (roomsPage) {
+    if (router.pathname === '/[region_id]/[detail_id]') {
       window.addEventListener('scroll', isScroll);
     }
     return () => {
       window.removeEventListener('scroll', isScroll);
     };
-  }, [roomsPage]);
+  }, [router.pathname]);
   return (
-    <HeaderEl ref={header} className="template">
-      {showHeader && (
-        <div className="container">
-          <Link href="/">
-            <a className="logo">
-              <img src="/assets/img/logo.png" />
-              <span style={{ padding: '0 0 10px 10px' }}>Beta</span>
-            </a>
-          </Link>
-          {/* <SearchInput /> */}
-          {isLoginedState ? <Profile profile_img={profile_img}/> : <LogInButton />}
-        </div>
-      )}
+    <HeaderEl className={`template ${hideHeader ? 'hide' : ''}`}>
+      <div className="container">
+        <Link href="/">
+          <a className="logo">
+            <img src="/assets/img/logo.png" />
+            <span style={{ padding: '0 0 10px 10px' }}>Beta</span>
+          </a>
+        </Link>
+        {/* <SearchInput /> */}
+        {isLoginedState ? <Profile profile_img={profile_img} /> : <LogInButton />}
+      </div>
     </HeaderEl>
   );
 };
 
 // styled-components
 const HeaderEl = styled.div`
-  &.scroll {
+  &.hide {
     display: none;
   }
   position: fixed;
