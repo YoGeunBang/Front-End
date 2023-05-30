@@ -9,7 +9,6 @@ import { useEffect } from 'react';
 import { RootState } from 'store';
 
 const Page: NextPageWithLayout = () => {
-
   let naverLogin: any;
   const { isLogined } = useSelector((state: RootState) => state.user);
 
@@ -26,18 +25,13 @@ const Page: NextPageWithLayout = () => {
     naverLogin.init();
   };
 
-  
-
   useEffect(() => {
-    if(!isLogined) {
+    if (!isLogined) {
       login();
-    }
-    else {
-      Router.push(
-        {
-          pathname: '/',
-        },
-      );
+    } else {
+      Router.push({
+        pathname: '/',
+      });
       alert('이미 로그인 상태 입니다.');
     }
   }, []);

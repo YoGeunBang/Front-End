@@ -2,19 +2,23 @@ import styled from 'styled-components';
 import Router from 'next/router';
 import { resetUserAction } from 'store/user';
 import { useDispatch } from 'react-redux';
+import { useCallback } from 'react';
+import { deleteCookie } from 'cookies-next';
 interface logOutButtonPropsType {
   imgSrc?:string;
   children?:string;
 }
 const LogOutButton = ({children,imgSrc}:logOutButtonPropsType) => {
   const dispatch = useDispatch();
-  const onClick = () => {
+  
+  const onClick = useCallback(() => {
+    deleteCookie('token');
     dispatch(resetUserAction());
     alert('로그아웃되었습니다.');
     Router.push({
       pathname: '/',
     });
-  };
+  },[])
   return (
     <LogOutButtonEl onClick={onClick}>
       {children && <span>{children}</span>}

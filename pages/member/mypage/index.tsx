@@ -35,7 +35,7 @@ const Page: NextPageWithLayout = () => {
     let isDelete = confirm('정말로 탈퇴하시겠습니까?');
     if (isDelete) {
       try {
-        const delete_res = await DeleteMemberApi();
+        await DeleteMemberApi();
         removeCookies('token');
         dispatch(resetUserAction());
         Router.push({

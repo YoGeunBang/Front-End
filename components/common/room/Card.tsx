@@ -1,55 +1,41 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { RiMapPinLine } from "react-icons/ri";
-import { IoIosArrowForward } from "react-icons/io";
-import { SkeletonCard, MapView, PhotoView } from "../room";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { RiMapPinLine } from 'react-icons/ri';
+import { IoIosArrowForward } from 'react-icons/io';
+import { SkeletonCard, MapView, PhotoView } from '../room';
 interface CardPropsTypes {
-  item:RoomTypes;
+  item: RoomTypes;
 }
-const Card = ({ item }:CardPropsTypes) => {
+const Card = ({ item }: CardPropsTypes) => {
   const [showMap, setShowMap] = useState<boolean>(false);
   const [showImg, setShowImg] = useState<boolean>(false);
-
   // 렌더링 전 후 구분 (스켈레톤 ui 출력을 위함)
   const [loading, setLoading] = useState<boolean>(true);
 
-  const isShowMap = () => {
-    setShowMap(true);
-  };
-  const isShowImg = () => {
-    setShowImg(true);
-  };
   // 정수형 데이터 -> 문자열 변환 후 문자 사이 : 추가 ex) 10:10
-  const time = (_num:number) => {
+  const time = (_num: number) => {
     if (String(_num).length == 4) {
-      let time = String(_num).replace(/(.{2})/, "$1:");
+      let time = String(_num).replace(/(.{2})/, '$1:');
       return time;
-    } 
-    else if (String(_num).length == 3) {
-      let time = '0'+ String(_num).replace(/(.{1})/, "$1:");
+    } else if (String(_num).length == 3) {
+      let time = '0' + String(_num).replace(/(.{1})/, '$1:');
       return time;
-    }
-    else {
-      return "없음";
+    } else {
+      return '없음';
     }
   };
   // 가격 정수형 데이터 반점 찍어주기
-  const price = (_price:number) => {
-    if (_price == null) return "가격 정보 없음";
-    else return `${_price.toLocaleString("ko-KR")} 원 ~`;
+  const price = (_price: number) => {
+    if (_price == null) return '가격 정보 없음';
+    else return `${_price.toLocaleString('ko-KR')} 원 ~`;
   };
   return (
     <CardEl>
-      {loading ? <SkeletonCard /> : ""}
-      <div className="card-top" onClick={isShowImg}>
-        <img
-          className="card-img"
-          src={item.image[0]}
-          alt="thumbnail"
-          onLoad={() => setLoading(false)}
-        />
+      {loading ? <SkeletonCard /> : ''}
+      <div className="card-top" onClick={() => setShowImg(true)}>
+        <img className="card-img" src={item.image[0]} alt="thumbnail" onLoad={() => setLoading(false)} />
         <button className="img-btn">
-        <img src="/assets/img/picture.png"></img>
+          <img src="/assets/img/picture.png"></img>
         </button>
       </div>
       <div className="card-info">
@@ -57,29 +43,25 @@ const Card = ({ item }:CardPropsTypes) => {
         <div className="card-check">
           <span className="tag">체크인</span>
           <span> : {time(item.checkin)}</span>
-          {" | "}
+          {' | '}
           <span className="tag"> 체크아웃</span>
           <span> : {time(item.checkout)}</span>
         </div>
-        <button className="card-locate" onClick={isShowMap}>
+        <button className="card-locate" onClick={() => setShowMap(true)}>
           <RiMapPinLine color="#205CFF" size="22px" />
           상세 위치 보기
         </button>
         <div className="price">
           <span className="tag">최저가 </span>
-          <em style={{ fontStyle: "normal" }}>{price(item.price)}</em>{" "}
+          <em style={{ fontStyle: 'normal' }}>{price(item.price)}</em>{' '}
         </div>
       </div>
-      <div className="info-right">
-        {showMap ? (
-          <MapView setShowMap={setShowMap} _lat={item.lat} _lng={item.lng} address={item.address}/>
-        ) : null}
-        {showImg ? <PhotoView setShowImg={setShowImg} item={item} /> : null}
-      </div>
-      <button className="move" onClick={() => window.open(item.url, "_blank")}>
+      <button className="move" onClick={() => window.open(item.url, '_blank')}>
         <span>숙소 정보 확인하기</span>
         <IoIosArrowForward size="22px" />
       </button>
+      {showMap ? <MapView setShowMap={setShowMap} _lat={item.lat} _lng={item.lng} address={item.address} /> : null}
+      {showImg ? <PhotoView setShowImg={setShowImg} item={item} /> : null}
     </CardEl>
   );
 };
