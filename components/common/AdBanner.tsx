@@ -28,7 +28,7 @@ const AdBannerEl = styled.div`
     justify-content: center;
     align-items: center;
     background-color: #f4f4f4;
-    min-width: 728px;
+    width: auto;
     .ad {
       width: 728px;
       height: 90px;

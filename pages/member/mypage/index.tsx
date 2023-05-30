@@ -14,21 +14,24 @@ import { resetUserAction } from 'store/user';
 
 const Page: NextPageWithLayout = () => {
   const { nickname, profile_img, isLogined } = useSelector((state: RootState) => state.user);
-  const [imageSrc, setImageSrc] = useState<any>(profile_img);
+  const [imageSrc, setImageSrc] = useState<string | null>(profile_img);
   const dispatch = useDispatch();
   const [isOpenModal, setIsOpenModal] = useState<boolean>(false);
 
-  const onUpload = (e: any) => {
-    const file = e.target.files[0];
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
+  const onUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if(e.target.files != null){
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
 
-    return new Promise<void>((resolve) => {
-      reader.onload = () => {
-        setImageSrc(reader.result || null); // 파일의 컨텐츠
-        resolve();
-      };
-    });
+      return new Promise<void>((resolve) => {
+        reader.onload = () => {
+          setImageSrc(reader.result as string); // 파일의 컨텐츠
+          resolve();
+        };
+      });
+    }
+
   };
 
   const deleteMember = async () => {

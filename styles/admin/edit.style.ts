@@ -32,6 +32,7 @@ export const RoomThumbnailUpload = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    overflow:hidden;
     width: 100%;
     height: 550px;
     background-color: ${({ theme }) => theme.colors.blackColors.grey_50};
@@ -39,8 +40,11 @@ export const RoomThumbnailUpload = styled.div`
     color: ${({ theme }) => theme.colors.blackColors.grey_400};
     font-weight: 500;
     font-size: 1.5rem;
-    img {
-      margin-bottom: 16px;
+    p {
+      margin-top: 16px;
+    }
+    #room-thumbnail {
+      width: 100%;
     }
   }
 `;

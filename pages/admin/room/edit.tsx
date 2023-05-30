@@ -113,9 +113,25 @@ const Page: NextPageWithLayout = () => {
     useInput<string>(''); /* 숙소 체크인 시간 */
   const [roomCheckOutTime, setRoomCheckOutTime, clearRoomCheckOutTime, roomCheckOutTimeHandler] =
     useInput<string>(''); /* 숙소 체크아웃 시간 */
-
+  const [roomThumbnail, setRoomThumbnail, clearRoomThumbnail, roomThumbnailHandler] = useInput<string | null>('');
   const [roomRegion, setRoomRegion, clearRoomRegion, roomRegionHandler] = useInput<string>('');
   const [roomSpot, setRoomSpot, clearRoomSpot, roomSpotHandler] = useInput<string>('');
+
+  const onUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files != null) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+
+      return new Promise<void>((resolve) => {
+        reader.onload = () => {
+          setRoomThumbnail(reader.result as string); // 파일의 컨텐츠
+          resolve();
+        };
+      });
+    }
+  };
+
   const roomTypeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const _value = Number(e.target.value);
     if (_value === 1 || _value === 2 || _value === 3 || _value === 4) setRoomType(_value);
@@ -136,16 +152,17 @@ const Page: NextPageWithLayout = () => {
     const roomTypeDataObj = { 1: '호텔', 2: '펜션', 3: '모텔', 4: '게스트하우스' };
     const roomDistanceDataObj = { walk_5: '도보 5분 내', walk_10: '도보 5~10분', walk_15: '도보 10~15분' };
     const verification =
-      !!roomName &&
-      !!roomAddress &&
-      !!roomLink &&
-      !!roomCharge &&
-      !!roomExplanation &&
-      !!roomCheckInTime &&
-      !!roomCheckOutTime &&
-      !!roomRegion &&
-      !!roomSpot;
-    if (verification)
+      !!roomName && // 숙소 이름
+      !!roomAddress && // 숙소 주소
+      !!roomLink && // 숙소 링크
+      !!roomCharge && // 숙소 최저가
+      !!roomExplanation && // 숙소 설명
+      !!roomCheckInTime && // 체크인
+      !!roomCheckOutTime && // 체크아웃
+      !!roomRegion && //지역
+      !!roomSpot; // 주변 관광지
+
+    if (verification) {
       console.log({
         roomName,
         roomAddress,
@@ -159,6 +176,9 @@ const Page: NextPageWithLayout = () => {
         roomType: roomTypeDataObj[roomType],
         roomDistnace: roomDistanceDataObj[roomDistance],
       });
+    } else {
+      alert('* 항목을 모두 기재해주세요.');
+    }
   };
 
   useEffect(() => {
@@ -226,11 +246,17 @@ const Page: NextPageWithLayout = () => {
             </Edit.InputCol>
             <Edit.InputCol>
               <Edit.RoomThumbnailUpload>
-                <input type="file" id="room-thumbnail-upload" />
+                <input type="file" id="room-thumbnail-upload" accept="image/*" onChange={(e) => onUpload(e)} />
                 <label htmlFor="room-thumbnail-upload">
                   <div>
-                    <img src={`/assets/img/admin/room_edit_svg/camera2.svg`} alt="카메라2 픽토그램" />
-                    <p>썸네일 이미지를 업로드 해주세요</p>
+                    {roomThumbnail ? (
+                      <img id='room-thumbnail' src={roomThumbnail} alt="프로필이미지" />
+                    ) : (
+                      <>
+                        <img src={`/assets/img/admin/room_edit_svg/camera2.svg`} alt="카메라2 픽토그램" />
+                        <p>썸네일 이미지를 업로드 해주세요</p>
+                      </>
+                    )}
                   </div>
                 </label>
               </Edit.RoomThumbnailUpload>
