@@ -1,7 +1,3 @@
-/* 관리자 페이지 사이드 메뉴 컴포넌트 */
-import type { NextPageWithLayout } from 'pages/_app';
-import { AppLayout } from 'components/layout';
-import { ReactElement } from 'react';
 import styled from 'styled-components';
 /* router 관련 */
 import { useRouter } from 'next/router';
@@ -14,7 +10,7 @@ interface MenuType {
   subMenu?: MenuType[];
 }
 
-const Page: NextPageWithLayout = () => {
+const SideMenu = () => {
   const router = useRouter();
   const menuData: MenuType[] = [
     { id: 'region_manage', name: '지역 관리', path: '/admin/region' },
@@ -62,9 +58,6 @@ const Page: NextPageWithLayout = () => {
   );
 };
 
-Page.getLayout = function getLayout(page: ReactElement) {
-  return <AppLayout>{page}</AppLayout>;
-};
 
 const MenuWrapper = styled.nav`
   position: absolute;
@@ -93,4 +86,4 @@ const MenuWrapper = styled.nav`
   }
 `;
 
-export default Page;
+export default SideMenu;

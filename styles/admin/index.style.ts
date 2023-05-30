@@ -6,3 +6,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   min-height: calc(100vh - 150px);
 `;
+
+export const Title = styled.h2`
+  font-size: 2.8rem;
+  font-weight: bold;
+`;
