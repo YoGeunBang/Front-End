@@ -119,7 +119,7 @@ const Page: NextPageWithLayout = () => {
   const [roomSpot, setRoomSpot, clearRoomSpot, roomSpotHandler] = useInput<string>('');
 
   const onThumbnailUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files != null) {
+    if (e.target.files && e.target.files.length !== 0) {
       const file = e.target.files[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -171,7 +171,6 @@ const Page: NextPageWithLayout = () => {
       !!roomAddress && // 숙소 주소
       !!roomLink && // 숙소 링크
       !!roomCharge && // 숙소 최저가
-      !!roomExplanation && // 숙소 설명
       !!roomCheckInTime && // 체크인
       !!roomCheckOutTime && // 체크아웃
       !!roomRegion && //지역
@@ -197,7 +196,6 @@ const Page: NextPageWithLayout = () => {
   };
 
   useEffect(() => {
-    console.log(roomImageList.length);
     setRoomRegion('제주도');
     setRoomSpot('제주국제공항');
     setRoomCheckInTime('00:00');
@@ -366,7 +364,7 @@ const Page: NextPageWithLayout = () => {
                 />
                 <div>
                   {roomImageList.length != 0 ? (
-                    <div id='room-image-wrapper'>
+                    <div id="room-image-wrapper">
                       {roomImageList.map((src) => {
                         return <img src={src} alt="숙소상세이미지" />;
                       })}
