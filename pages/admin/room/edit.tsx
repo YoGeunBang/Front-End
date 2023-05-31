@@ -114,10 +114,11 @@ const Page: NextPageWithLayout = () => {
   const [roomCheckOutTime, setRoomCheckOutTime, clearRoomCheckOutTime, roomCheckOutTimeHandler] =
     useInput<string>(''); /* 숙소 체크아웃 시간 */
   const [roomThumbnail, setRoomThumbnail, clearRoomThumbnail, roomThumbnailHandler] = useInput<string | null>('');
+  const [roomImageList, setRoomImageList, clearRoomImageList, roomImageListHandler] = useInput<string[]>([]);
   const [roomRegion, setRoomRegion, clearRoomRegion, roomRegionHandler] = useInput<string>('');
   const [roomSpot, setRoomSpot, clearRoomSpot, roomSpotHandler] = useInput<string>('');
 
-  const onUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onThumbnailUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files != null) {
       const file = e.target.files[0];
       const reader = new FileReader();
@@ -131,7 +132,21 @@ const Page: NextPageWithLayout = () => {
       });
     }
   };
+  const onImageListUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files != null) {
+      const fileList = e.target.files;
+      let imageList: string[] = [...roomImageList];
 
+      for (let i = 0; i < fileList.length; i++) {
+        const currentImageUrl = URL.createObjectURL(fileList[i]);
+        imageList.push(currentImageUrl);
+      }
+      if (imageList.length > 10) {
+        imageList = imageList.slice(0, 10);
+      }
+      setRoomImageList(imageList); // 파일의 컨텐츠
+    }
+  };
   const roomTypeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     const _value = Number(e.target.value);
     if (_value === 1 || _value === 2 || _value === 3 || _value === 4) setRoomType(_value);
@@ -182,6 +197,7 @@ const Page: NextPageWithLayout = () => {
   };
 
   useEffect(() => {
+    console.log(roomImageList.length);
     setRoomRegion('제주도');
     setRoomSpot('제주국제공항');
     setRoomCheckInTime('00:00');
@@ -246,11 +262,11 @@ const Page: NextPageWithLayout = () => {
             </Edit.InputCol>
             <Edit.InputCol>
               <Edit.RoomThumbnailUpload>
-                <input type="file" id="room-thumbnail-upload" accept="image/*" onChange={(e) => onUpload(e)} />
+                <input type="file" id="room-thumbnail-upload" accept="image/*" onChange={(e) => onThumbnailUpload(e)} />
                 <label htmlFor="room-thumbnail-upload">
                   <div>
                     {roomThumbnail ? (
-                      <img id='room-thumbnail' src={roomThumbnail} alt="프로필이미지" />
+                      <img id="room-thumbnail" src={roomThumbnail} alt="프로필이미지" />
                     ) : (
                       <>
                         <img src={`/assets/img/admin/room_edit_svg/camera2.svg`} alt="카메라2 픽토그램" />
@@ -340,12 +356,27 @@ const Page: NextPageWithLayout = () => {
             <Edit.InputItem required>
               <label className="input-title">이미지 업로드</label>
               <div className="room-image-upload">
-                <input type="file" multiple id="room-image-upload" />
+                <input
+                  type="file"
+                  id="room-image-upload"
+                  onChange={(e) => {
+                    onImageListUpload(e);
+                  }}
+                  multiple
+                />
                 <div>
-                  <div>
-                    <img src={`/assets/img/admin/room_edit_svg/camera.svg`} alt="카메라 픽토그램" />
-                    <p>숙소 상세 이미지를 업로드해주세요</p>
-                  </div>
+                  {roomImageList.length != 0 ? (
+                    <div id='room-image-wrapper'>
+                      {roomImageList.map((src) => {
+                        return <img src={src} alt="숙소상세이미지" />;
+                      })}
+                    </div>
+                  ) : (
+                    <div>
+                      <img src={`/assets/img/admin/room_edit_svg/camera.svg`} alt="카메라 픽토그램" />
+                      <p>숙소 상세 이미지를 업로드해주세요</p>
+                    </div>
+                  )}
 
                   <label className="select-file-btn" htmlFor="room-image-upload">
                     Select File

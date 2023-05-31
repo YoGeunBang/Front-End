@@ -96,14 +96,28 @@ export const InputItem = styled.div<{ required?: boolean }>`
       border-radius: 4px;
       border: dashed 1.5px ${({ theme }) => theme.colors.blackColors.grey_400};
       background-color: ${({ theme }) => theme.colors.blackColors.grey_50};
+      #room-image-wrapper {
+        display: grid;
+        grid-template-columns: repeat(5,20%);
+        grid-template-rows: repeat(2,50%);
+        width: 100%;
+        height: 100%;
+        overflow:hidden;
+        >img {
+          position:relative;
+          width: 100%;
+          height:100%;
+          object-fit: contain;
+        }
+      }
       div {
         margin-bottom: 27px;
         display: flex;
         flex-direction: column;
         align-items: center;
 
-        img {
-          margin-bottom: 20px;
+        p {
+          margin-top: 20px;
         }
       }
 
