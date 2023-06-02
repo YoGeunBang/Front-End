@@ -119,7 +119,7 @@ const Page: NextPageWithLayout = () => {
   const [roomSpot, setRoomSpot, clearRoomSpot, roomSpotHandler] = useInput<string>('');
 
   const onThumbnailUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files.length !== 0) {
+    if (e.target.files?.length) {
       const file = e.target.files[0];
       const reader = new FileReader();
       reader.readAsDataURL(file);
@@ -169,6 +169,8 @@ const Page: NextPageWithLayout = () => {
     const verification =
       !!roomName && // 숙소 이름
       !!roomAddress && // 숙소 주소
+      !!roomThumbnail && // 숙소 썸네일 이미지
+      !!roomImageList.length && // 숙소 상세 이미지
       !!roomLink && // 숙소 링크
       !!roomCharge && // 숙소 최저가
       !!roomCheckInTime && // 체크인
@@ -180,6 +182,8 @@ const Page: NextPageWithLayout = () => {
       console.log({
         roomName,
         roomAddress,
+        roomThumbnail,
+        roomImageList,
         roomLink,
         roomCharge,
         roomExplanation,
@@ -189,6 +193,7 @@ const Page: NextPageWithLayout = () => {
         roomSpot,
         roomType: roomTypeDataObj[roomType],
         roomDistnace: roomDistanceDataObj[roomDistance],
+        amenitiyCheckList,
       });
     } else {
       alert('* 항목을 모두 기재해주세요.');
@@ -365,8 +370,8 @@ const Page: NextPageWithLayout = () => {
                 <div>
                   {roomImageList.length != 0 ? (
                     <div id="room-image-wrapper">
-                      {roomImageList.map((src) => {
-                        return <img src={src} alt="숙소상세이미지" />;
+                      {roomImageList.map((src,idx) => {
+                        return <img key={idx} src={src} alt="숙소상세이미지" />;
                       })}
                     </div>
                   ) : (
